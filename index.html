@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Royale - The Ultimate Gaming Experience</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f1923; /* Main dark background */
+        }
+        .sidebar {
+            background-color: #1a2935;
+        }
+        .main-content {
+            background-color: #0f1923;
+        }
+        .game-card {
+            background-color: #2d3748;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .game-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px rgba(29, 78, 216, 0.5); /* Blue glow */
+        }
+        .btn-primary {
+            @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300;
+        }
+         .btn-secondary {
+            @apply bg-slate-700 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded-md transition duration-300;
+        }
+    </style>
+</head>
+<body class="text-slate-300">
+
+    <div class="flex min-h-screen">
+        <!-- Collapsible Sidebar -->
+        <aside class="sidebar w-64 min-h-screen flex-shrink-0 p-4 space-y-6 hidden md:flex md:flex-col">
+            <a href="index.html" class="text-2xl font-bold text-white text-center">
+                <i class="fas fa-gem mr-2 text-blue-500"></i>Casino Royale
+            </a>
+            <nav class="flex-grow space-y-2">
+                <a href="dashboard.html" class="flex items-center p-3 rounded-lg hover:bg-slate-700 transition-colors">
+                    <i class="fas fa-dice w-6 text-center text-slate-400"></i><span class="ml-4">Casino</span>
+                </a>
+                 <a href="history.html" class="flex items-center p-3 rounded-lg hover:bg-slate-700 transition-colors">
+                    <i class="fas fa-history w-6 text-center text-slate-400"></i><span class="ml-4">History</span>
+                </a>
+                <a href="settings.html" class="flex items-center p-3 rounded-lg hover:bg-slate-700 transition-colors">
+                    <i class="fas fa-cog w-6 text-center text-slate-400"></i><span class="ml-4">Settings</span>
+                </a>
+                 <a href="help.html" class="flex items-center p-3 rounded-lg hover:bg-slate-700 transition-colors">
+                    <i class="fas fa-question-circle w-6 text-center text-slate-400"></i><span class="ml-4">Help</span>
+                </a>
+            </nav>
+            <div class="space-y-2 text-sm text-slate-500">
+                <p>&copy; 2025 Casino Royale</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <div class="flex-grow">
+            <!-- Header -->
+            <header class="main-content flex items-center justify-between p-4 border-b border-slate-800">
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div class="w-full max-w-xs relative hidden md:block">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
+                    <input type="text" placeholder="Search for games..." class="w-full bg-slate-800 border border-slate-700 rounded-full py-2 pl-10 pr-4 text-white focus:outline-none focus:border-blue-500">
+                </div>
+                <div id="auth-buttons" class="flex items-center space-x-4">
+                    <a href="login.html" class="btn-secondary">Log In</a>
+                    <a href="signup.html" class="btn-primary">Sign Up</a>
+                </div>
+                 <div id="user-info" class="hidden items-center space-x-4">
+                     <span id="username-display" class="font-semibold text-white"></span>
+                     <button id="logout-button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">Log Out</button>
+                </div>
+            </header>
+
+            <main class="main-content p-6">
+                <!-- Hero Banner -->
+                <section class="mb-10">
+                    <div class="rounded-lg overflow-hidden relative h-80">
+                         <img src="https://placehold.co/1200x400/0f1923/FFFFFF?text=Epic+Jackpot+Event" class="w-full h-full object-cover" alt="Promotional Banner">
+                         <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start p-12">
+                            <h1 class="text-4xl font-extrabold text-white mb-3">New Original Game!</h1>
+                            <p class="text-slate-300 max-w-lg mb-6">Experience the thrill of 'Cosmic Crash'. Predict the multiplier and win big before it's too late!</p>
+                            <a href="dashboard.html" class="btn-primary text-lg">Play Now</a>
+                         </div>
+                    </div>
+                </section>
+
+                <!-- Game Grid -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-6">Popular Games</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+                        <!-- Repeat this game card block for each game -->
+                        <div class="game-card rounded-lg overflow-hidden cursor-pointer">
+                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Slots" class="w-full h-48 object-cover">
+                            <div class="p-3">
+                                <h3 class="font-semibold text-white">Book of Slots</h3>
+                                <p class="text-sm text-slate-400">Provider Name</p>
+                            </div>
+                        </div>
+                        <div class="game-card rounded-lg overflow-hidden cursor-pointer">
+                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Blackjack" class="w-full h-48 object-cover">
+                            <div class="p-3">
+                                <h3 class="font-semibold text-white">Live Blackjack</h3>
+                                <p class="text-sm text-slate-400">Evolution</p>
+                            </div>
+                        </div>
+                         <div class="game-card rounded-lg overflow-hidden cursor-pointer">
+                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Roulette" class="w-full h-48 object-cover">
+                            <div class="p-3">
+                                <h3 class="font-semibold text-white">American Roulette</h3>
+                                <p class="text-sm text-slate-400">Pragmatic Play</p>
+                            </div>
+                        </div>
+                        <div class="game-card rounded-lg overflow-hidden cursor-pointer">
+                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Crash" class="w-full h-48 object-cover">
+                            <div class="p-3">
+                                <h3 class="font-semibold text-white">Cosmic Crash</h3>
+                                <p class="text-sm text-slate-400">Royale Originals</p>
+                            </div>
+                        </div>
+                        <div class="game-card rounded-lg overflow-hidden cursor-pointer">
+                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Baccarat" class="w-full h-48 object-cover">
+                            <div class="p-3">
+                                <h3 class="font-semibold text-white">Speed Baccarat</h3>
+                                <p class="text-sm text-slate-400">Evolution</p>
+                            </div>
+                        </div>
+                        <!-- ... add more game cards as needed -->
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const user = JSON.parse(localStorage.getItem('casinoUser'));
+            const authButtons = document.getElementById('auth-buttons');
+            const userInfo = document.getElementById('user-info');
+            
+            if (user && user.username) {
+                authButtons.classList.add('hidden');
+                userInfo.classList.remove('hidden');
+                userInfo.classList.add('flex');
+                document.getElementById('username-display').textContent = `Welcome, ${user.username}`;
+            } else {
+                authButtons.classList.remove('hidden');
+                userInfo.classList.add('hidden');
+            }
+
+            const logoutButton = document.getElementById('logout-button');
+            if(logoutButton) {
+                logoutButton.addEventListener('click', () => {
+                    localStorage.removeItem('casinoUser');
+                    window.location.reload();
+                });
+            }
+        });
+    </script>
+</body>
+</html>
+
