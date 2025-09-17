@@ -86,9 +86,11 @@ img {
 .site-header .container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 1.25rem;
   min-height: 72px;
+  flex-wrap: wrap;
+  padding-block: 0.75rem;
 }
 
 .brand {
@@ -99,6 +101,10 @@ img {
   font-size: 1.3rem;
 }
 
+.site-header .brand {
+  flex: 0 0 auto;
+}
+
 .brand-logo {
   width: 38px;
   height: 38px;
@@ -106,9 +112,15 @@ img {
   place-items: center;
   border-radius: 12px;
   background: var(--accent-gradient);
-  color: #041126;
-  font-weight: 700;
-  letter-spacing: 0.02em;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.brand-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
 }
 
 .menu-toggle {
@@ -133,6 +145,10 @@ img {
   display: flex;
   align-items: center;
   gap: 0.6rem;
+  flex: 1 1 auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-height: 40px;
 }
 
 .nav-link {
@@ -142,6 +158,7 @@ img {
   font-size: 0.93rem;
   font-weight: 500;
   transition: color 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
 }
 
 .nav-link:hover,
@@ -175,6 +192,8 @@ img {
   font-size: 0.95rem;
   transition: transform 0.25s ease, box-shadow 0.25s ease;
   cursor: pointer;
+  border: none;
+  white-space: nowrap;
 }
 
 .primary-button {
@@ -199,26 +218,62 @@ img {
   border-color: rgba(43, 217, 255, 0.4);
 }
 
+.btn i {
+  font-size: 0.95em;
+}
+
+.btn:focus-visible,
+.nav-link:focus-visible,
+.menu-toggle:focus-visible,
+.filter-chip:focus-visible {
+  outline: 2px solid rgba(43, 217, 255, 0.6);
+  outline-offset: 3px;
+}
+
 .action-buttons {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.site-header [data-auth-buttons],
+.site-header [data-user-info] {
+  margin-left: auto;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .action-buttons.user-info {
   display: none;
 }
 
-.user-pill {
-  display: inline-flex;
+.account-button {
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.45rem 0.9rem;
-  border-radius: 999px;
-  background: rgba(43, 217, 255, 0.12);
-  color: var(--accent-primary);
+  gap: 0.7rem;
+  white-space: normal;
+  text-align: left;
+}
+
+.account-button .account-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.1;
+  gap: 0.1rem;
+}
+
+.account-button .account-title {
+  font-size: 0.75rem;
   font-weight: 600;
-  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+.account-button .account-username {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 main {
@@ -887,6 +942,17 @@ textarea:focus {
   .site-header .container {
     gap: 0.8rem;
   }
+
+  .nav-links {
+    order: 3;
+    width: 100%;
+  }
+
+  .site-header [data-auth-buttons],
+  .site-header [data-user-info] {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 960px) {
@@ -901,6 +967,7 @@ textarea:focus {
     left: 16px;
     flex-direction: column;
     align-items: flex-start;
+    justify-content: flex-start;
     background: rgba(5, 12, 27, 0.96);
     border: var(--border-subtle);
     border-radius: var(--radius-lg);
@@ -910,6 +977,8 @@ textarea:focus {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease, transform 0.3s ease;
+    flex: initial;
+    min-height: 0;
   }
 
   .nav-links.open {
@@ -937,6 +1006,11 @@ textarea:focus {
 
   .mobile-only .action-buttons.user-info.is-visible {
     display: grid;
+  }
+
+  .mobile-only .account-button {
+    width: 100%;
+    justify-content: center;
   }
 
   .hero .container {
@@ -978,5 +1052,13 @@ textarea:focus {
 
   .footer .container {
     grid-template-columns: 1fr;
+  }
+
+  .account-button .account-title {
+    font-size: 0.68rem;
+  }
+
+  .account-button .account-username {
+    font-size: 0.95rem;
   }
 }

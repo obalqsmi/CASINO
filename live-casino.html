@@ -15,7 +15,9 @@
     <header class="site-header">
         <div class="container">
             <a href="index.html" class="brand">
-                <span class="brand-logo">S</span>
+                <span class="brand-logo">
+                    <img src="assets/images/logo.png" alt="Stake Casino logo">
+                </span>
                 <span>Stake Casino</span>
             </a>
             <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
@@ -35,22 +37,34 @@
                 <a href="settings.html" class="nav-link">Account</a>
                 <div class="mobile-only">
                     <div class="action-buttons" data-mobile-auth>
-                        <a href="login.html" class="ghost-button btn">Log In</a>
-                        <a href="signup.html" class="primary-button btn">Register</a>
+                        <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+                        <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
                     </div>
                     <div class="action-buttons user-info" data-mobile-user>
-                        <span class="user-pill" data-username>Player</span>
-                        <button class="ghost-button btn" data-logout>Log Out</button>
+                        <a href="settings.html" class="primary-button btn account-button">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span class="account-text">
+                                <span class="account-title">Account</span>
+                                <span class="account-username" data-username>Player</span>
+                            </span>
+                        </a>
+                        <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
                     </div>
                 </div>
             </nav>
             <div class="action-buttons" data-auth-buttons>
-                <a href="login.html" class="ghost-button btn">Log In</a>
-                <a href="signup.html" class="primary-button btn">Register</a>
+                <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+                <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
             </div>
             <div class="action-buttons user-info" data-user-info>
-                <span class="user-pill" data-username>Player</span>
-                <button class="ghost-button btn" data-logout>Log Out</button>
+                <a href="settings.html" class="primary-button btn account-button">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="account-text">
+                        <span class="account-title">Account</span>
+                        <span class="account-username" data-username>Player</span>
+                    </span>
+                </a>
+                <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
             </div>
         </div>
     </header>
@@ -110,28 +124,28 @@
                     </div>
                 </div>
                 <div class="games-grid">
-                    <article class="game-card compact" style="background-image: url('https://images.unsplash.com/photo-1542990253-a781e04c0082?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card compact" style="background-image: url('assets/images/blackjack-table.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-chair"></i> 2 seats free</span>
                             <h3 class="title">Stake Blackjack A</h3>
                             <p class="meta">$10 - $2,000 • Dealer Mia</p>
                         </div>
                     </article>
-                    <article class="game-card compact" style="background-image: url('https://images.unsplash.com/photo-1534854638093-bada1813ca19?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card compact" style="background-image: url('assets/images/roulette-live.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-burst"></i> Multiplier</span>
                             <h3 class="title">Lightning Roulette</h3>
                             <p class="meta">x50, x100, x200 active • Host Daniel</p>
                         </div>
                     </article>
-                    <article class="game-card compact" style="background-image: url('https://images.unsplash.com/photo-1519671282429-b44660ead0a7?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card compact" style="background-image: url('assets/images/mega-wheel.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-masks-theater"></i> Show</span>
                             <h3 class="title">Mega Wheel</h3>
                             <p class="meta">$0.10 - $1,000 • Bonus drop soon</p>
                         </div>
                     </article>
-                    <article class="game-card compact" style="background-image: url('https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card compact" style="background-image: url('assets/images/speed-baccarat.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-spa"></i> Baccarat</span>
                             <h3 class="title">Speed Baccarat</h3>
@@ -194,7 +208,9 @@
         <div class="container">
             <div>
                 <a href="index.html" class="brand">
-                    <span class="brand-logo">S</span>
+                    <span class="brand-logo">
+                        <img src="assets/images/logo.png" alt="Stake Casino logo">
+                    </span>
                     <span>Stake Casino</span>
                 </a>
                 <p>Stake.com inspired live casino with HD hosts and exclusive bonuses.</p>

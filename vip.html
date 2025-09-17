@@ -15,7 +15,9 @@
     <header class="site-header">
         <div class="container">
             <a href="index.html" class="brand">
-                <span class="brand-logo">S</span>
+                <span class="brand-logo">
+                    <img src="assets/images/logo.png" alt="Stake Casino logo">
+                </span>
                 <span>Stake Casino</span>
             </a>
             <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
@@ -35,22 +37,34 @@
                 <a href="settings.html" class="nav-link">Account</a>
                 <div class="mobile-only">
                     <div class="action-buttons" data-mobile-auth>
-                        <a href="login.html" class="ghost-button btn">Log In</a>
-                        <a href="signup.html" class="primary-button btn">Register</a>
+                        <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+                        <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
                     </div>
                     <div class="action-buttons user-info" data-mobile-user>
-                        <span class="user-pill" data-username>Player</span>
-                        <button class="ghost-button btn" data-logout>Log Out</button>
+                        <a href="settings.html" class="primary-button btn account-button">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span class="account-text">
+                                <span class="account-title">Account</span>
+                                <span class="account-username" data-username>Player</span>
+                            </span>
+                        </a>
+                        <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
                     </div>
                 </div>
             </nav>
             <div class="action-buttons" data-auth-buttons>
-                <a href="login.html" class="ghost-button btn">Log In</a>
-                <a href="signup.html" class="primary-button btn">Register</a>
+                <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+                <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
             </div>
             <div class="action-buttons user-info" data-user-info>
-                <span class="user-pill" data-username>Player</span>
-                <button class="ghost-button btn" data-logout>Log Out</button>
+                <a href="settings.html" class="primary-button btn account-button">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="account-text">
+                        <span class="account-title">Account</span>
+                        <span class="account-username" data-username>Player</span>
+                    </span>
+                </a>
+                <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
             </div>
         </div>
     </header>
@@ -209,7 +223,9 @@
         <div class="container">
             <div>
                 <a href="index.html" class="brand">
-                    <span class="brand-logo">S</span>
+                    <span class="brand-logo">
+                        <img src="assets/images/logo.png" alt="Stake Casino logo">
+                    </span>
                     <span>Stake Casino</span>
                 </a>
                 <p>Stake.com inspired VIP ladder with rakeback, reloads, and concierge hosts.</p>

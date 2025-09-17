@@ -15,7 +15,9 @@
     <header class="site-header">
         <div class="container">
             <a href="index.html" class="brand">
-                <span class="brand-logo">S</span>
+                <span class="brand-logo">
+                    <img src="assets/images/logo.png" alt="Stake Casino logo">
+                </span>
                 <span>Stake Casino</span>
             </a>
             <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
@@ -35,22 +37,34 @@
                 <a href="settings.html" class="nav-link">Account</a>
                 <div class="mobile-only">
                     <div class="action-buttons" data-mobile-auth>
-                        <a href="login.html" class="ghost-button btn">Log In</a>
-                        <a href="signup.html" class="primary-button btn">Register</a>
+                        <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+                        <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
                     </div>
                     <div class="action-buttons user-info" data-mobile-user>
-                        <span class="user-pill" data-username>Player</span>
-                        <button class="ghost-button btn" data-logout>Log Out</button>
+                        <a href="settings.html" class="primary-button btn account-button">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span class="account-text">
+                                <span class="account-title">Account</span>
+                                <span class="account-username" data-username>Player</span>
+                            </span>
+                        </a>
+                        <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
                     </div>
                 </div>
             </nav>
             <div class="action-buttons" data-auth-buttons>
-                <a href="login.html" class="ghost-button btn">Log In</a>
-                <a href="signup.html" class="primary-button btn">Register</a>
+                <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
+                <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
             </div>
             <div class="action-buttons user-info" data-user-info>
-                <span class="user-pill" data-username>Player</span>
-                <button class="ghost-button btn" data-logout>Log Out</button>
+                <a href="settings.html" class="primary-button btn account-button">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="account-text">
+                        <span class="account-title">Account</span>
+                        <span class="account-username" data-username>Player</span>
+                    </span>
+                </a>
+                <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
             </div>
         </div>
     </header>
@@ -111,42 +125,42 @@
                     <a href="dashboard.html" class="ghost-button btn"><i class="fa-solid fa-grid-2"></i> View full casino</a>
                 </div>
                 <div class="games-grid">
-                    <article class="game-card" style="background-image: url('https://images.unsplash.com/photo-1549049950-48d5887197e1?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card" style="background-image: url('assets/images/crash.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-rocket"></i> Stake Originals</span>
                             <h3 class="title">Crash X</h3>
                             <p class="meta">Predict the multiplier and cash out before the bust.</p>
                         </div>
                     </article>
-                    <article class="game-card" style="background-image: url('https://images.unsplash.com/photo-1528222354212-a29573cdb844?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card" style="background-image: url('assets/images/lightning-roulette.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-bolt"></i> Hot Pick</span>
                             <h3 class="title">Lightning Roulette</h3>
                             <p class="meta">Electrifying multipliers on every spin.</p>
                         </div>
                     </article>
-                    <article class="game-card" style="background-image: url('https://images.unsplash.com/photo-1504270997636-07ddfbd48945?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card" style="background-image: url('assets/images/blackjack-vip.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-chess-knight"></i> Live Dealers</span>
                             <h3 class="title">Blackjack VIP</h3>
                             <p class="meta">High-limit action with elite hosts.</p>
                         </div>
                     </article>
-                    <article class="game-card" style="background-image: url('https://images.unsplash.com/photo-1533237264985-ee93c0bd6ab8?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card" style="background-image: url('assets/images/mega-moolah.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-coins"></i> Jackpots</span>
                             <h3 class="title">Mega Moolah Night</h3>
                             <p class="meta">Seven-figure wins triggered weekly.</p>
                         </div>
                     </article>
-                    <article class="game-card" style="background-image: url('https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card" style="background-image: url('assets/images/plinko.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-bullseye"></i> Originals</span>
                             <h3 class="title">Plinko 3D</h3>
                             <p class="meta">Choose volatility and watch the balls cascade.</p>
                         </div>
                     </article>
-                    <article class="game-card" style="background-image: url('https://images.unsplash.com/photo-1504274066651-8d31a536b11a?auto=format&fit=crop&w=900&q=80');">
+                    <article class="game-card" style="background-image: url('assets/images/dice-duel.png');">
                         <div class="content">
                             <span class="badge"><i class="fa-solid fa-shield-halved"></i> Provably Fair</span>
                             <h3 class="title">Dice Duel</h3>
@@ -246,7 +260,9 @@
         <div class="container">
             <div>
                 <a href="index.html" class="brand">
-                    <span class="brand-logo">S</span>
+                    <span class="brand-logo">
+                        <img src="assets/images/logo.png" alt="Stake Casino logo">
+                    </span>
                     <span>Stake Casino</span>
                 </a>
                 <p>Stake.com inspired interface delivering lightning-fast casino and sportsbook entertainment.</p>
