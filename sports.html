@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bet History | Stake Casino</title>
-    <meta name="description" content="Review recent wagers, live bets, and results in a Stake.com inspired history dashboard with filters and status badges.">
+    <title>Sportsbook | Stake Casino</title>
+    <meta name="description" content="Bet on live and upcoming sports with a Stake.com inspired sportsbook experience, featuring live odds, parlays, and boosted lines.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
@@ -26,11 +26,11 @@
             <nav class="nav-links" data-nav-links>
                 <a href="index.html" class="nav-link">Home</a>
                 <a href="dashboard.html" class="nav-link">Casino</a>
-                <a href="sports.html" class="nav-link">Sports</a>
+                <a href="sports.html" class="nav-link active">Sports</a>
                 <a href="live-casino.html" class="nav-link">Live Casino</a>
                 <a href="promotions.html" class="nav-link">Promotions</a>
                 <a href="vip.html" class="nav-link">VIP Club</a>
-                <a href="history.html" class="nav-link active">History</a>
+                <a href="history.html" class="nav-link">History</a>
                 <a href="help.html" class="nav-link">Support</a>
                 <a href="settings.html" class="nav-link">Account</a>
                 <div class="mobile-only">
@@ -56,103 +56,91 @@
     </header>
 
     <main>
-        <section class="section">
+        <section class="hero">
             <div class="container">
-                <div class="section-header">
-                    <div>
-                        <h1 class="section-title">Bet History</h1>
-                        <p class="section-subtitle">Track your latest casino spins, live dealer rounds, and sportsbook tickets.</p>
+                <div>
+                    <span class="hero-eyebrow"><i class="fa-solid fa-basketball"></i> Sportsbook</span>
+                    <h1 class="hero-title">Live odds with Stake.com swagger</h1>
+                    <p class="hero-description">Bet on pre-game and in-play markets with boosted parlays, instant cashouts, and slick visualisation tools inspired by Stake.com.</p>
+                    <div class="hero-actions">
+                        <a href="#live" class="primary-button btn"><i class="fa-solid fa-tower-broadcast"></i> View live now</a>
+                        <a href="promotions.html" class="ghost-button btn"><i class="fa-solid fa-bolt"></i> Claim boosts</a>
                     </div>
-                    <div class="badge-pill"><i class="fa-solid fa-clock-rotate-left"></i> Synced 30 seconds ago</div>
+                    <div class="hero-stats">
+                        <div class="hero-stat">
+                            <span>120+</span>
+                            Live events every hour
+                        </div>
+                        <div class="hero-stat">
+                            <span>$5M</span>
+                            Average weekly payouts
+                        </div>
+                        <div class="hero-stat">
+                            <span>94%</span>
+                            Player return on top leagues
+                        </div>
+                    </div>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <strong>$12,450</strong>
-                        <span>Total wagered last 7 days</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>142</strong>
-                        <span>Bets settled this week</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>$2,180</strong>
-                        <span>Net profit across all games</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>62%</strong>
-                        <span>Casino win rate</span>
-                    </div>
+                <div class="hero-gallery">
+                    <article class="hero-card">
+                        <span class="label"><i class="fa-solid fa-fire"></i> Boosted</span>
+                        <strong>NBA Super Parlay +35%</strong>
+                        <small>Available until tip-off.</small>
+                    </article>
+                    <article class="hero-card">
+                        <span class="label"><i class="fa-solid fa-medal"></i> Featured</span>
+                        <strong>UFC Main Card</strong>
+                        <small>Live markets & rapid cashout.</small>
+                    </article>
                 </div>
             </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="live">
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <h2 class="section-title">Recent wagers</h2>
-                        <p class="section-subtitle">Filter between casino, originals, and sports bets just like Stake.com.</p>
+                        <h2 class="section-title">Live right now</h2>
+                        <p class="section-subtitle">Dynamic odds update every second just like Stake.com.</p>
                     </div>
-                </div>
-                <div class="filters">
-                    <button class="filter-chip active"><i class="fa-solid fa-border-all"></i> All Bets</button>
-                    <button class="filter-chip"><i class="fa-solid fa-dice"></i> Casino</button>
-                    <button class="filter-chip"><i class="fa-solid fa-bolt"></i> Originals</button>
-                    <button class="filter-chip"><i class="fa-solid fa-futbol"></i> Sports</button>
-                    <button class="filter-chip"><i class="fa-solid fa-filter"></i> Filters</button>
+                    <a href="#" class="ghost-button btn"><i class="fa-solid fa-tv"></i> Multi-view</a>
                 </div>
                 <div class="table-wrapper">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Placed</th>
-                                <th>Game</th>
-                                <th>Bet Amount</th>
-                                <th>Payout</th>
-                                <th>Multiplier</th>
-                                <th>Status</th>
+                                <th>Event</th>
+                                <th>Market</th>
+                                <th>Home</th>
+                                <th>Draw</th>
+                                <th>Away</th>
+                                <th>Cashout</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>02:12 • Today</td>
-                                <td>Crash X</td>
-                                <td>$250</td>
-                                <td>$1,425</td>
-                                <td>x5.7</td>
-                                <td><span class="status-badge won"><i class="fa-solid fa-arrow-trend-up"></i> Won</span></td>
+                                <td>Premier League • 64&apos;</td>
+                                <td>Match Winner</td>
+                                <td>1.82</td>
+                                <td>3.95</td>
+                                <td>4.20</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-hand-holding-dollar"></i> $235</span></td>
                             </tr>
                             <tr>
-                                <td>01:48 • Today</td>
-                                <td>NBA Parlay</td>
-                                <td>$150</td>
-                                <td>$0</td>
-                                <td>x0.0</td>
-                                <td><span class="status-badge lost"><i class="fa-solid fa-xmark"></i> Lost</span></td>
-                            </tr>
-                            <tr>
-                                <td>23:10 • Yesterday</td>
-                                <td>Roulette Ultimate</td>
-                                <td>$400</td>
-                                <td>$1,200</td>
-                                <td>x3.0</td>
-                                <td><span class="status-badge won"><i class="fa-solid fa-bolt"></i> Won</span></td>
-                            </tr>
-                            <tr>
-                                <td>22:22 • Yesterday</td>
-                                <td>World Cup Futures</td>
-                                <td>$500</td>
-                                <td>$0</td>
+                                <td>NBA Playoffs • Q3</td>
+                                <td>Total Points</td>
+                                <td>1.91</td>
                                 <td>-</td>
-                                <td><span class="status-badge pending"><i class="fa-solid fa-hourglass-half"></i> Pending</span></td>
+                                <td>1.91</td>
+                                <td><span class="status-badge pending"><i class="fa-solid fa-stopwatch"></i> Cashout 92%</span></td>
                             </tr>
                             <tr>
-                                <td>18:55 • Yesterday</td>
-                                <td>Plinko 3D</td>
-                                <td>$75</td>
-                                <td>$315</td>
-                                <td>x4.2</td>
-                                <td><span class="status-badge won"><i class="fa-solid fa-sparkles"></i> Won</span></td>
+                                <td>ATP Masters • Set 2</td>
+                                <td>Next Game Winner</td>
+                                <td>1.65</td>
+                                <td>-</td>
+                                <td>2.28</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-bolt"></i> Instant</span></td>
                             </tr>
                         </tbody>
                     </table>
@@ -164,34 +152,34 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <h2 class="section-title">Session recap</h2>
-                        <p class="section-subtitle">Stay on top of your performance and responsible gaming metrics.</p>
+                        <h2 class="section-title">Popular markets</h2>
+                        <p class="section-subtitle">Stake.com styled categories with one-tap access.</p>
                     </div>
                 </div>
                 <div class="card-grid">
                     <article class="surface-card highlight">
-                        <h3 class="card-title">Performance insights</h3>
-                        <p class="card-meta">Your top three profit sources this week:</p>
-                        <ul class="footer-links">
-                            <li>Crash X • +$1,275</li>
-                            <li>Stake Blackjack • +$540</li>
-                            <li>Premier League bets • +$365</li>
-                        </ul>
-                    </article>
-                    <article class="surface-card">
-                        <h3 class="card-title">Responsible play</h3>
-                        <p class="card-meta">Limits & reminders aligned with Stake.com best practices.</p>
+                        <h3 class="card-title">Same game parlays</h3>
+                        <p class="card-meta">Build custom combos with live odds tracking and cashout.</p>
                         <div class="list-inline">
-                            <span class="chip">Loss Limit Active</span>
-                            <span class="chip">Session Reminder</span>
+                            <span class="chip">NBA</span>
+                            <span class="chip">NFL</span>
+                            <span class="chip">Champions League</span>
                         </div>
                     </article>
                     <article class="surface-card">
-                        <h3 class="card-title">Export & share</h3>
-                        <p class="card-meta">Download CSV statements for compliance or support.</p>
-                        <div class="hero-actions">
-                            <a href="#" class="ghost-button btn"><i class="fa-solid fa-file-arrow-down"></i> Export CSV</a>
-                            <a href="#" class="ghost-button btn"><i class="fa-solid fa-link"></i> Share Bet</a>
+                        <h3 class="card-title">Esports</h3>
+                        <p class="card-meta">CS:GO, League, Valorant with map-by-map markets.</p>
+                        <div class="list-inline">
+                            <span class="chip">Live Streams</span>
+                            <span class="chip">Micro Markets</span>
+                        </div>
+                    </article>
+                    <article class="surface-card">
+                        <h3 class="card-title">Motorsport</h3>
+                        <p class="card-meta">F1, MotoGP, and rally specials with boost tokens.</p>
+                        <div class="list-inline">
+                            <span class="chip">Fast Settlements</span>
+                            <span class="chip">In-race Bets</span>
                         </div>
                     </article>
                 </div>
@@ -206,7 +194,7 @@
                     <span class="brand-logo">S</span>
                     <span>Stake Casino</span>
                 </a>
-                <p>Stake.com grade bet history with crisp filters and provably fair tracking.</p>
+                <p>Stake.com inspired sportsbook with boosted parlays and instant cashouts.</p>
                 <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
             </div>
             <div>

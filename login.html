@@ -3,102 +3,150 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Log In - Casino Royale</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #1a202c;
-        }
-        .form-container-bg {
-             background: linear-gradient(rgba(26, 32, 44, 0.8), rgba(26, 32, 44, 0.8)), url('https://placehold.co/1920x1080/000000/FFFFFF?text=Casino+Ambiance');
-            background-size: cover;
-            background-position: center;
-        }
-        .glassmorphism {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-    </style>
+    <title>Log In | Stake Casino</title>
+    <meta name="description" content="Log in to a Stake.com styled casino experience featuring originals, live casino, sports, and VIP rewards.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-+1YwkpawuO/7dBDEuDfSU/EYEYVplpXCMVvjJAnYXhYzuq/n6PvJEa3TBUnIFVQGryuVKy7jH9MuNoMylkz7dA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="text-white">
-
-    <!-- Header Section -->
-    <header class="bg-gray-900 shadow-lg">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-yellow-500">
-                <i class="fas fa-gem mr-2"></i>Casino Royale
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="brand">
+                <span class="brand-logo">S</span>
+                <span>Stake Casino</span>
             </a>
-            <div>
-                 <a href="signup.html" class="bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-2 px-4 rounded-lg transition duration-300">
-                    Sign Up
-                </a>
+            <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" data-nav-links>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="dashboard.html" class="nav-link">Casino</a>
+                <a href="sports.html" class="nav-link">Sports</a>
+                <a href="live-casino.html" class="nav-link">Live Casino</a>
+                <a href="promotions.html" class="nav-link">Promotions</a>
+                <a href="vip.html" class="nav-link">VIP Club</a>
+                <a href="history.html" class="nav-link">History</a>
+                <a href="help.html" class="nav-link">Support</a>
+                <a href="settings.html" class="nav-link active">Account</a>
+                <div class="mobile-only">
+                    <div class="action-buttons" data-mobile-auth>
+                        <a href="login.html" class="ghost-button btn">Log In</a>
+                        <a href="signup.html" class="primary-button btn">Register</a>
+                    </div>
+                    <div class="action-buttons user-info" data-mobile-user>
+                        <span class="user-pill" data-username>Player</span>
+                        <button class="ghost-button btn" data-logout>Log Out</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="action-buttons" data-auth-buttons>
+                <a href="login.html" class="ghost-button btn">Log In</a>
+                <a href="signup.html" class="primary-button btn">Register</a>
             </div>
-        </nav>
-    </header>
-
-    <!-- Log In Form Section -->
-    <main class="form-container-bg flex items-center justify-center min-h-screen -mt-20">
-        <div class="container mx-auto px-6 py-24">
-            <div class="glassmorphism max-w-md mx-auto p-8 md:p-12 shadow-2xl">
-                <h2 class="text-3xl font-bold text-center text-yellow-500 mb-8">Welcome Back</h2>
-                 <p id="error-message" class="text-center text-red-500 mb-4"></p>
-                <form id="login-form">
-                    <div class="mb-4">
-                        <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email</label>
-                        <input type="email" id="email" name="email" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-yellow-500" required>
-                    </div>
-                    <div class="mb-6">
-                        <label for="password" class="block text-gray-300 text-sm font-bold mb-2">Password</label>
-                        <input type="password" id="password" name="password" class="w-full bg-gray-800 border border-gray-700 rounded-lg py-3 px-4 text-white focus:outline-none focus:border-yellow-500" required>
-                    </div>
-                    <button type="submit" class="w-full bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-3 px-4 rounded-lg transition duration-300 transform hover:scale-105">
-                        Log In
-                    </button>
-                </form>
-                <p class="text-center text-gray-400 text-sm mt-6">
-                    Don't have an account? <a href="signup.html" class="text-yellow-500 hover:underline">Sign Up</a>
-                </p>
+            <div class="action-buttons user-info" data-user-info>
+                <span class="user-pill" data-username>Player</span>
+                <button class="ghost-button btn" data-logout>Log Out</button>
             </div>
         </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h1 class="section-title">Welcome back</h1>
+                        <p class="section-subtitle">Enter the Stake.com inspired hub with instant access to casino, sports, and VIP rewards.</p>
+                    </div>
+                    <div class="badge-pill"><i class="fa-solid fa-lock"></i> Secure login</div>
+                </div>
+                <div class="card-grid">
+                    <form class="form-card" data-login-form data-redirect="dashboard.html">
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <label for="login-username">Username</label>
+                                <input type="text" id="login-username" name="username" class="input-field" placeholder="StakeHero" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="login-password">Password</label>
+                                <input type="password" id="login-password" name="password" class="input-field" placeholder="••••••••" required>
+                            </div>
+                            <div class="input-group">
+                                <label for="login-currency">Preferred currency</label>
+                                <select id="login-currency" name="currency" class="input-field">
+                                    <option value="USD">USD</option>
+                                    <option value="BTC">BTC</option>
+                                    <option value="ETH">ETH</option>
+                                    <option value="USDT">USDT</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="primary-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</button>
+                            <a href="signup.html" class="ghost-button btn"><i class="fa-solid fa-user-plus"></i> Create account</a>
+                        </div>
+                    </form>
+                    <article class="surface-card highlight">
+                        <h3 class="card-title">Why log in?</h3>
+                        <p class="card-meta">Unlock Stake.com inspired benefits tailored to your bankroll.</p>
+                        <ul class="footer-links">
+                            <li><i class="fa-solid fa-bolt"></i> Lightning withdrawals</li>
+                            <li><i class="fa-solid fa-gift"></i> Personalized reloads</li>
+                            <li><i class="fa-solid fa-chart-simple"></i> Detailed bet history</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
     </main>
-    
-    <script>
-        const loginForm = document.getElementById('login-form');
-        const errorMessage = document.getElementById('error-message');
 
-        loginForm.addEventListener('submit', function(event) {
-            event.preventDefault();
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <a href="index.html" class="brand">
+                    <span class="brand-logo">S</span>
+                    <span>Stake Casino</span>
+                </a>
+                <p>Stake.com inspired platform delivering seamless logins and cross-product rewards.</p>
+                <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
+            </div>
+            <div>
+                <h4 class="card-title">Discover</h4>
+                <div class="footer-links">
+                    <a href="dashboard.html">Casino</a>
+                    <a href="sports.html">Sportsbook</a>
+                    <a href="live-casino.html">Live Casino</a>
+                    <a href="promotions.html">Promotions</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Community</h4>
+                <div class="footer-links">
+                    <a href="vip.html">VIP Club</a>
+                    <a href="history.html">Bet History</a>
+                    <a href="help.html">Support Hub</a>
+                    <a href="settings.html">Account Settings</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Responsible Play</h4>
+                <div class="footer-links">
+                    <a href="help.html">Safer Gambling</a>
+                    <a href="help.html#faq">FAQs</a>
+                    <a href="mailto:support@stakecasino.example">support@stakecasino.example</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Stake Casino. Inspired by Stake.com&apos;s world-class experience. Play responsibly.
+        </div>
+    </footer>
 
-            const email = document.getElementById('email').value;
-            const password = document.getElementById('password').value;
-
-            // Retrieve the stored user data
-            const storedUserJSON = localStorage.getItem('casinoUser');
-
-            if (!storedUserJSON) {
-                errorMessage.textContent = 'No account found. Please sign up.';
-                return;
-            }
-
-            const storedUser = JSON.parse(storedUserJSON);
-
-            // Check if the credentials match
-            if (email === storedUser.email && password === storedUser.password) {
-                // Successful login
-                errorMessage.textContent = '';
-                alert('Login successful! Welcome to the casino.');
-                window.location.href = 'dashboard.html';
-            } else {
-                // Failed login
-                errorMessage.textContent = 'Invalid email or password.';
-            }
-        });
-    </script>
-
+    <script src="scripts.js"></script>
 </body>
 </html>
