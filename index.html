@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stake Casino Hub | Stake.com Inspired Experience</title>
-    <meta name="description" content="Experience a Stake.com inspired casino hub with originals, live drops, promotions, and a VIP club. Lightning-fast gaming tailored for crypto-native players.">
+    <meta name="description" content="Stake.com inspired casino hub with responsive layouts, a bankroll dashboard, and rich game lobby cards optimised for every screen size.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
@@ -27,25 +27,22 @@
             </button>
             <nav class="nav-links" data-nav-links>
                 <a href="index.html" class="nav-link active">Home</a>
-                <a href="dashboard.html" class="nav-link">Casino</a>
-                <a href="sports.html" class="nav-link">Sports</a>
-                <a href="live-casino.html" class="nav-link">Live Casino</a>
-                <a href="promotions.html" class="nav-link">Promotions</a>
-                <a href="vip.html" class="nav-link">VIP Club</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="casino.html" class="nav-link">Casino</a>
                 <a href="history.html" class="nav-link">History</a>
-                <a href="help.html" class="nav-link">Support</a>
-                <a href="settings.html" class="nav-link">Account</a>
+                <a href="help.html" class="nav-link">Help</a>
+                <a href="account.html" class="nav-link">Account</a>
+                <a href="settings.html" class="nav-link">Settings</a>
                 <div class="mobile-only">
                     <div class="action-buttons" data-mobile-auth>
-                        <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
-                        <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
+                        <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
                     </div>
                     <div class="action-buttons user-info" data-mobile-user>
-                        <a href="settings.html" class="primary-button btn account-button">
+                        <a href="account.html" class="primary-button btn account-button">
                             <i class="fa-solid fa-circle-user"></i>
                             <span class="account-text">
                                 <span class="account-title">Account</span>
-                                <span class="account-username" data-username>Player</span>
+                                <span class="account-username" data-username>Guest</span>
                             </span>
                         </a>
                         <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
@@ -53,15 +50,14 @@
                 </div>
             </nav>
             <div class="action-buttons" data-auth-buttons>
-                <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
-                <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
+                <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
             </div>
             <div class="action-buttons user-info" data-user-info>
-                <a href="settings.html" class="primary-button btn account-button">
+                <a href="account.html" class="primary-button btn account-button">
                     <i class="fa-solid fa-circle-user"></i>
                     <span class="account-text">
                         <span class="account-title">Account</span>
-                        <span class="account-username" data-username>Player</span>
+                        <span class="account-username" data-username>Guest</span>
                     </span>
                 </a>
                 <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
@@ -73,43 +69,43 @@
         <section class="hero">
             <div class="container">
                 <div>
-                    <span class="hero-eyebrow"><i class="fa-solid fa-bolt"></i> Originals Exclusive</span>
-                    <h1 class="hero-title">Lightning-fast thrills, inspired by Stake.com</h1>
-                    <p class="hero-description">Discover an immersive casino crafted with the same sleek precision and energy you love from Stake.com. Dive into originals, live drops, daily races, and a VIP Club built for crypto-native winners.</p>
+                    <span class="hero-eyebrow"><i class="fa-solid fa-bolt"></i> Stake.com Inspired</span>
+                    <h1 class="hero-title">Casino, analytics, and account tools built for any screen</h1>
+                    <p class="hero-description">Browse a Stake.com style lobby, monitor your bankroll health, and manage preferences from a single responsive hub. Everything is tuned for fast play and crystal clear insights.</p>
                     <div class="hero-actions">
-                        <a href="dashboard.html" class="primary-button btn"><i class="fa-solid fa-dice"></i> Enter Casino</a>
-                        <a href="vip.html" class="ghost-button btn"><i class="fa-solid fa-crown"></i> View VIP Ladder</a>
+                        <a href="dashboard.html" class="primary-button btn"><i class="fa-solid fa-chart-line"></i> View dashboard</a>
+                        <a href="casino.html" class="ghost-button btn"><i class="fa-solid fa-dice"></i> Browse casino</a>
                     </div>
                     <div class="hero-stats">
                         <div class="hero-stat">
-                            <span>8,000+</span>
-                            Games curated from premium providers
+                            <span>1,280+</span>
+                            Games tracked with live performance metrics
                         </div>
                         <div class="hero-stat">
-                            <span>$75M</span>
-                            Daily wagered across casino & sports
+                            <span>45s</span>
+                            Average withdrawal approval across assets
                         </div>
                         <div class="hero-stat">
-                            <span>24/7</span>
-                            Live support & rapid withdrawals
+                            <span>99.98%</span>
+                            Uptime for stats syncs and session logging
                         </div>
                     </div>
                 </div>
                 <div class="hero-gallery hero-card-stack">
                     <article class="hero-card">
-                        <span class="label"><i class="fa-solid fa-trophy"></i> Daily Races</span>
-                        <strong>$100,000 Prize Pool</strong>
-                        <small>Climb the leaderboard every 24h.</small>
+                        <span class="label"><i class="fa-solid fa-layer-group"></i> Bankroll Split</span>
+                        <strong>65% Casino • 25% Live • 10% Originals</strong>
+                        <small>Automatic allocation update every hour.</small>
                     </article>
                     <article class="hero-card">
-                        <span class="label"><i class="fa-solid fa-diamond"></i> VIP Boost</span>
-                        <strong>Instant Reload Bonuses</strong>
-                        <small>Unlock weekly boosts with VIP tiers.</small>
+                        <span class="label"><i class="fa-solid fa-clock"></i> Session Recap</span>
+                        <strong>4h 12m Played Today</strong>
+                        <small>Highlights top streaks and biggest swings.</small>
                     </article>
                     <article class="hero-card">
-                        <span class="label"><i class="fa-solid fa-shuffle"></i> Live Drops</span>
-                        <strong>650 winners every hour</strong>
-                        <small>Random cash boosts on any bet size.</small>
+                        <span class="label"><i class="fa-solid fa-shield"></i> Safety Check</span>
+                        <strong>2FA & Device Lock Enabled</strong>
+                        <small>Manage keys directly from your account hub.</small>
                     </article>
                 </div>
             </div>
@@ -120,9 +116,9 @@
                 <div class="section-header">
                     <div>
                         <h2 class="section-title">Trending casino games</h2>
-                        <p class="section-subtitle">Hand-picked experiences with the same pulse as Stake.com&apos;s casino lobby.</p>
+                        <p class="section-subtitle">Hand-picked experiences mirroring Stake.com&rsquo;s lobby, ready to launch instantly.</p>
                     </div>
-                    <a href="dashboard.html" class="ghost-button btn"><i class="fa-solid fa-grid-2"></i> View full casino</a>
+                    <a href="casino.html" class="ghost-button btn"><i class="fa-solid fa-table-cells-large"></i> View full casino</a>
                 </div>
                 <div class="games-grid">
                     <article class="game-card" style="background-image: url('assets/images/crash.png');">
@@ -222,34 +218,34 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <h2 class="section-title">Live drops & race highlights</h2>
-                        <p class="section-subtitle">Just like Stake.com, rewards rain down non-stop.</p>
+                        <h2 class="section-title">Stay on top of every move</h2>
+                        <p class="section-subtitle">Live sync pulls wagers, swaps, and withdrawals directly into your dashboard so nothing slips through.</p>
                     </div>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <strong>Every 60 sec</strong>
-                        <span>Random drops to active bettors regardless of stake.</span>
+                        <strong>Every session</strong>
+                        <span>Auto-categorised into wins, losses, and neutral streaks.</span>
                     </div>
                     <div class="stat-card">
-                        <strong>Top 3</strong>
-                        <span>Daily race winners share $50,000 in boosted prizes.</span>
+                        <strong>Bankroll health</strong>
+                        <span>Profit &amp; loss deltas compared to the previous seven days.</span>
                     </div>
                     <div class="stat-card">
-                        <strong>5%</strong>
-                        <span>Weekly reload applied automatically for VIPs.</span>
+                        <strong>Game focus</strong>
+                        <span>Hours played and wager volume by your top titles.</span>
                     </div>
                     <div class="stat-card">
-                        <strong>Instant</strong>
-                        <span>Crypto withdrawals with no manual approvals.</span>
+                        <strong>Instant exports</strong>
+                        <span>Download CSV snapshots straight from the history page.</span>
                     </div>
                 </div>
                 <div class="cta-banner">
-                    <h3>Ready to compete?</h3>
-                    <p>Opt-in to hourly challenges, unlock bonus multipliers, and climb the Stake-inspired leaderboards. Every wager gives you a shot at surprise boosts.</p>
+                    <h3>Keep your edge sharp</h3>
+                    <p>Sync bankroll analytics, document every transfer, and fine-tune preferences without leaving the lobby.</p>
                     <div class="hero-actions">
-                        <a href="promotions.html" class="primary-button btn"><i class="fa-solid fa-fire"></i> Explore Challenges</a>
-                        <a href="vip.html" class="ghost-button btn"><i class="fa-solid fa-gem"></i> VIP Roadmap</a>
+                        <a href="dashboard.html" class="primary-button btn"><i class="fa-solid fa-chart-pie"></i> Open dashboard</a>
+                        <a href="history.html" class="ghost-button btn"><i class="fa-solid fa-clock-rotate-left"></i> Review history</a>
                     </div>
                 </div>
             </div>
@@ -265,38 +261,36 @@
                     </span>
                     <span>Stake Casino</span>
                 </a>
-                <p>Stake.com inspired interface delivering lightning-fast casino and sportsbook entertainment.</p>
+                <p>Stake.com inspired interface delivering lightning-fast casino action with deep analytics.</p>
                 <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
             </div>
             <div>
-                <h4 class="card-title">Discover</h4>
+                <h4 class="card-title">Product</h4>
                 <div class="footer-links">
-                    <a href="dashboard.html">Casino</a>
-                    <a href="sports.html">Sportsbook</a>
-                    <a href="live-casino.html">Live Casino</a>
-                    <a href="promotions.html">Promotions</a>
+                    <a href="index.html">Home</a>
+                    <a href="casino.html">Casino</a>
+                    <a href="dashboard.html">Dashboard</a>
                 </div>
             </div>
             <div>
-                <h4 class="card-title">Community</h4>
+                <h4 class="card-title">Account</h4>
                 <div class="footer-links">
-                    <a href="vip.html">VIP Club</a>
-                    <a href="history.html">Bet History</a>
-                    <a href="help.html">Support Hub</a>
-                    <a href="settings.html">Account Settings</a>
+                    <a href="history.html">History</a>
+                    <a href="account.html">Account</a>
+                    <a href="settings.html">Settings</a>
                 </div>
             </div>
             <div>
-                <h4 class="card-title">Responsible Play</h4>
+                <h4 class="card-title">Support</h4>
                 <div class="footer-links">
-                    <a href="help.html">Safer Gambling</a>
+                    <a href="help.html">Help Center</a>
                     <a href="help.html#faq">FAQs</a>
                     <a href="mailto:support@stakecasino.example">support@stakecasino.example</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 Stake Casino. Inspired by Stake.com&apos;s world-class experience. Play responsibly.
+            &copy; 2025 Stake Casino. Inspired by Stake.com&rsquo;s world-class experience. Play responsibly.
         </div>
     </footer>
 

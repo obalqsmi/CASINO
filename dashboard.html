@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casino Lobby | Stake Casino</title>
-    <meta name="description" content="Browse Stake.com inspired casino categories, originals, and live dealer tables with sleek UI and lightning-fast filters.">
+    <title>Player Dashboard | Stake Casino</title>
+    <meta name="description" content="Stake.com style portfolio dashboard showing total games, profit, loss, ROI, and hour-by-hour breakdowns of your favourite games.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
@@ -27,25 +27,22 @@
             </button>
             <nav class="nav-links" data-nav-links>
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="dashboard.html" class="nav-link active">Casino</a>
-                <a href="sports.html" class="nav-link">Sports</a>
-                <a href="live-casino.html" class="nav-link">Live Casino</a>
-                <a href="promotions.html" class="nav-link">Promotions</a>
-                <a href="vip.html" class="nav-link">VIP Club</a>
+                <a href="dashboard.html" class="nav-link active">Dashboard</a>
+                <a href="casino.html" class="nav-link">Casino</a>
                 <a href="history.html" class="nav-link">History</a>
-                <a href="help.html" class="nav-link">Support</a>
-                <a href="settings.html" class="nav-link">Account</a>
+                <a href="help.html" class="nav-link">Help</a>
+                <a href="account.html" class="nav-link">Account</a>
+                <a href="settings.html" class="nav-link">Settings</a>
                 <div class="mobile-only">
                     <div class="action-buttons" data-mobile-auth>
-                        <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
-                        <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
+                        <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
                     </div>
                     <div class="action-buttons user-info" data-mobile-user>
-                        <a href="settings.html" class="primary-button btn account-button">
+                        <a href="account.html" class="primary-button btn account-button">
                             <i class="fa-solid fa-circle-user"></i>
                             <span class="account-text">
                                 <span class="account-title">Account</span>
-                                <span class="account-username" data-username>Player</span>
+                                <span class="account-username" data-username>Guest</span>
                             </span>
                         </a>
                         <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
@@ -53,15 +50,14 @@
                 </div>
             </nav>
             <div class="action-buttons" data-auth-buttons>
-                <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
-                <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
+                <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
             </div>
             <div class="action-buttons user-info" data-user-info>
-                <a href="settings.html" class="primary-button btn account-button">
+                <a href="account.html" class="primary-button btn account-button">
                     <i class="fa-solid fa-circle-user"></i>
                     <span class="account-text">
                         <span class="account-title">Account</span>
-                        <span class="account-username" data-username>Player</span>
+                        <span class="account-username" data-username>Guest</span>
                     </span>
                 </a>
                 <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
@@ -74,100 +70,95 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <h1 class="section-title">Casino Lobby</h1>
-                        <p class="section-subtitle">Navigate Stake.com inspired categories with instant filtering and polished tiles.</p>
+                        <h1 class="section-title">Player performance dashboard</h1>
+                        <p class="section-subtitle">Track total games, profit and loss swings, and how long you grind each favourite Stake.com title.</p>
                     </div>
-                    <div class="badge-pill"><i class="fa-solid fa-circle-notch"></i> Updated 2 minutes ago</div>
+                    <div class="badge-pill"><i class="fa-solid fa-arrows-rotate"></i> Last synced: 2 minutes ago</div>
                 </div>
-                <div class="filters">
-                    <button class="filter-chip active"><i class="fa-solid fa-fire"></i> Trending</button>
-                    <button class="filter-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Originals</button>
-                    <button class="filter-chip"><i class="fa-solid fa-bolt"></i> Live Dealer</button>
-                    <button class="filter-chip"><i class="fa-solid fa-coins"></i> Jackpots</button>
-                    <button class="filter-chip"><i class="fa-solid fa-ranking-star"></i> Tournaments</button>
-                    <button class="filter-chip"><i class="fa-solid fa-heart"></i> Favorites</button>
-                </div>
-                <div class="games-grid">
-                    <article class="game-card" style="background-image: url('assets/images/roulette-ultimate.png');">
-                        <div class="content">
-                            <span class="badge"><i class="fa-solid fa-chess-board"></i> New</span>
-                            <h3 class="title">Roulette Ultimate</h3>
-                            <p class="meta">Immersive roulette with multiplier streaks.</p>
-                        </div>
-                    </article>
-                    <article class="game-card" style="background-image: url('assets/images/sweet-vault.png');">
-                        <div class="content">
-                            <span class="badge"><i class="fa-solid fa-diamond"></i> Stake Pick</span>
-                            <h3 class="title">Sweet Vault</h3>
-                            <p class="meta">Candy cluster slot with mega multipliers.</p>
-                        </div>
-                    </article>
-                    <article class="game-card" style="background-image: url('assets/images/blackjack-elite.png');">
-                        <div class="content">
-                            <span class="badge"><i class="fa-solid fa-chess-knight"></i> High Roller</span>
-                            <h3 class="title">Blackjack Elite</h3>
-                            <p class="meta">Seat at the exclusive $5k max table.</p>
-                        </div>
-                    </article>
-                    <article class="game-card" style="background-image: url('assets/images/dice-arena.png');">
-                        <div class="content">
-                            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Provably Fair</span>
-                            <h3 class="title">Dice Arena</h3>
-                            <p class="meta">Rapid-fire dice with community leaderboard.</p>
-                        </div>
-                    </article>
-                    <article class="game-card" style="background-image: url('assets/images/aztec-riches.png');">
-                        <div class="content">
-                            <span class="badge"><i class="fa-solid fa-coins"></i> Jackpot</span>
-                            <h3 class="title">Aztec Riches</h3>
-                            <p class="meta">Progressive prize starting at $1,500,000.</p>
-                        </div>
-                    </article>
-                    <article class="game-card" style="background-image: url('assets/images/gates-of-olympus.png');">
-                        <div class="content">
-                            <span class="badge"><i class="fa-solid fa-bolt"></i> Featured</span>
-                            <h3 class="title">Gates of Olympus</h3>
-                            <p class="meta">All-time Stake favorite with tumbling reels.</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title">Live dealer spotlight</h2>
-                        <p class="section-subtitle">Studio-quality broadcasts with Stake branded tables.</p>
-                    </div>
-                    <a href="live-casino.html" class="ghost-button btn"><i class="fa-solid fa-video"></i> Enter Live Casino</a>
+                <div class="metric-grid">
+                    <article class="metric-card">
+                        <span class="metric-label">Games played</span>
+                        <span class="metric-value">1,284</span>
+                        <span class="metric-meta positive"><i class="fa-solid fa-arrow-trend-up"></i> +38 vs last week</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Total profit</span>
+                        <span class="metric-value">$42,680</span>
+                        <span class="metric-meta positive"><i class="fa-solid fa-circle-up"></i> +12.4%</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Total loss</span>
+                        <span class="metric-value">$31,940</span>
+                        <span class="metric-meta negative"><i class="fa-solid fa-circle-down"></i> -6.2%</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Net ROI</span>
+                        <span class="metric-value">+18.7%</span>
+                        <span class="metric-meta"><i class="fa-solid fa-scale-balanced"></i> Bankroll healthy</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Average session</span>
+                        <span class="metric-value">48m</span>
+                        <span class="metric-meta"><i class="fa-solid fa-clock"></i> 5.2 sessions / day</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Hours played</span>
+                        <span class="metric-value">114h</span>
+                        <span class="metric-meta"><i class="fa-solid fa-hourglass-half"></i> +8.5h this week</span>
+                    </article>
                 </div>
-                <div class="card-grid">
+
+                <div class="portfolio-panels">
                     <article class="surface-card highlight">
-                        <h3 class="card-title">Stake Blackjack</h3>
-                        <p class="card-meta">Dual-view angles, pre-decision support, and hot seat stats.</p>
+                        <h2 class="card-title">Profit vs loss</h2>
+                        <p class="card-meta">Compare realised wins and drawdowns over the last 7 days.</p>
+                        <div class="progress-group">
+                            <div class="progress-label">
+                                <span><i class="fa-solid fa-arrow-up-right-dots"></i> Profit</span>
+                                <span>$12,480</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill positive" style="width: 68%;"></div>
+                            </div>
+                            <div class="progress-label">
+                                <span><i class="fa-solid fa-arrow-down"></i> Loss</span>
+                                <span>$8,920</span>
+                            </div>
+                            <div class="progress-track">
+                                <div class="progress-fill negative" style="width: 42%;"></div>
+                            </div>
+                        </div>
                         <div class="list-inline">
-                            <span class="chip">Seat Me</span>
-                            <span class="chip">Hot Hands</span>
-                            <span class="chip">Chat Hosts</span>
+                            <span class="chip"><i class="fa-solid fa-calendar-week"></i> 7 day view</span>
+                            <span class="chip"><i class="fa-solid fa-wave-square"></i> Volatility low</span>
                         </div>
                     </article>
                     <article class="surface-card">
-                        <h3 class="card-title">Roulette Azure</h3>
-                        <p class="card-meta">Immersive wheel with lightning multipliers up to x500.</p>
-                        <div class="list-inline">
-                            <span class="chip">30fps Stream</span>
-                            <span class="chip">Bet Tracker</span>
-                        </div>
-                    </article>
-                    <article class="surface-card">
-                        <h3 class="card-title">Baccarat Squeeze</h3>
-                        <p class="card-meta">Authentic squeeze reveal and side bets galore.</p>
-                        <div class="list-inline">
-                            <span class="chip">No Commission</span>
-                            <span class="chip">Side Bets</span>
-                        </div>
+                        <h2 class="card-title">Bankroll allocation</h2>
+                        <p class="card-meta">Where your current bankroll is staked across the platform.</p>
+                        <ul class="allocation-list">
+                            <li>
+                                <span><i class="fa-solid fa-dice"></i> Originals</span>
+                                <span>34%</span>
+                            </li>
+                            <li>
+                                <span><i class="fa-solid fa-chess-rook"></i> Live casino</span>
+                                <span>27%</span>
+                            </li>
+                            <li>
+                                <span><i class="fa-solid fa-sliders"></i> Slots</span>
+                                <span>22%</span>
+                            </li>
+                            <li>
+                                <span><i class="fa-solid fa-fire"></i> Tournaments</span>
+                                <span>9%</span>
+                            </li>
+                            <li>
+                                <span><i class="fa-solid fa-gift"></i> Bonuses</span>
+                                <span>8%</span>
+                            </li>
+                        </ul>
                     </article>
                 </div>
             </div>
@@ -177,52 +168,119 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <h2 class="section-title">Jackpots about to pop</h2>
-                        <p class="section-subtitle">Track the hottest progressive pots in real time.</p>
+                        <h2 class="section-title">Most played games</h2>
+                        <p class="section-subtitle">Hours logged, average bet size, and your hit rate for each title.</p>
                     </div>
+                    <div class="badge-pill"><i class="fa-solid fa-chart-simple"></i> Top 6 focus titles</div>
                 </div>
                 <div class="table-wrapper">
-                    <table class="table">
+                    <table class="table table-compact">
                         <thead>
                             <tr>
                                 <th>Game</th>
-                                <th>Provider</th>
-                                <th>Current Pot</th>
-                                <th>Hit Rate</th>
-                                <th>Status</th>
+                                <th>Sessions</th>
+                                <th>Hours</th>
+                                <th>Win rate</th>
+                                <th>Avg stake</th>
+                                <th>Profit</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Wheel of Fortune</td>
-                                <td>Pragmatic</td>
-                                <td>$1,845,221</td>
-                                <td>1 in 15M</td>
-                                <td><span class="status-badge pending"><i class="fa-solid fa-timer"></i> Building</span></td>
+                                <td>Crash X</td>
+                                <td>186</td>
+                                <td>28.4h</td>
+                                <td>54%</td>
+                                <td>$320</td>
+                                <td class="positive">$8,420</td>
                             </tr>
                             <tr>
-                                <td>Stake Drops</td>
-                                <td>Stake Originals</td>
-                                <td>$420,770</td>
-                                <td>1 in 45k</td>
-                                <td><span class="status-badge won"><i class="fa-solid fa-arrow-trend-up"></i> Hot</span></td>
+                                <td>Lightning Roulette</td>
+                                <td>92</td>
+                                <td>17.3h</td>
+                                <td>48%</td>
+                                <td>$210</td>
+                                <td class="positive">$5,110</td>
                             </tr>
                             <tr>
-                                <td>Wild Phoenix</td>
-                                <td>Relax Gaming</td>
-                                <td>$980,515</td>
-                                <td>1 in 1.8M</td>
-                                <td><span class="status-badge pending"><i class="fa-solid fa-clock"></i> Rising</span></td>
+                                <td>Blackjack VIP</td>
+                                <td>134</td>
+                                <td>21.6h</td>
+                                <td>51%</td>
+                                <td>$540</td>
+                                <td class="negative">-$2,280</td>
                             </tr>
                             <tr>
-                                <td>Crypto Heist</td>
-                                <td>Hacksaw</td>
-                                <td>$654,422</td>
-                                <td>1 in 250k</td>
-                                <td><span class="status-badge won"><i class="fa-solid fa-bolt"></i> On Fire</span></td>
+                                <td>Plinko 3D</td>
+                                <td>77</td>
+                                <td>12.1h</td>
+                                <td>62%</td>
+                                <td>$95</td>
+                                <td class="positive">$3,460</td>
+                            </tr>
+                            <tr>
+                                <td>Dice Arena</td>
+                                <td>58</td>
+                                <td>9.8h</td>
+                                <td>57%</td>
+                                <td>$180</td>
+                                <td class="positive">$1,940</td>
+                            </tr>
+                            <tr>
+                                <td>Sweet Vault</td>
+                                <td>41</td>
+                                <td>7.5h</td>
+                                <td>44%</td>
+                                <td>$140</td>
+                                <td class="negative">-$1,120</td>
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Session timeline</h2>
+                        <p class="section-subtitle">A running log of your longest streaks and latest highlights.</p>
+                    </div>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-badge positive"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                        <div>
+                            <h3>+ $6,250 on Crash X</h3>
+                            <p>Chained 8x auto cashouts between 1.9x and 3.2x multipliers.</p>
+                            <span class="timeline-meta"><i class="fa-regular fa-clock"></i> Today • 18:22</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-badge negative"><i class="fa-solid fa-arrow-trend-down"></i></div>
+                        <div>
+                            <h3>- $2,100 on Blackjack VIP</h3>
+                            <p>Dropped three consecutive double downs &mdash; flagged for strategy review.</p>
+                            <span class="timeline-meta"><i class="fa-regular fa-clock"></i> Today • 15:47</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-badge neutral"><i class="fa-solid fa-shuffle"></i></div>
+                        <div>
+                            <h3>Stake Drops reload</h3>
+                            <p>Claimed $350 reload bonus after completing 12 tournament rounds.</p>
+                            <span class="timeline-meta"><i class="fa-regular fa-clock"></i> Yesterday • 23:05</span>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-badge positive"><i class="fa-solid fa-stopwatch"></i></div>
+                        <div>
+                            <h3>4h session badge unlocked</h3>
+                            <p>Maintained 60% win rate across Limbo and Dice Arena marathon.</p>
+                            <span class="timeline-meta"><i class="fa-regular fa-clock"></i> Yesterday • 18:14</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -237,38 +295,36 @@
                     </span>
                     <span>Stake Casino</span>
                 </a>
-                <p>Stake.com styled lobby with lightning-fast access to originals, live dealers, and jackpots.</p>
+                <p>Stake.com inspired analytics hub with bankroll health tracking and precise wagering stats.</p>
                 <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
             </div>
             <div>
-                <h4 class="card-title">Discover</h4>
+                <h4 class="card-title">Product</h4>
                 <div class="footer-links">
-                    <a href="dashboard.html">Casino</a>
-                    <a href="sports.html">Sportsbook</a>
-                    <a href="live-casino.html">Live Casino</a>
-                    <a href="promotions.html">Promotions</a>
+                    <a href="index.html">Home</a>
+                    <a href="casino.html">Casino</a>
+                    <a href="dashboard.html">Dashboard</a>
                 </div>
             </div>
             <div>
-                <h4 class="card-title">Community</h4>
+                <h4 class="card-title">Account</h4>
                 <div class="footer-links">
-                    <a href="vip.html">VIP Club</a>
-                    <a href="history.html">Bet History</a>
-                    <a href="help.html">Support Hub</a>
-                    <a href="settings.html">Account Settings</a>
+                    <a href="history.html">History</a>
+                    <a href="account.html">Account</a>
+                    <a href="settings.html">Settings</a>
                 </div>
             </div>
             <div>
-                <h4 class="card-title">Responsible Play</h4>
+                <h4 class="card-title">Support</h4>
                 <div class="footer-links">
-                    <a href="help.html">Safer Gambling</a>
+                    <a href="help.html">Help Center</a>
                     <a href="help.html#faq">FAQs</a>
                     <a href="mailto:support@stakecasino.example">support@stakecasino.example</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 Stake Casino. Inspired by Stake.com&apos;s world-class experience. Play responsibly.
+            &copy; 2025 Stake Casino. Inspired by Stake.com&rsquo;s world-class experience. Play responsibly.
         </div>
     </footer>
 

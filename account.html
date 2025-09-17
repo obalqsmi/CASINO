@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Preferences | Stake Casino</title>
-    <meta name="description" content="Stake.com style settings to customise theme, time format, sound, notifications, and accessibility controls.">
+    <title>Account Management | Stake Casino</title>
+    <meta name="description" content="Manage username, email, password, avatar, and security preferences in a Stake.com inspired account hub.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
@@ -31,8 +31,8 @@
                 <a href="casino.html" class="nav-link">Casino</a>
                 <a href="history.html" class="nav-link">History</a>
                 <a href="help.html" class="nav-link">Help</a>
-                <a href="account.html" class="nav-link">Account</a>
-                <a href="settings.html" class="nav-link active">Settings</a>
+                <a href="account.html" class="nav-link active">Account</a>
+                <a href="settings.html" class="nav-link">Settings</a>
                 <div class="mobile-only">
                     <div class="action-buttons" data-mobile-auth>
                         <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
@@ -70,81 +70,78 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <h1 class="section-title">Preferences</h1>
-                        <p class="section-subtitle">Fine-tune theme, time, notifications, and audio just like Stake.com.</p>
+                        <h1 class="section-title">Account management</h1>
+                        <p class="section-subtitle">Update your profile details, security, and contact preferences in one Stake.com inspired view.</p>
                     </div>
-                    <div class="badge-pill"><i class="fa-solid fa-sliders"></i> Personal presets</div>
+                    <div class="badge-pill"><i class="fa-solid fa-shield-halved"></i> Encrypted sync</div>
                 </div>
 
-                <div class="banner-inline hidden" data-preferences-feedback></div>
+                <div class="banner-inline hidden" data-account-feedback></div>
 
-                <form class="form-card" data-preferences-form>
+                <form class="form-card" data-account-form>
                     <div class="form-grid">
                         <div class="input-group">
-                            <label for="theme">Theme</label>
-                            <select id="theme" name="theme" class="input-field">
-                                <option value="dark">Dark</option>
-                                <option value="light">Light</option>
-                                <option value="auto">Auto (system)</option>
+                            <label for="displayName">Display name</label>
+                            <input type="text" id="displayName" name="displayName" class="input-field" placeholder="StakeHero" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="username">Username</label>
+                            <input type="text" id="username" name="username" class="input-field" placeholder="stakehero" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" class="input-field" placeholder="player@stakecasino.example" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="currency">Primary currency</label>
+                            <select id="currency" name="currency" class="input-field">
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="BTC">BTC</option>
+                                <option value="ETH">ETH</option>
+                                <option value="USDT">USDT</option>
                             </select>
                         </div>
                         <div class="input-group">
-                            <label for="accent">Accent colour</label>
-                            <select id="accent" name="accent" class="input-field">
-                                <option value="cyan">Cyan</option>
-                                <option value="purple">Purple</option>
-                                <option value="emerald">Emerald</option>
-                                <option value="amber">Amber</option>
+                            <label for="country">Country</label>
+                            <select id="country" name="country" class="input-field">
+                                <option value="USA">United States</option>
+                                <option value="CAN">Canada</option>
+                                <option value="AUS">Australia</option>
+                                <option value="DEU">Germany</option>
+                                <option value="BRA">Brazil</option>
                             </select>
                         </div>
                         <div class="input-group">
-                            <label for="timeFormat">Time format</label>
-                            <select id="timeFormat" name="timeFormat" class="input-field">
-                                <option value="24h">24-hour</option>
-                                <option value="12h">12-hour</option>
-                            </select>
+                            <label for="avatar">Avatar filename</label>
+                            <input type="text" id="avatar" name="avatar" class="input-field" placeholder="avatar.png">
                         </div>
                         <div class="input-group">
-                            <label for="timezone">Timezone</label>
-                            <select id="timezone" name="timezone" class="input-field">
-                                <option value="UTC">UTC</option>
-                                <option value="UTC-5">UTC-5 (EST)</option>
-                                <option value="UTC+1">UTC+1 (CET)</option>
-                                <option value="UTC+8">UTC+8 (SGT)</option>
-                            </select>
+                            <label for="bio">Player bio</label>
+                            <textarea id="bio" name="bio" class="input-field" rows="3" placeholder="High roller focused on provably fair originals."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" class="input-field" placeholder="Update password">
                         </div>
                         <div class="input-group switch-group">
-                            <label for="sound">Sound effects</label>
+                            <label for="twoFactor">Two-factor authentication</label>
                             <label class="switch">
-                                <input type="checkbox" id="sound" name="sound" checked>
+                                <input type="checkbox" id="twoFactor" name="twoFactor" checked>
                                 <span class="slider"></span>
                             </label>
                         </div>
                         <div class="input-group switch-group">
-                            <label for="reduceMotion">Reduce motion</label>
+                            <label for="marketing">Marketing emails</label>
                             <label class="switch">
-                                <input type="checkbox" id="reduceMotion" name="reduceMotion">
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="input-group switch-group">
-                            <label for="notifications">Push notifications</label>
-                            <label class="switch">
-                                <input type="checkbox" id="notifications" name="notifications" checked>
-                                <span class="slider"></span>
-                            </label>
-                        </div>
-                        <div class="input-group switch-group">
-                            <label for="emailUpdates">Email updates</label>
-                            <label class="switch">
-                                <input type="checkbox" id="emailUpdates" name="emailUpdates">
+                                <input type="checkbox" id="marketing" name="marketing">
                                 <span class="slider"></span>
                             </label>
                         </div>
                     </div>
                     <div class="form-actions">
-                        <button type="submit" class="primary-button btn"><i class="fa-solid fa-floppy-disk"></i> Save preferences</button>
-                        <a href="history.html" class="ghost-button btn"><i class="fa-solid fa-clock-rotate-left"></i> View statements</a>
+                        <button type="submit" class="primary-button btn"><i class="fa-solid fa-floppy-disk"></i> Save account</button>
+                        <button type="button" class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</button>
                     </div>
                 </form>
             </div>
@@ -154,35 +151,33 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <h2 class="section-title">Advanced controls</h2>
-                        <p class="section-subtitle">Extra toggles for stream overlays, chat, and data usage.</p>
+                        <h2 class="section-title">Security snapshot</h2>
+                        <p class="section-subtitle">Review active devices, API keys, and recovery options.</p>
                     </div>
                 </div>
                 <div class="card-grid">
                     <article class="surface-card highlight">
-                        <h3 class="card-title">Streaming overlay</h3>
-                        <p class="card-meta">Enable clean overlays for broadcasting Stake.com style sessions.</p>
-                        <ul class="bullet-list">
-                            <li>Hide sensitive balances</li>
-                            <li>Auto-toggle chat filters</li>
-                            <li>Drop in session timers</li>
-                        </ul>
-                    </article>
-                    <article class="surface-card">
-                        <h3 class="card-title">Data saver</h3>
-                        <p class="card-meta">Limit autoplay animations and compress previews while on mobile data.</p>
-                        <div class="list-inline">
-                            <span class="chip"><i class="fa-solid fa-signal"></i> Adaptive quality</span>
-                            <span class="chip"><i class="fa-solid fa-rotate"></i> Auto resume on Wi-Fi</span>
+                        <h3 class="card-title">Active sessions</h3>
+                        <p class="card-meta">These devices have logged in within the last 30 days.</p>
+                        <div class="ticket-meta">
+                            <span><i class="fa-solid fa-laptop"></i> Chrome • NYC • Today</span>
+                            <span><i class="fa-solid fa-mobile-screen"></i> iOS • London • 2 days ago</span>
                         </div>
                     </article>
                     <article class="surface-card">
-                        <h3 class="card-title">Chat filters</h3>
-                        <p class="card-meta">Fine tune community chat experience during live dealer streams.</p>
+                        <h3 class="card-title">API keys</h3>
+                        <p class="card-meta">Generate read-only keys for bet tracking dashboards.</p>
+                        <div class="hero-actions">
+                            <a href="#" class="ghost-button btn"><i class="fa-solid fa-key"></i> Create key</a>
+                        </div>
+                    </article>
+                    <article class="surface-card">
+                        <h3 class="card-title">Recovery options</h3>
+                        <p class="card-meta">Back up your codes and link secondary contacts for failsafes.</p>
                         <ul class="bullet-list">
-                            <li>Profanity + spam filtering</li>
-                            <li>Highlight moderator messages</li>
-                            <li>Mute by language</li>
+                            <li>Backup code exported 3 days ago</li>
+                            <li>Secondary email: highroller@securemail.example</li>
+                            <li>SMS failover disabled</li>
                         </ul>
                     </article>
                 </div>
@@ -199,7 +194,7 @@
                     </span>
                     <span>Stake Casino</span>
                 </a>
-                <p>Stake.com inspired preference center with instant sync to every page of the casino hub.</p>
+                <p>Stake.com inspired account centre with fast profile management and secure preferences.</p>
                 <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
             </div>
             <div>

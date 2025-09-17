@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bet History | Stake Casino</title>
-    <meta name="description" content="Review recent wagers, live bets, and results in a Stake.com inspired history dashboard with filters and status badges.">
+    <title>Transaction History | Stake Casino</title>
+    <meta name="description" content="Stake.com style funds history with deposits, withdrawals, swaps, and export-ready statements.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
@@ -27,25 +27,22 @@
             </button>
             <nav class="nav-links" data-nav-links>
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="dashboard.html" class="nav-link">Casino</a>
-                <a href="sports.html" class="nav-link">Sports</a>
-                <a href="live-casino.html" class="nav-link">Live Casino</a>
-                <a href="promotions.html" class="nav-link">Promotions</a>
-                <a href="vip.html" class="nav-link">VIP Club</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="casino.html" class="nav-link">Casino</a>
                 <a href="history.html" class="nav-link active">History</a>
-                <a href="help.html" class="nav-link">Support</a>
-                <a href="settings.html" class="nav-link">Account</a>
+                <a href="help.html" class="nav-link">Help</a>
+                <a href="account.html" class="nav-link">Account</a>
+                <a href="settings.html" class="nav-link">Settings</a>
                 <div class="mobile-only">
                     <div class="action-buttons" data-mobile-auth>
-                        <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
-                        <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
+                        <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
                     </div>
                     <div class="action-buttons user-info" data-mobile-user>
-                        <a href="settings.html" class="primary-button btn account-button">
+                        <a href="account.html" class="primary-button btn account-button">
                             <i class="fa-solid fa-circle-user"></i>
                             <span class="account-text">
                                 <span class="account-title">Account</span>
-                                <span class="account-username" data-username>Player</span>
+                                <span class="account-username" data-username>Guest</span>
                             </span>
                         </a>
                         <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
@@ -53,15 +50,14 @@
                 </div>
             </nav>
             <div class="action-buttons" data-auth-buttons>
-                <a href="login.html" class="ghost-button btn"><i class="fa-solid fa-right-to-bracket"></i> Log In</a>
-                <a href="signup.html" class="primary-button btn"><i class="fa-solid fa-user-plus"></i> Register</a>
+                <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
             </div>
             <div class="action-buttons user-info" data-user-info>
-                <a href="settings.html" class="primary-button btn account-button">
+                <a href="account.html" class="primary-button btn account-button">
                     <i class="fa-solid fa-circle-user"></i>
                     <span class="account-text">
                         <span class="account-title">Account</span>
-                        <span class="account-username" data-username>Player</span>
+                        <span class="account-username" data-username>Guest</span>
                     </span>
                 </a>
                 <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
@@ -74,99 +70,111 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <h1 class="section-title">Bet History</h1>
-                        <p class="section-subtitle">Track your latest casino spins, live dealer rounds, and sportsbook tickets.</p>
+                        <h1 class="section-title">Transaction history</h1>
+                        <p class="section-subtitle">Monitor deposits, withdrawals, and swaps with Stake.com level clarity and exportable statements.</p>
                     </div>
-                    <div class="badge-pill"><i class="fa-solid fa-clock-rotate-left"></i> Synced 30 seconds ago</div>
+                    <div class="badge-pill"><i class="fa-solid fa-cloud-arrow-down"></i> Export CSV</div>
                 </div>
-                <div class="stats-grid">
-                    <div class="stat-card">
-                        <strong>$12,450</strong>
-                        <span>Total wagered last 7 days</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>142</strong>
-                        <span>Bets settled this week</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>$2,180</strong>
-                        <span>Net profit across all games</span>
-                    </div>
-                    <div class="stat-card">
-                        <strong>62%</strong>
-                        <span>Casino win rate</span>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <div>
-                        <h2 class="section-title">Recent wagers</h2>
-                        <p class="section-subtitle">Filter between casino, originals, and sports bets just like Stake.com.</p>
-                    </div>
+                <div class="metric-grid">
+                    <article class="metric-card">
+                        <span class="metric-label">Deposits</span>
+                        <span class="metric-value">$128,400</span>
+                        <span class="metric-meta positive"><i class="fa-solid fa-arrow-trend-up"></i> 32 entries</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Withdrawals</span>
+                        <span class="metric-value">$86,250</span>
+                        <span class="metric-meta"><i class="fa-solid fa-gauge"></i> Avg 43s confirm</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Swaps</span>
+                        <span class="metric-value">$24,890</span>
+                        <span class="metric-meta"><i class="fa-solid fa-arrows-rotate"></i> 14 conversions</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Net flow</span>
+                        <span class="metric-value">+$17,260</span>
+                        <span class="metric-meta positive"><i class="fa-solid fa-wallet"></i> Healthy bankroll</span>
+                    </article>
                 </div>
+
                 <div class="filters">
-                    <button class="filter-chip active"><i class="fa-solid fa-border-all"></i> All Bets</button>
-                    <button class="filter-chip"><i class="fa-solid fa-dice"></i> Casino</button>
-                    <button class="filter-chip"><i class="fa-solid fa-bolt"></i> Originals</button>
-                    <button class="filter-chip"><i class="fa-solid fa-futbol"></i> Sports</button>
-                    <button class="filter-chip"><i class="fa-solid fa-filter"></i> Filters</button>
+                    <button class="filter-chip active"><i class="fa-solid fa-list"></i> All</button>
+                    <button class="filter-chip"><i class="fa-solid fa-circle-arrow-down"></i> Deposits</button>
+                    <button class="filter-chip"><i class="fa-solid fa-circle-arrow-up"></i> Withdrawals</button>
+                    <button class="filter-chip"><i class="fa-solid fa-arrows-left-right"></i> Swaps</button>
+                    <button class="filter-chip"><i class="fa-solid fa-calendar"></i> Last 7 days</button>
                 </div>
+
                 <div class="table-wrapper">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th>Placed</th>
-                                <th>Game</th>
-                                <th>Bet Amount</th>
-                                <th>Payout</th>
-                                <th>Multiplier</th>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Asset</th>
+                                <th>Amount</th>
                                 <th>Status</th>
+                                <th>Reference</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>02:12 • Today</td>
-                                <td>Crash X</td>
-                                <td>$250</td>
-                                <td>$1,425</td>
-                                <td>x5.7</td>
-                                <td><span class="status-badge won"><i class="fa-solid fa-arrow-trend-up"></i> Won</span></td>
+                                <td>05 May 2025 • 18:42</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-circle-arrow-down"></i> Deposit</span></td>
+                                <td>USDT</td>
+                                <td>$5,000</td>
+                                <td>Completed</td>
+                                <td>#DP-94721</td>
                             </tr>
                             <tr>
-                                <td>01:48 • Today</td>
-                                <td>NBA Parlay</td>
-                                <td>$150</td>
-                                <td>$0</td>
-                                <td>x0.0</td>
-                                <td><span class="status-badge lost"><i class="fa-solid fa-xmark"></i> Lost</span></td>
+                                <td>05 May 2025 • 17:05</td>
+                                <td><span class="status-badge pending"><i class="fa-solid fa-arrows-left-right"></i> Swap</span></td>
+                                <td>BTC &rarr; ETH</td>
+                                <td>$2,450</td>
+                                <td>Confirming</td>
+                                <td>#SW-11854</td>
                             </tr>
                             <tr>
-                                <td>23:10 • Yesterday</td>
-                                <td>Roulette Ultimate</td>
-                                <td>$400</td>
+                                <td>05 May 2025 • 02:38</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-circle-arrow-up"></i> Withdrawal</span></td>
+                                <td>BTC</td>
+                                <td>$4,800</td>
+                                <td>Completed</td>
+                                <td>#WD-88241</td>
+                            </tr>
+                            <tr>
+                                <td>04 May 2025 • 21:14</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-circle-arrow-down"></i> Deposit</span></td>
+                                <td>ETH</td>
+                                <td>$3,750</td>
+                                <td>Completed</td>
+                                <td>#DP-94418</td>
+                            </tr>
+                            <tr>
+                                <td>04 May 2025 • 16:09</td>
+                                <td><span class="status-badge pending"><i class="fa-solid fa-circle-arrow-up"></i> Withdrawal</span></td>
+                                <td>USDC</td>
                                 <td>$1,200</td>
-                                <td>x3.0</td>
-                                <td><span class="status-badge won"><i class="fa-solid fa-bolt"></i> Won</span></td>
+                                <td>Pending</td>
+                                <td>#WD-87902</td>
                             </tr>
                             <tr>
-                                <td>22:22 • Yesterday</td>
-                                <td>World Cup Futures</td>
-                                <td>$500</td>
-                                <td>$0</td>
-                                <td>-</td>
-                                <td><span class="status-badge pending"><i class="fa-solid fa-hourglass-half"></i> Pending</span></td>
+                                <td>04 May 2025 • 08:52</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-arrows-left-right"></i> Swap</span></td>
+                                <td>USDT &rarr; BTC</td>
+                                <td>$3,100</td>
+                                <td>Completed</td>
+                                <td>#SW-11802</td>
                             </tr>
                             <tr>
-                                <td>18:55 • Yesterday</td>
-                                <td>Plinko 3D</td>
-                                <td>$75</td>
-                                <td>$315</td>
-                                <td>x4.2</td>
-                                <td><span class="status-badge won"><i class="fa-solid fa-sparkles"></i> Won</span></td>
+                                <td>03 May 2025 • 12:31</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-circle-arrow-down"></i> Deposit</span></td>
+                                <td>BTC</td>
+                                <td>$7,500</td>
+                                <td>Completed</td>
+                                <td>#DP-93952</td>
                             </tr>
                         </tbody>
                     </table>
@@ -178,34 +186,34 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <h2 class="section-title">Session recap</h2>
-                        <p class="section-subtitle">Stay on top of your performance and responsible gaming metrics.</p>
+                        <h2 class="section-title">Statements &amp; alerts</h2>
+                        <p class="section-subtitle">Stay informed with automated exports and balance notifications.</p>
                     </div>
                 </div>
                 <div class="card-grid">
                     <article class="surface-card highlight">
-                        <h3 class="card-title">Performance insights</h3>
-                        <p class="card-meta">Your top three profit sources this week:</p>
-                        <ul class="footer-links">
-                            <li>Crash X • +$1,275</li>
-                            <li>Stake Blackjack • +$540</li>
-                            <li>Premier League bets • +$365</li>
-                        </ul>
-                    </article>
-                    <article class="surface-card">
-                        <h3 class="card-title">Responsible play</h3>
-                        <p class="card-meta">Limits & reminders aligned with Stake.com best practices.</p>
+                        <h3 class="card-title">Scheduled statements</h3>
+                        <p class="card-meta">Weekly CSV exports drop into your inbox and sync with your account archive.</p>
                         <div class="list-inline">
-                            <span class="chip">Loss Limit Active</span>
-                            <span class="chip">Session Reminder</span>
+                            <span class="chip"><i class="fa-solid fa-calendar-week"></i> Delivered Mondays</span>
+                            <span class="chip"><i class="fa-solid fa-inbox"></i> 6 month retention</span>
                         </div>
                     </article>
                     <article class="surface-card">
-                        <h3 class="card-title">Export & share</h3>
-                        <p class="card-meta">Download CSV statements for compliance or support.</p>
-                        <div class="hero-actions">
-                            <a href="#" class="ghost-button btn"><i class="fa-solid fa-file-arrow-down"></i> Export CSV</a>
-                            <a href="#" class="ghost-button btn"><i class="fa-solid fa-link"></i> Share Bet</a>
+                        <h3 class="card-title">Balance alerts</h3>
+                        <p class="card-meta">Trigger push and email alerts when balance thresholds or cooldowns hit.</p>
+                        <ul class="bullet-list">
+                            <li>Notify when bankroll dips below $10k</li>
+                            <li>Ping after 2 consecutive large withdrawals</li>
+                            <li>Remind to claim reload bonuses</li>
+                        </ul>
+                    </article>
+                    <article class="surface-card">
+                        <h3 class="card-title">Audit trail</h3>
+                        <p class="card-meta">Device, IP, and compliance notes attached to every transfer for clarity.</p>
+                        <div class="ticket-meta">
+                            <span><i class="fa-solid fa-desktop"></i> Chrome • NYC</span>
+                            <span><i class="fa-solid fa-mobile-screen"></i> iOS • London</span>
                         </div>
                     </article>
                 </div>
@@ -222,38 +230,36 @@
                     </span>
                     <span>Stake Casino</span>
                 </a>
-                <p>Stake.com grade bet history with crisp filters and provably fair tracking.</p>
+                <p>Stake.com inspired history hub with lightning-fast exports and detailed transaction status updates.</p>
                 <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
             </div>
             <div>
-                <h4 class="card-title">Discover</h4>
+                <h4 class="card-title">Product</h4>
                 <div class="footer-links">
-                    <a href="dashboard.html">Casino</a>
-                    <a href="sports.html">Sportsbook</a>
-                    <a href="live-casino.html">Live Casino</a>
-                    <a href="promotions.html">Promotions</a>
+                    <a href="index.html">Home</a>
+                    <a href="casino.html">Casino</a>
+                    <a href="dashboard.html">Dashboard</a>
                 </div>
             </div>
             <div>
-                <h4 class="card-title">Community</h4>
+                <h4 class="card-title">Account</h4>
                 <div class="footer-links">
-                    <a href="vip.html">VIP Club</a>
-                    <a href="history.html">Bet History</a>
-                    <a href="help.html">Support Hub</a>
-                    <a href="settings.html">Account Settings</a>
+                    <a href="history.html">History</a>
+                    <a href="account.html">Account</a>
+                    <a href="settings.html">Settings</a>
                 </div>
             </div>
             <div>
-                <h4 class="card-title">Responsible Play</h4>
+                <h4 class="card-title">Support</h4>
                 <div class="footer-links">
-                    <a href="help.html">Safer Gambling</a>
+                    <a href="help.html">Help Center</a>
                     <a href="help.html#faq">FAQs</a>
                     <a href="mailto:support@stakecasino.example">support@stakecasino.example</a>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 Stake Casino. Inspired by Stake.com&apos;s world-class experience. Play responsibly.
+            &copy; 2025 Stake Casino. Inspired by Stake.com&rsquo;s world-class experience. Play responsibly.
         </div>
     </footer>
 

@@ -2,6 +2,16 @@
 
 Stake.com-inspired responsive casino front-end built with static HTML, a shared stylesheet, and lightweight JavaScript for navigation and pseudo-auth state.
 
+## Pages
+
+- `index.html` &ndash; responsive homepage with hero CTA, trending games, and bankroll callouts.
+- `dashboard.html` &ndash; portfolio dashboard summarising games played, profit/loss, and session timeline.
+- `casino.html` &ndash; lobby grid for all games with category filters and jackpot overview.
+- `history.html` &ndash; complete funds ledger covering deposits, withdrawals, and swaps.
+- `help.html` &ndash; support centre featuring live chat, FAQs, and contact table.
+- `account.html` &ndash; profile management for username, email, currency, avatar, and security settings.
+- `settings.html` &ndash; preference controls for theme, time format, notifications, and accessibility toggles.
+
 ## Quick start
 
 1. Place the project on any static file host or open `index.html` locally in your browser.
@@ -25,9 +35,7 @@ Upload the following PNG files into `assets/images/` before deploying so every c
 - `mega-moolah.png`
 - `mega-wheel.png`
 - `plinko.png`
-- `roulette-live.png`
 - `roulette-ultimate.png`
-- `speed-baccarat.png`
 - `sweet-vault.png`
 
 Feel free to replace these filenames with your own artwork, but keep the names consistent with the references in the HTML or update the markup accordingly.

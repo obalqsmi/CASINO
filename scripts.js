@@ -16,6 +16,20 @@ const removeStoredUser = () => {
   localStorage.removeItem('casinoUser');
 };
 
+const getPreferences = () => {
+  try {
+    const raw = localStorage.getItem('casinoPreferences');
+    return raw ? JSON.parse(raw) : null;
+  } catch (error) {
+    console.warn('Unable to parse stored preferences', error);
+    return null;
+  }
+};
+
+const storePreferences = (payload) => {
+  localStorage.setItem('casinoPreferences', JSON.stringify(payload));
+};
+
 const closeMobileMenu = (navLinks, toggle) => {
   if (!navLinks) return;
   navLinks.classList.remove('open');
@@ -63,9 +77,10 @@ document.addEventListener('DOMContentLoaded', () => {
   const user = getStoredUser();
 
   const renderAuthState = (profile) => {
-    if (profile && profile.username) {
+    if (profile && (profile.username || profile.displayName)) {
+      const resolvedName = profile.displayName || profile.username || 'Player';
       usernameTargets.forEach((target) => {
-        target.textContent = profile.username;
+        target.textContent = resolvedName;
       });
       authButtons?.classList.add('hidden');
       userInfo?.classList.add('is-visible');
@@ -91,85 +106,116 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  const loginForm = document.querySelector('[data-login-form]');
-  if (loginForm) {
-    loginForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const formData = new FormData(loginForm);
-      const username = (formData.get('username') || '').toString().trim();
-      if (!username) {
-        alert('Please enter your username to continue.');
-        return;
-      }
-      const currency = (formData.get('currency') || 'USD').toString().trim();
-      const payload = {
-        username,
-        currency,
-        lastLogin: new Date().toISOString(),
-      };
-      storeUser(payload);
-      renderAuthState(payload);
-      const redirect = loginForm.dataset.redirect || 'dashboard.html';
-      window.location.href = redirect;
-    });
-  }
+  const accountForm = document.querySelector('[data-account-form]');
+  const accountFeedback = document.querySelector('[data-account-feedback]');
+  if (accountForm) {
+    if (user) {
+      const mappings = [
+        ['displayName', user.displayName || user.username || ''],
+        ['username', user.username || ''],
+        ['email', user.email || ''],
+        ['currency', user.currency || 'USD'],
+        ['country', user.country || 'USA'],
+        ['avatar', user.avatar || ''],
+        ['bio', user.bio || ''],
+      ];
 
-  const signupForm = document.querySelector('[data-signup-form]');
-  if (signupForm) {
-    signupForm.addEventListener('submit', (event) => {
-      event.preventDefault();
-      const formData = new FormData(signupForm);
-      const username = (formData.get('username') || '').toString().trim();
-      const email = (formData.get('email') || '').toString().trim();
-      if (!username || !email) {
-        alert('Please complete all required fields.');
-        return;
-      }
-      const currency = (formData.get('currency') || 'USD').toString().trim();
-      const payload = {
-        username,
-        email,
-        currency,
-        joinedAt: new Date().toISOString(),
-      };
-      storeUser(payload);
-      renderAuthState(payload);
-      const redirect = signupForm.dataset.redirect || 'dashboard.html';
-      window.location.href = redirect;
-    });
-  }
+      mappings.forEach(([name, value]) => {
+        const field = accountForm.querySelector(`[name="${name}"]`);
+        if (field && value) {
+          field.value = value;
+        }
+      });
 
-  const settingsForm = document.querySelector('[data-settings-form]');
-  const settingsFeedback = document.querySelector('[data-settings-feedback]');
-  if (settingsForm) {
-    if (user && user.username) {
-      const displayInput = settingsForm.querySelector('[name="displayName"]');
-      if (displayInput && !displayInput.value) {
-        displayInput.value = user.username;
+      const twoFactor = accountForm.querySelector('[name="twoFactor"]');
+      if (twoFactor) {
+        twoFactor.checked = Boolean(user.twoFactor ?? true);
+      }
+
+      const marketing = accountForm.querySelector('[name="marketing"]');
+      if (marketing) {
+        marketing.checked = Boolean(user.marketing);
       }
     }
 
-    settingsForm.addEventListener('submit', (event) => {
+    accountForm.addEventListener('submit', (event) => {
       event.preventDefault();
-      const formData = new FormData(settingsForm);
-      const current = getStoredUser() || {};
-      const updated = {
-        ...current,
-        username: (formData.get('displayName') || current.username || 'Player').toString().trim() || 'Player',
-        email: (formData.get('email') || current.email || '').toString().trim(),
-        currency: (formData.get('currency') || current.currency || 'USD').toString().trim(),
+      const formData = new FormData(accountForm);
+      const username = (formData.get('username') || formData.get('displayName') || 'Player').toString().trim() || 'Player';
+      const payload = {
+        username,
+        displayName: (formData.get('displayName') || username).toString().trim() || username,
+        email: (formData.get('email') || '').toString().trim(),
+        currency: (formData.get('currency') || 'USD').toString().trim(),
+        country: (formData.get('country') || 'USA').toString().trim(),
+        avatar: (formData.get('avatar') || '').toString().trim(),
+        bio: (formData.get('bio') || '').toString().trim(),
+        twoFactor: formData.has('twoFactor'),
+        marketing: formData.has('marketing'),
+        updatedAt: new Date().toISOString(),
       };
-      storeUser(updated);
-      renderAuthState(updated);
-      if (settingsFeedback) {
-        settingsFeedback.classList.remove('hidden');
-        settingsFeedback.classList.add('is-visible');
-        settingsFeedback.classList.add('active');
-        settingsFeedback.textContent = 'Your preferences have been saved successfully.';
+      storeUser(payload);
+      renderAuthState(payload);
+      if (accountFeedback) {
+        accountFeedback.classList.remove('hidden');
+        accountFeedback.classList.add('is-visible', 'active');
+        accountFeedback.textContent = 'Account details saved successfully.';
         setTimeout(() => {
-          settingsFeedback.classList.remove('is-visible');
-          settingsFeedback.classList.remove('active');
-          settingsFeedback.classList.add('hidden');
+          accountFeedback.classList.remove('is-visible', 'active');
+          accountFeedback.classList.add('hidden');
+        }, 3200);
+      }
+    });
+  }
+
+  const preferencesForm = document.querySelector('[data-preferences-form]');
+  const preferencesFeedback = document.querySelector('[data-preferences-feedback]');
+  if (preferencesForm) {
+    const defaults = {
+      theme: 'dark',
+      accent: 'cyan',
+      timeFormat: '24h',
+      timezone: 'UTC',
+      sound: true,
+      reduceMotion: false,
+      notifications: true,
+      emailUpdates: false,
+    };
+
+    const storedPreferences = { ...defaults, ...(getPreferences() || {}) };
+
+    Object.entries(storedPreferences).forEach(([key, value]) => {
+      const field = preferencesForm.querySelector(`[name="${key}"]`);
+      if (!field) return;
+      if (field.type === 'checkbox') {
+        field.checked = Boolean(value);
+      } else {
+        field.value = value;
+      }
+    });
+
+    preferencesForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const formData = new FormData(preferencesForm);
+      const payload = {
+        theme: (formData.get('theme') || 'dark').toString(),
+        accent: (formData.get('accent') || 'cyan').toString(),
+        timeFormat: (formData.get('timeFormat') || '24h').toString(),
+        timezone: (formData.get('timezone') || 'UTC').toString(),
+        sound: formData.has('sound'),
+        reduceMotion: formData.has('reduceMotion'),
+        notifications: formData.has('notifications'),
+        emailUpdates: formData.has('emailUpdates'),
+        savedAt: new Date().toISOString(),
+      };
+      storePreferences(payload);
+      if (preferencesFeedback) {
+        preferencesFeedback.classList.remove('hidden');
+        preferencesFeedback.classList.add('is-visible', 'active');
+        preferencesFeedback.textContent = 'Preferences updated successfully.';
+        setTimeout(() => {
+          preferencesFeedback.classList.remove('is-visible', 'active');
+          preferencesFeedback.classList.add('hidden');
         }, 3200);
       }
     });

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Lobby | Stake Casino</title>
+    <meta name="description" content="Stake.com style casino lobby with responsive cards, category filters, and high-impact jackpots ready to launch on any device.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-+1YwkpawuO/7dBDEuDfSU/EYEYVplpXCMVvjJAnYXhYzuq/n6PvJEa3TBUnIFVQGryuVKy7jH9MuNoMylkz7dA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="brand">
+                <span class="brand-logo">
+                    <img src="assets/images/logo.png" alt="Stake Casino logo">
+                </span>
+                <span>Stake Casino</span>
+            </a>
+            <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" data-nav-links>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="casino.html" class="nav-link active">Casino</a>
+                <a href="history.html" class="nav-link">History</a>
+                <a href="help.html" class="nav-link">Help</a>
+                <a href="account.html" class="nav-link">Account</a>
+                <a href="settings.html" class="nav-link">Settings</a>
+                <div class="mobile-only">
+                    <div class="action-buttons" data-mobile-auth>
+                        <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
+                    </div>
+                    <div class="action-buttons user-info" data-mobile-user>
+                        <a href="account.html" class="primary-button btn account-button">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span class="account-text">
+                                <span class="account-title">Account</span>
+                                <span class="account-username" data-username>Guest</span>
+                            </span>
+                        </a>
+                        <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="action-buttons" data-auth-buttons>
+                <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
+            </div>
+            <div class="action-buttons user-info" data-user-info>
+                <a href="account.html" class="primary-button btn account-button">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="account-text">
+                        <span class="account-title">Account</span>
+                        <span class="account-username" data-username>Guest</span>
+                    </span>
+                </a>
+                <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h1 class="section-title">Casino lobby</h1>
+                        <p class="section-subtitle">Instantly jump into Stake.com inspired cards, originals, and live dealer tables with filters that stay pinned on mobile.</p>
+                    </div>
+                    <div class="badge-pill"><i class="fa-solid fa-circle-notch"></i> Updated 2 minutes ago</div>
+                </div>
+                <div class="filters">
+                    <button class="filter-chip active"><i class="fa-solid fa-fire"></i> Trending</button>
+                    <button class="filter-chip"><i class="fa-solid fa-wand-magic-sparkles"></i> Originals</button>
+                    <button class="filter-chip"><i class="fa-solid fa-clover"></i> Slots</button>
+                    <button class="filter-chip"><i class="fa-solid fa-bolt"></i> Live Dealer</button>
+                    <button class="filter-chip"><i class="fa-solid fa-coins"></i> Jackpots</button>
+                    <button class="filter-chip"><i class="fa-solid fa-heart"></i> Favourites</button>
+                </div>
+                <div class="games-grid">
+                    <article class="game-card" style="background-image: url('assets/images/roulette-ultimate.png');">
+                        <div class="content">
+                            <span class="badge"><i class="fa-solid fa-chess-board"></i> New</span>
+                            <h3 class="title">Roulette Ultimate</h3>
+                            <p class="meta">Immersive roulette with multiplier streaks.</p>
+                        </div>
+                    </article>
+                    <article class="game-card" style="background-image: url('assets/images/sweet-vault.png');">
+                        <div class="content">
+                            <span class="badge"><i class="fa-solid fa-diamond"></i> Stake Pick</span>
+                            <h3 class="title">Sweet Vault</h3>
+                            <p class="meta">Candy cluster slot with mega multipliers.</p>
+                        </div>
+                    </article>
+                    <article class="game-card" style="background-image: url('assets/images/blackjack-elite.png');">
+                        <div class="content">
+                            <span class="badge"><i class="fa-solid fa-chess-knight"></i> High Roller</span>
+                            <h3 class="title">Blackjack Elite</h3>
+                            <p class="meta">Seat at the exclusive $5k max table.</p>
+                        </div>
+                    </article>
+                    <article class="game-card" style="background-image: url('assets/images/dice-arena.png');">
+                        <div class="content">
+                            <span class="badge"><i class="fa-solid fa-shield-halved"></i> Provably Fair</span>
+                            <h3 class="title">Dice Arena</h3>
+                            <p class="meta">Rapid-fire dice with community leaderboard.</p>
+                        </div>
+                    </article>
+                    <article class="game-card" style="background-image: url('assets/images/aztec-riches.png');">
+                        <div class="content">
+                            <span class="badge"><i class="fa-solid fa-coins"></i> Jackpot</span>
+                            <h3 class="title">Aztec Riches</h3>
+                            <p class="meta">Progressive prize starting at $1,500,000.</p>
+                        </div>
+                    </article>
+                    <article class="game-card" style="background-image: url('assets/images/gates-of-olympus.png');">
+                        <div class="content">
+                            <span class="badge"><i class="fa-solid fa-bolt"></i> Featured</span>
+                            <h3 class="title">Gates of Olympus</h3>
+                            <p class="meta">All-time Stake favourite with tumbling reels.</p>
+                        </div>
+                    </article>
+                    <article class="game-card" style="background-image: url('assets/images/blackjack-table.png');">
+                        <div class="content">
+                            <span class="badge"><i class="fa-solid fa-club"></i> Live</span>
+                            <h3 class="title">Stake Blackjack</h3>
+                            <p class="meta">Dual-view angles, pre-decision support, and hot seat stats.</p>
+                        </div>
+                    </article>
+                    <article class="game-card" style="background-image: url('assets/images/mega-wheel.png');">
+                        <div class="content">
+                            <span class="badge"><i class="fa-solid fa-spinner"></i> Game Show</span>
+                            <h3 class="title">Mega Wheel</h3>
+                            <p class="meta">Spin-to-win spectacle with boosted segments.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Live dealer spotlight</h2>
+                        <p class="section-subtitle">Studio-quality broadcasts with Stake branded tables.</p>
+                    </div>
+                </div>
+                <div class="card-grid">
+                    <article class="surface-card highlight">
+                        <h3 class="card-title">Stake Blackjack</h3>
+                        <p class="card-meta">Dual-view angles, pre-decision support, and hot seat stats.</p>
+                        <div class="list-inline">
+                            <span class="chip">Seat Me</span>
+                            <span class="chip">Hot Hands</span>
+                            <span class="chip">Chat Hosts</span>
+                        </div>
+                    </article>
+                    <article class="surface-card">
+                        <h3 class="card-title">Roulette Azure</h3>
+                        <p class="card-meta">Immersive wheel with lightning multipliers up to x500.</p>
+                        <div class="list-inline">
+                            <span class="chip">30fps Stream</span>
+                            <span class="chip">Auto Track</span>
+                        </div>
+                    </article>
+                    <article class="surface-card">
+                        <h3 class="card-title">Baccarat Squeeze</h3>
+                        <p class="card-meta">Authentic squeeze reveal and side bets galore.</p>
+                        <div class="list-inline">
+                            <span class="chip">No Commission</span>
+                            <span class="chip">Side Bets</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Jackpots about to pop</h2>
+                        <p class="section-subtitle">Track the hottest progressive pots in real time.</p>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Game</th>
+                                <th>Provider</th>
+                                <th>Current Pot</th>
+                                <th>Hit Rate</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Wheel of Fortune</td>
+                                <td>Pragmatic</td>
+                                <td>$1,845,221</td>
+                                <td>1 in 15M</td>
+                                <td><span class="status-badge pending"><i class="fa-solid fa-hourglass-half"></i> Building</span></td>
+                            </tr>
+                            <tr>
+                                <td>Stake Drops</td>
+                                <td>Stake Originals</td>
+                                <td>$420,770</td>
+                                <td>1 in 45k</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-arrow-trend-up"></i> Hot</span></td>
+                            </tr>
+                            <tr>
+                                <td>Wild Phoenix</td>
+                                <td>Relax Gaming</td>
+                                <td>$980,515</td>
+                                <td>1 in 1.8M</td>
+                                <td><span class="status-badge pending"><i class="fa-solid fa-clock"></i> Rising</span></td>
+                            </tr>
+                            <tr>
+                                <td>Crypto Heist</td>
+                                <td>Hacksaw</td>
+                                <td>$654,422</td>
+                                <td>1 in 250k</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-bolt"></i> On Fire</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <a href="index.html" class="brand">
+                    <span class="brand-logo">
+                        <img src="assets/images/logo.png" alt="Stake Casino logo">
+                    </span>
+                    <span>Stake Casino</span>
+                </a>
+                <p>Stake.com styled lobby with lightning-fast access to originals, live dealers, and jackpots.</p>
+                <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
+            </div>
+            <div>
+                <h4 class="card-title">Product</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="casino.html">Casino</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Account</h4>
+                <div class="footer-links">
+                    <a href="history.html">History</a>
+                    <a href="account.html">Account</a>
+                    <a href="settings.html">Settings</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Support</h4>
+                <div class="footer-links">
+                    <a href="help.html">Help Center</a>
+                    <a href="help.html#faq">FAQs</a>
+                    <a href="mailto:support@stakecasino.example">support@stakecasino.example</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Stake Casino. Inspired by Stake.com&rsquo;s world-class experience. Play responsibly.
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
