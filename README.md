@@ -11,6 +11,13 @@ Stake.com-inspired responsive casino front-end built with static HTML, a shared 
 - `help.html` &ndash; support centre featuring live chat, FAQs, and contact table.
 - `account.html` &ndash; profile management for username, email, currency, avatar, and security settings.
 - `settings.html` &ndash; preference controls for theme, time format, notifications, and accessibility toggles.
+- `/games/blackjack.html` &ndash; fully playable blackjack table with bets, hit, stand, and shoe reset controls.
+- `/games/roulette.html` &ndash; roulette wheel with colour, parity, straight bets, and bankroll settlements.
+- `/games/plinko.html` &ndash; Stake originals plinko board with live multipliers and drop history.
+- `/games/baccarat.html` &ndash; banker/player/tie baccarat including third-card logic and commission handling.
+- `/games/starburst.html`, `/games/gonzos-quest.html`, `/games/mega-moolah.html`, `/games/book-of-dead.html` &ndash; themed slot rooms powered by the shared slot engine.
+- `/games/sic-bo.html` &ndash; big/small/triple Sic Bo dice table with rolling history.
+- `/games/keno.html` &ndash; ten-pick Keno with number selection, draw results, and win tracking.
 
 ## Quick start
 
@@ -23,20 +30,20 @@ Stake.com-inspired responsive casino front-end built with static HTML, a shared 
 Upload the following PNG files into `assets/images/` before deploying so every card and hero panel renders with the intended artwork:
 
 - `logo.png`
-- `aztec-riches.png`
-- `blackjack-elite.png`
-- `blackjack-table.png`
+- `blackjack.png`
+- `roulette.png`
+- `plinko.png`
+- `baccarat.png`
+- `starburst.png`
+- `gonzos-quest.png`
+- `mega-moolah.png`
+- `book-of-dead.png`
+- `sic-bo.png`
+- `keno.png`
 - `blackjack-vip.png`
 - `crash.png`
-- `dice-arena.png`
-- `dice-duel.png`
-- `gates-of-olympus.png`
 - `lightning-roulette.png`
-- `mega-moolah.png`
-- `mega-wheel.png`
-- `plinko.png`
-- `roulette-ultimate.png`
-- `sweet-vault.png`
+- `dice-duel.png`
 
 Feel free to replace these filenames with your own artwork, but keep the names consistent with the references in the HTML or update the markup accordingly.
 

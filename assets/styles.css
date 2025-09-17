@@ -1210,6 +1210,434 @@ textarea:focus {
   font-size: 0.92rem;
 }
 
+/* Game detail pages */
+.game-hero-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  background: linear-gradient(135deg, rgba(43, 217, 255, 0.16), rgba(95, 123, 255, 0.12));
+  border-color: rgba(43, 217, 255, 0.22);
+}
+
+.hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(43, 217, 255, 0.2);
+  color: var(--accent-primary);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 800;
+}
+
+.hero-subtitle {
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  max-width: 640px;
+}
+
+.game-layout {
+  display: grid;
+  gap: 1.6rem;
+}
+
+.game-layout.two-column {
+  grid-template-columns: minmax(0, 2.1fr) minmax(0, 1fr);
+  align-items: flex-start;
+}
+
+.game-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.game-status-bar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.balance-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.balance-card {
+  padding: 0.85rem 1.2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(43, 217, 255, 0.2);
+  background: rgba(8, 20, 36, 0.82);
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.balance-card strong {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.balance-card span {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.bet-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.bet-controls label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.bet-controls .input-field {
+  width: 120px;
+}
+
+.game-table {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.hand-area {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(43, 217, 255, 0.18);
+  background: rgba(10, 20, 36, 0.9);
+}
+
+.hand-label {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.hand-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  min-height: 48px;
+}
+
+.hand-total {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.playing-card {
+  padding: 0.55rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, rgba(43, 217, 255, 0.2), rgba(87, 111, 255, 0.18));
+  border: 1px solid rgba(43, 217, 255, 0.35);
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+.playing-card.is-hidden {
+  background: rgba(9, 16, 28, 0.8);
+  border-style: dashed;
+  color: var(--text-muted);
+}
+
+.game-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.game-status {
+  font-size: 0.95rem;
+  color: var(--text-soft);
+}
+
+.history-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.panel-meta {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.55rem;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.history-list li {
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background: rgba(9, 18, 34, 0.85);
+  border: 1px solid rgba(43, 217, 255, 0.12);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.info-panel {
+  gap: 1.2rem;
+}
+
+.info-callout {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius-md);
+  background: rgba(43, 217, 255, 0.12);
+  border: 1px solid rgba(43, 217, 255, 0.22);
+  color: var(--text-soft);
+  font-size: 0.92rem;
+}
+
+.info-callout i {
+  color: var(--accent-primary);
+  font-size: 1.2rem;
+  margin-top: 0.15rem;
+}
+
+.chip-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+.chip-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(43, 217, 255, 0.3);
+  background: rgba(8, 18, 32, 0.8);
+  color: var(--text-soft);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.chip-button:hover,
+.chip-button:focus-visible {
+  border-color: rgba(43, 217, 255, 0.6);
+  outline: none;
+}
+
+.chip-button.active {
+  background: linear-gradient(135deg, rgba(43, 217, 255, 0.3), rgba(95, 123, 255, 0.25));
+  color: var(--text-primary);
+}
+
+.roulette-board {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.roulette-wheel {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem;
+  border-radius: var(--radius-md);
+  background: rgba(9, 18, 34, 0.9);
+  border: 1px solid rgba(43, 217, 255, 0.18);
+}
+
+.wheel-number {
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.2rem;
+  font-weight: 800;
+  background: radial-gradient(circle at 30% 30%, rgba(43, 217, 255, 0.4), rgba(9, 18, 34, 0.9));
+  border: 2px solid rgba(43, 217, 255, 0.32);
+}
+
+.wheel-color {
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
+.roulette-bets {
+  display: grid;
+  gap: 1rem;
+}
+
+.betting-row {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.slot-stage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.6rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(43, 217, 255, 0.18);
+  background: rgba(10, 20, 36, 0.92);
+}
+
+.slot-reels {
+  display: grid;
+  gap: 0.9rem;
+  grid-template-columns: repeat(auto-fit, minmax(68px, 1fr));
+}
+
+.slot-reel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem;
+  border-radius: var(--radius-md);
+  background: rgba(8, 18, 32, 0.85);
+  border: 1px solid rgba(43, 217, 255, 0.18);
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.multiplier-display {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+}
+
+.plinko-grid {
+  display: grid;
+  gap: 0.45rem;
+  grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+}
+
+.plinko-grid span {
+  padding: 0.45rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background: rgba(8, 18, 32, 0.85);
+  border: 1px solid rgba(43, 217, 255, 0.16);
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.sicbo-dice {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.dice-face {
+  width: 62px;
+  height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  background: rgba(8, 18, 32, 0.85);
+  border: 1px solid rgba(43, 217, 255, 0.22);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.keno-grid {
+  display: grid;
+  gap: 0.55rem;
+  grid-template-columns: repeat(auto-fit, minmax(52px, 1fr));
+}
+
+.keno-number {
+  padding: 0.55rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(43, 217, 255, 0.2);
+  background: rgba(9, 18, 34, 0.85);
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-soft);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.keno-number:hover,
+.keno-number:focus-visible {
+  border-color: rgba(43, 217, 255, 0.6);
+  outline: none;
+}
+
+.keno-number.selected {
+  background: linear-gradient(135deg, rgba(43, 217, 255, 0.3), rgba(95, 123, 255, 0.25));
+  color: var(--text-primary);
+}
+
+.drawn-output {
+  font-weight: 600;
+  color: var(--accent-primary);
+}
+
+@media (max-width: 1100px) {
+  .game-layout.two-column {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .game-status-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .balance-badges {
+    width: 100%;
+  }
+
+  .bet-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
 @media (max-width: 1100px) {
   .site-header .container {
     gap: 0.8rem;
