@@ -8,20 +8,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
     <style>
         body {
             font-family: 'Inter', sans-serif;
         }
-        .scroll-shadow {
-            box-shadow: inset 0 1px 0 0 rgba(15, 23, 42, 0.7);
+        .tab-button-active {
+            border-color: rgba(52, 211, 153, 0.6);
+            background-color: rgba(16, 185, 129, 0.1);
+            color: #bbf7d0;
+            box-shadow: inset 0 0 0 1px rgba(16, 185, 129, 0.1);
+        }
+        .roadmap-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-radius: 9999px;
+            border: 1px solid rgba(15, 23, 42, 0.7);
+            background-color: rgba(2, 6, 23, 0.7);
+            padding: 0.25rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: rgba(148, 163, 184, 1);
+            transition: all 0.2s ease;
+        }
+        .roadmap-pill[data-status='complete'] {
+            border-color: rgba(16, 185, 129, 0.6);
+            background-color: rgba(16, 185, 129, 0.1);
+            color: rgba(167, 243, 208, 1);
+        }
+        .roadmap-pill[data-status='active'] {
+            border-color: rgba(16, 185, 129, 0.9);
+            background-color: rgba(16, 185, 129, 0.2);
+            color: rgba(224, 242, 241, 1);
+        }
+        .roadmap-pill[data-status='upcoming'] {
+            opacity: 0.6;
         }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-100">
     <div class="flex min-h-screen bg-slate-950">
-        <!-- Desktop Sidebar -->
-        <aside class="hidden w-72 flex-col border-r border-slate-900/70 bg-slate-950/60 backdrop-blur-xl xl:fixed xl:inset-y-0 xl:flex">
+        <!-- Sidebar -->
+        <aside
+            id="primary-sidebar"
+            class="hidden w-72 flex-col border-r border-slate-900/70 bg-slate-950/60 backdrop-blur-xl xl:fixed xl:inset-y-0 xl:flex"
+            aria-label="Primary navigation"
+        >
             <div class="flex-1 overflow-y-auto px-6 pb-12 pt-10">
                 <a href="index.html" class="flex items-center gap-3 text-emerald-400">
                     <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-2xl">
@@ -36,7 +77,11 @@
                     <div>
                         <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Casino</p>
                         <div class="mt-3 space-y-1">
-                            <a href="index.html" aria-current="page" class="flex items-center justify-between rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-emerald-200 shadow-inner shadow-emerald-500/10">
+                            <a
+                                href="index.html"
+                                aria-current="page"
+                                class="flex items-center justify-between rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-emerald-200 shadow-inner shadow-emerald-500/10"
+                            >
                                 <span class="flex items-center gap-3"><i class="fas fa-chess-knight"></i>Lobby</span>
                                 <i class="fas fa-chevron-right text-xs"></i>
                             </a>
@@ -87,16 +132,27 @@
             </div>
             <div class="border-t border-slate-900/60 px-6 py-8 text-xs text-slate-500">
                 <p class="font-semibold text-slate-300">Roadmap</p>
-                <p class="mt-2 leading-relaxed text-slate-500">Phase 1 establishes the Stake-inspired shell that will host wallet mechanics, Stake Originals, slots, search, history, and security flows across upcoming iterations.</p>
+                <p class="mt-2 leading-relaxed text-slate-500">
+                    Phase 1 lays the foundation for Stake Originals, wallet mechanics, slots, search, history, and security flows. Each step lights up as features land.
+                </p>
             </div>
         </aside>
+
+        <div id="mobile-sidebar-backdrop" class="fixed inset-0 z-40 hidden bg-slate-950/80 backdrop-blur-sm xl:hidden" aria-hidden="true"></div>
 
         <div class="flex min-h-screen flex-1 flex-col xl:ml-72">
             <!-- Top Bar -->
             <header class="sticky top-0 z-40 border-b border-slate-900/70 bg-slate-950/90 backdrop-blur">
                 <div class="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-10">
                     <div class="flex items-center gap-4">
-                        <button class="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-800 text-slate-300 transition hover:border-emerald-400 hover:text-emerald-300 xl:hidden" aria-label="Toggle navigation">
+                        <button
+                            id="mobile-nav-toggle"
+                            class="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-800 text-slate-300 transition hover:border-emerald-400 hover:text-emerald-300 xl:hidden"
+                            type="button"
+                            aria-label="Toggle navigation"
+                            aria-controls="primary-sidebar"
+                            aria-expanded="false"
+                        >
                             <i class="fas fa-bars"></i>
                         </button>
                         <a href="index.html" class="flex items-center gap-3 xl:hidden">
@@ -113,34 +169,65 @@
                     <div class="hidden max-w-xl flex-1 items-center justify-center px-6 md:flex">
                         <label for="global-search" class="relative flex w-full items-center">
                             <span class="absolute left-4 text-slate-500"><i class="fas fa-search"></i></span>
-                            <input id="global-search" type="search" placeholder="Search games, providers, or features" class="w-full rounded-full border border-slate-900/70 bg-slate-950/80 py-3 pl-12 pr-4 text-sm text-slate-100 shadow-inner shadow-black/40 transition focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30" />
+                            <input
+                                id="global-search"
+                                type="search"
+                                placeholder="Search games, providers, or features"
+                                class="w-full rounded-full border border-slate-900/70 bg-slate-950/80 py-3 pl-12 pr-4 text-sm text-slate-100 shadow-inner shadow-black/40 transition focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30"
+                            />
                             <span class="pointer-events-none absolute right-4 hidden text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500 lg:block">⌘K</span>
                         </label>
                     </div>
 
                     <div class="flex items-center gap-3">
-                        <div id="wallet-summary" class="hidden items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-2 text-left text-sm shadow-inner shadow-black/40 sm:flex">
+                        <div
+                            id="wallet-summary"
+                            class="hidden items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-2 text-left text-sm shadow-inner shadow-black/40 sm:flex"
+                        >
                             <div>
                                 <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Balance</p>
                                 <p id="wallet-balance" class="text-lg font-semibold text-white">0.00000000 BTC</p>
                             </div>
-                            <button class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-300 transition hover:bg-emerald-500/20" aria-label="Wallet actions">
+                            <button
+                                class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-300 transition hover:bg-emerald-500/20"
+                                aria-label="Wallet actions"
+                            >
                                 <i class="fas fa-wallet"></i>
                             </button>
                         </div>
-                        <button class="hidden h-11 w-11 items-center justify-center rounded-2xl border border-slate-900/70 text-slate-400 transition hover:border-emerald-400 hover:text-emerald-300 sm:flex" aria-label="Notifications">
+                        <button
+                            class="hidden h-11 w-11 items-center justify-center rounded-2xl border border-slate-900/70 text-slate-400 transition hover:border-emerald-400 hover:text-emerald-300 sm:flex"
+                            aria-label="Notifications"
+                        >
                             <i class="fas fa-bell"></i>
                         </button>
                         <div id="auth-actions" class="flex items-center gap-2">
-                            <a href="login.html" class="rounded-xl border border-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Log In</a>
-                            <a href="signup.html" class="rounded-xl bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400">Sign Up</a>
+                            <a
+                                href="login.html"
+                                class="rounded-xl border border-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200"
+                            >
+                                Log In
+                            </a>
+                            <a
+                                href="signup.html"
+                                class="rounded-xl bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400"
+                            >
+                                Sign Up
+                            </a>
                         </div>
-                        <div id="profile-summary" class="hidden items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-3 py-2 text-sm shadow-inner shadow-black/40">
+                        <div
+                            id="profile-summary"
+                            class="hidden items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-3 py-2 text-sm shadow-inner shadow-black/40"
+                        >
                             <div>
                                 <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Player</p>
                                 <p id="header-username" class="font-semibold text-white">Player</p>
                             </div>
-                            <button id="logout-button" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-900/70 text-slate-400 transition hover:border-red-400 hover:text-red-300" aria-label="Log out">
+                            <button
+                                id="logout-button"
+                                class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-900/70 text-slate-400 transition hover:border-red-400 hover:text-red-300"
+                                aria-label="Log out"
+                            >
                                 <i class="fas fa-arrow-right-from-bracket"></i>
                             </button>
                         </div>
@@ -148,120 +235,304 @@
                 </div>
 
                 <div class="border-t border-slate-900/60 px-4 sm:px-6 lg:px-10">
-                    <nav class="flex flex-wrap gap-2 py-3 text-sm font-semibold text-slate-400">
-                        <button class="rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-emerald-200 shadow-inner shadow-emerald-500/10">Lobby</button>
-                        <button class="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-800 hover:text-emerald-200">Live Casino</button>
-                        <button class="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-800 hover:text-emerald-200">Featured Slots</button>
-                        <button class="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-800 hover:text-emerald-200">Game Shows</button>
-                        <button class="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-800 hover:text-emerald-200">Stake Originals</button>
+                    <nav class="flex flex-wrap gap-2 py-3 text-sm font-semibold text-slate-400" role="tablist" aria-label="Stake Casino sections">
+                        <button
+                            type="button"
+                            class="tab-button rounded-full border border-transparent px-4 py-2 text-slate-400 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
+                            data-tab="lobby"
+                            id="tab-button-lobby"
+                            aria-controls="tab-panel-lobby"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            Lobby
+                        </button>
+                        <button
+                            type="button"
+                            class="tab-button rounded-full border border-transparent px-4 py-2 text-slate-400 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
+                            data-tab="live-casino"
+                            id="tab-button-live-casino"
+                            aria-controls="tab-panel-live-casino"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            Live Casino
+                        </button>
+                        <button
+                            type="button"
+                            class="tab-button rounded-full border border-transparent px-4 py-2 text-slate-400 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
+                            data-tab="featured-slots"
+                            id="tab-button-featured-slots"
+                            aria-controls="tab-panel-featured-slots"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            Featured Slots
+                        </button>
+                        <button
+                            type="button"
+                            class="tab-button rounded-full border border-transparent px-4 py-2 text-slate-400 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
+                            data-tab="game-shows"
+                            id="tab-button-game-shows"
+                            aria-controls="tab-panel-game-shows"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            Game Shows
+                        </button>
+                        <button
+                            type="button"
+                            class="tab-button rounded-full border border-transparent px-4 py-2 text-slate-400 transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/60"
+                            data-tab="stake-originals"
+                            id="tab-button-stake-originals"
+                            aria-controls="tab-panel-stake-originals"
+                            role="tab"
+                            aria-selected="false"
+                        >
+                            Stake Originals
+                        </button>
                     </nav>
                 </div>
             </header>
 
-            <!-- Main content -->
             <main class="flex-1 overflow-y-auto px-4 pb-16 pt-10 sm:px-6 lg:px-10">
-                <section class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-8 shadow-xl shadow-black/40">
-                    <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                        <div>
-                            <p class="text-sm font-semibold uppercase tracking-[0.5em] text-emerald-300">Phase 1</p>
-                            <h1 class="mt-2 text-3xl font-bold text-white md:text-4xl">Stake Dashboard Shell Ready</h1>
-                            <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">The foundational layout mirrors Stake&apos;s casino experience with a fixed top bar, persistent sidebar, and contextual tab rail. Future updates will progressively activate wallet mechanics, Stake Originals, slots, account history, security tools, and persistent state.</p>
+                <section id="tab-panel-lobby" data-tab-panel="lobby" role="tabpanel" tabindex="0">
+                    <div class="rounded-3xl border border-emerald-500/20 bg-gradient-to-br from-emerald-500/10 via-slate-950/90 to-slate-950 p-8 shadow-inner shadow-emerald-500/10">
+                        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+                            <div class="max-w-2xl">
+                                <p class="text-sm font-semibold uppercase tracking-[0.4em] text-emerald-300">Step 2 · Navigation logic unlocked</p>
+                                <h1 class="mt-4 text-3xl font-bold text-white sm:text-4xl">Navigate Stake&apos;s universe without losing your place</h1>
+                                <p class="mt-4 text-sm text-slate-300">
+                                    Tabs, keyboard shortcuts, and a responsive sidebar now remember exactly where you left off. Future gameplay modules will plug into this shell and inherit the same persistence.
+                                </p>
+                                <div class="mt-6 flex flex-wrap gap-2">
+                                    <span class="roadmap-pill" data-roadmap-step="1">Step 1 · Layout foundation</span>
+                                    <span class="roadmap-pill" data-roadmap-step="2">Step 2 · Tabs &amp; navigation</span>
+                                    <span class="roadmap-pill" data-roadmap-step="3">Step 3 · Stake Originals grid</span>
+                                    <span class="roadmap-pill" data-roadmap-step="4">Step 4 · Wallet &amp; bets</span>
+                                    <span class="roadmap-pill" data-roadmap-step="5">Step 5 · Game engines</span>
+                                    <span class="roadmap-pill" data-roadmap-step="6">Step 6 · Slots simulator</span>
+                                    <span class="roadmap-pill" data-roadmap-step="7">Step 7 · History &amp; discovery</span>
+                                    <span class="roadmap-pill" data-roadmap-step="8">Step 8 · Security suite</span>
+                                </div>
+                            </div>
+                            <div class="grid w-full gap-4 sm:grid-cols-2 lg:max-w-lg">
+                                <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                    <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Persistent</p>
+                                    <p class="mt-2 text-xl font-semibold text-white">Tab state stored</p>
+                                    <p class="mt-2 text-sm text-slate-400">Hop between devices or reload—the lobby remembers your active surface.</p>
+                                </div>
+                                <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                    <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Shortcuts</p>
+                                    <p class="mt-2 text-xl font-semibold text-white">⌘/Ctrl + 1–5</p>
+                                    <p class="mt-2 text-sm text-slate-400">Arrow keys, Home/End, and quick numbers now cycle the experience.</p>
+                                </div>
+                                <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                    <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Responsive</p>
+                                    <p class="mt-2 text-xl font-semibold text-white">Mobile drawer</p>
+                                    <p class="mt-2 text-sm text-slate-400">Access the full sidebar on touch devices with backdrop + Escape handling.</p>
+                                </div>
+                                <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                    <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Roadmap</p>
+                                    <p class="mt-2 text-xl font-semibold text-white">Step 3 next</p>
+                                    <p class="mt-2 text-sm text-slate-400">Stake Originals grid will bring interactive cards and quick-launch modals.</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="grid gap-3 text-sm text-slate-300">
-                            <div class="flex items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Step 1 · Layout scaffold</div>
-                            <div class="flex items-center gap-3 rounded-2xl border border-dashed border-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 2 · Navigation logic</div>
-                            <div class="flex items-center gap-3 rounded-2xl border border-dashed border-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 3 · Stake Originals</div>
+                    </div>
+
+                    <div class="mt-10 grid gap-6 xl:grid-cols-3">
+                        <div class="xl:col-span-2 space-y-6">
+                            <section class="rounded-3xl border border-slate-900/70 bg-slate-950/70 p-6 shadow-inner shadow-black/40">
+                                <h2 class="text-xl font-semibold text-white">What&apos;s live now</h2>
+                                <p class="mt-2 text-sm text-slate-400">State persistence is wired for wallet, authentication, and navigation. Upcoming gameplay modules will reuse these containers.</p>
+                                <ul class="mt-4 space-y-3 text-sm text-slate-300">
+                                    <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Tab selection stored in <code class="text-emerald-200">stakeCasinoState.navigation.activeTab</code></li>
+                                    <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Mobile sidebar remembers open state per device</li>
+                                    <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Keyboard shortcuts + aria roles prepare for accessibility audits</li>
+                                </ul>
+                            </section>
+                            <section class="rounded-3xl border border-dashed border-emerald-500/30 bg-emerald-500/5 p-6 text-sm text-emerald-100">
+                                <h2 class="text-xl font-semibold text-emerald-200">Coming up</h2>
+                                <p class="mt-2 text-emerald-100/80">Stake Originals, wallet mechanics, and slots simulator are staged for the next passes. This lobby page will remain the home for discovery and featured drops.</p>
+                                <div class="mt-4 grid gap-4 sm:grid-cols-3">
+                                    <div class="rounded-2xl border border-emerald-500/20 bg-slate-950/60 p-4">
+                                        <p class="text-xs uppercase tracking-[0.4em] text-emerald-300">Step 3</p>
+                                        <p class="mt-2 font-semibold text-white">Stake Originals grid</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-emerald-500/20 bg-slate-950/60 p-4">
+                                        <p class="text-xs uppercase tracking-[0.4em] text-emerald-300">Step 4</p>
+                                        <p class="mt-2 font-semibold text-white">Wallet &amp; bet controls</p>
+                                    </div>
+                                    <div class="rounded-2xl border border-emerald-500/20 bg-slate-950/60 p-4">
+                                        <p class="text-xs uppercase tracking-[0.4em] text-emerald-300">Step 6</p>
+                                        <p class="mt-2 font-semibold text-white">Slots simulator</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <section class="rounded-3xl border border-slate-900/70 bg-slate-950/70 p-6 shadow-inner shadow-black/40">
+                            <h2 class="text-xl font-semibold text-white">State snapshot</h2>
+                            <p class="mt-2 text-sm text-slate-400">Reload to confirm persistence. Coming iterations will surface export/import controls.</p>
+                            <div class="mt-5 space-y-4 text-sm">
+                                <div class="flex items-center justify-between rounded-2xl border border-slate-900/60 bg-slate-950/80 px-4 py-3">
+                                    <span class="text-slate-400">Logged in</span>
+                                    <span id="state-auth-indicator" class="text-emerald-300">Guest</span>
+                                </div>
+                                <div class="flex items-center justify-between rounded-2xl border border-slate-900/60 bg-slate-950/80 px-4 py-3">
+                                    <span class="text-slate-400">Active tab</span>
+                                    <span id="state-tab-indicator" class="text-emerald-300">Lobby</span>
+                                </div>
+                                <div class="flex items-center justify-between rounded-2xl border border-slate-900/60 bg-slate-950/80 px-4 py-3">
+                                    <span class="text-slate-400">Sidebar state</span>
+                                    <span id="state-sidebar-indicator" class="text-emerald-300">Closed</span>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                <section id="tab-panel-live-casino" data-tab-panel="live-casino" role="tabpanel" tabindex="-1" hidden>
+                    <div class="rounded-3xl border border-slate-900/70 bg-slate-950/70 p-8 shadow-inner shadow-black/40">
+                        <h2 class="text-2xl font-semibold text-white">Live Casino staging</h2>
+                        <p class="mt-3 max-w-2xl text-sm text-slate-400">
+                            Dealer experiences, live tables, and event feeds will wire in after core Stake Originals ship. Use the navigation tabs or keyboard shortcuts to hop back to the Lobby.
+                        </p>
+                        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Coming</p>
+                                <p class="mt-2 text-lg font-semibold text-white">Blackjack tables</p>
+                                <p class="mt-2 text-sm text-slate-400">Seat selection, dealer chat, and streak tracking arrive with live integrations.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Streaming</p>
+                                <p class="mt-2 text-lg font-semibold text-white">Live roulette feeds</p>
+                                <p class="mt-2 text-sm text-slate-400">Multicam angles and latency-aware betting overlays will mirror Stake&apos;s broadcast.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-xs uppercase tracking-[0.4em] text-slate-500">Sync</p>
+                                <p class="mt-2 text-lg font-semibold text-white">Real-time wallets</p>
+                                <p class="mt-2 text-sm text-slate-400">Live tables will consume the shared wallet and bet controls added in Step 4.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
-                    <article class="rounded-2xl border border-slate-900/70 bg-slate-950/50 p-6 shadow-inner shadow-black/40">
-                        <p class="text-xs font-semibold uppercase tracking-[0.5em] text-slate-500">Stake Originals</p>
-                        <h2 class="mt-3 text-xl font-semibold text-white">Interactive grid incoming</h2>
-                        <p class="mt-3 text-sm text-slate-400">Dice, Crash, Plinko, Mines, Limbo, and Blackjack will sit inside the main grid with live odds, bet inputs, and provably-fair seeding once Step 3 &amp; 5 land.</p>
-                    </article>
-                    <article class="rounded-2xl border border-slate-900/70 bg-slate-950/50 p-6 shadow-inner shadow-black/40">
-                        <p class="text-xs font-semibold uppercase tracking-[0.5em] text-slate-500">Wallet &amp; chips</p>
-                        <h2 class="mt-3 text-xl font-semibold text-white">Bet controls panel prepared</h2>
-                        <p class="mt-3 text-sm text-slate-400">Deposit, withdraw, convert, transfer, chip presets, and turbo bet adjustments will dock under the header as dedicated controls in Step 4.</p>
-                    </article>
-                    <article class="rounded-2xl border border-slate-900/70 bg-slate-950/50 p-6 shadow-inner shadow-black/40">
-                        <p class="text-xs font-semibold uppercase tracking-[0.5em] text-slate-500">Slots &amp; Shows</p>
-                        <h2 class="mt-3 text-xl font-semibold text-white">Carousel staging area</h2>
-                        <p class="mt-3 text-sm text-slate-400">Sweet Bonanza, Wanted Dead or a Wild, Sugar Rush, Gates of Olympus, Dork Unit, and Dog Mansion Megaways will rotate here with modal simulators.</p>
-                    </article>
-                </section>
-
-                <section class="mt-10 rounded-3xl border border-slate-900/70 bg-slate-950/60 p-8">
-                    <div class="grid gap-8 lg:grid-cols-[1.5fr,1fr]">
-                        <div class="space-y-6">
-                            <div class="flex items-center justify-between">
-                                <h2 class="text-2xl font-semibold text-white">Stake Originals Preview</h2>
-                                <span class="rounded-full border border-emerald-400/60 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">Step 3 soon</span>
+                <section id="tab-panel-featured-slots" data-tab-panel="featured-slots" role="tabpanel" tabindex="-1" hidden>
+                    <div class="rounded-3xl border border-slate-900/70 bg-slate-950/70 p-8 shadow-inner shadow-black/40">
+                        <h2 class="text-2xl font-semibold text-white">Featured slots rotation</h2>
+                        <p class="mt-3 max-w-2xl text-sm text-slate-400">
+                            A curated reel lineup spotlights the first wave of integrations. The slots simulator and carousel controls arrive with Step 6.
+                        </p>
+                        <div class="mt-6 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-sm font-semibold text-white">Sweet Bonanza</p>
+                                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-emerald-300">High volatility</p>
+                                <p class="mt-3 text-sm text-slate-400">Candy multipliers and tumbling reels prime the Step 6 simulator.</p>
                             </div>
-                            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
-                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-dice"></i></div>
-                                    <h3 class="mt-4 text-lg font-semibold text-white">Dice</h3>
-                                    <p class="mt-2 text-xs text-slate-400">Provably-fair rolls with risk sliders and instant payouts.</p>
-                                </div>
-                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
-                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-rocket"></i></div>
-                                    <h3 class="mt-4 text-lg font-semibold text-white">Crash</h3>
-                                    <p class="mt-2 text-xs text-slate-400">Charted multipliers with auto cash-out and live queue.</p>
-                                </div>
-                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
-                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-bullseye"></i></div>
-                                    <h3 class="mt-4 text-lg font-semibold text-white">Plinko</h3>
-                                    <p class="mt-2 text-xs text-slate-400">Risk tiers, pin rows, and weighted cups ready for simulation.</p>
-                                </div>
-                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
-                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-bomb"></i></div>
-                                    <h3 class="mt-4 text-lg font-semibold text-white">Mines</h3>
-                                    <p class="mt-2 text-xs text-slate-400">Dynamic boards with cash-out ladders and volatility tuning.</p>
-                                </div>
-                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
-                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-wave-square"></i></div>
-                                    <h3 class="mt-4 text-lg font-semibold text-white">Limbo</h3>
-                                    <p class="mt-2 text-xs text-slate-400">Pick a multiplier, beat the odds, and chain rapid bets.</p>
-                                </div>
-                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
-                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-chess-king"></i></div>
-                                    <h3 class="mt-4 text-lg font-semibold text-white">Blackjack</h3>
-                                    <p class="mt-2 text-xs text-slate-400">Multi-hand blackjack with split, double, and insurance logic.</p>
-                                </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-sm font-semibold text-white">Wanted Dead or a Wild</p>
+                                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-emerald-300">Sticky wilds</p>
+                                <p class="mt-3 text-sm text-slate-400">Notorious bonus rounds and expanding symbols keep volatility high.</p>
                             </div>
-                        </div>
-                        <div class="space-y-6 rounded-3xl border border-slate-900/70 bg-slate-950/70 p-6">
-                            <div>
-                                <h3 class="text-lg font-semibold text-white">Slots Carousel Preview</h3>
-                                <p class="mt-2 text-sm text-slate-400">Upcoming carousel anchors for Stake-favorite slots with modal simulators, auto-spins, and paylines.</p>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-sm font-semibold text-white">Sugar Rush</p>
+                                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-emerald-300">Cluster pays</p>
+                                <p class="mt-3 text-sm text-slate-400">Chain multipliers will tie into the shared reel state machine.</p>
                             </div>
-                            <ul class="space-y-3 text-sm text-slate-300">
-                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Sweet Bonanza</li>
-                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Wanted Dead or a Wild</li>
-                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Sugar Rush</li>
-                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Gates of Olympus</li>
-                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Dork Unit</li>
-                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Dog Mansion Megaways</li>
-                            </ul>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-sm font-semibold text-white">Gates of Olympus</p>
+                                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-emerald-300">All ways</p>
+                                <p class="mt-3 text-sm text-slate-400">Zeus multipliers seed the math model for upcoming slots logic.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-sm font-semibold text-white">Dork Unit</p>
+                                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-emerald-300">Feature buy</p>
+                                <p class="mt-3 text-sm text-slate-400">One-click entry to bonus rounds ties into bankroll safeguards.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-sm font-semibold text-white">Dog Mansion Megaways</p>
+                                <p class="mt-2 text-xs uppercase tracking-[0.3em] text-emerald-300">Megaways</p>
+                                <p class="mt-3 text-sm text-slate-400">Dynamic reel configurations preview adaptive paylines.</p>
+                            </div>
                         </div>
                     </div>
                 </section>
 
-                <section class="mt-10 rounded-3xl border border-dashed border-emerald-500/30 bg-emerald-500/5 p-8 text-sm text-emerald-100">
-                    <h2 class="text-xl font-semibold text-emerald-200">Implementation Roadmap</h2>
-                    <ol class="mt-4 space-y-3 text-slate-200">
-                        <li><span class="font-semibold text-emerald-300">Step 1 · Layout foundation</span> — Complete. Shared Stake-inspired shell across the project with fixed header, sidebar, and content canvas.</li>
-                        <li><span class="font-semibold text-emerald-300">Step 2 · Tabs &amp; navigation</span> — Upcoming interactive tab router, keyboard shortcuts, and mobile tray.</li>
-                        <li><span class="font-semibold text-emerald-300">Step 3 · Stake Originals grid</span> — Engage cards, quick launch modals, and seeded randomization pipeline.</li>
-                        <li><span class="font-semibold text-emerald-300">Step 4 · Wallet &amp; bet controls</span> — Deposit/withdraw/convert/transfer, chip presets, bet sizing, and auto bet toggles.</li>
-                        <li><span class="font-semibold text-emerald-300">Step 5 · Game engines</span> — Dice, Crash, Plinko, Mines, Limbo, Blackjack with provably-fair logic.</li>
-                        <li><span class="font-semibold text-emerald-300">Step 6 · Slots carousel</span> — 5×3 reel simulations, paylines, spins, and auto-spins.</li>
-                        <li><span class="font-semibold text-emerald-300">Step 7 · History &amp; discovery</span> — Favorites, search, filters, live counters, toasts, and notifications.</li>
-                        <li><span class="font-semibold text-emerald-300">Step 8 · Security &amp; extras</span> — Settings, seeds, lock screen, shred mode, decoy accounts, state export/import.</li>
-                    </ol>
+                <section id="tab-panel-game-shows" data-tab-panel="game-shows" role="tabpanel" tabindex="-1" hidden>
+                    <div class="rounded-3xl border border-slate-900/70 bg-slate-950/70 p-8 shadow-inner shadow-black/40">
+                        <h2 class="text-2xl font-semibold text-white">Game shows preview</h2>
+                        <p class="mt-3 max-w-2xl text-sm text-slate-400">
+                            Stake&apos;s interactive game shows will plug into the same navigation and wallet systems. Expect lightning rounds, leaderboard overlays, and collaborative betting.
+                        </p>
+                        <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-sm font-semibold text-white">Mega Wheel</p>
+                                <p class="mt-2 text-sm text-slate-400">Spin-to-win experiences integrate live chat and multipliers.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-sm font-semibold text-white">Crazy Time</p>
+                                <p class="mt-2 text-sm text-slate-400">Bonus games funnel into the shared history and toasts pipeline.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-5">
+                                <p class="text-sm font-semibold text-white">Deal or No Deal</p>
+                                <p class="mt-2 text-sm text-slate-400">Banker decisions will soon leverage the bet control presets.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="tab-panel-stake-originals" data-tab-panel="stake-originals" role="tabpanel" tabindex="-1" hidden>
+                    <div class="rounded-3xl border border-slate-900/70 bg-slate-950/70 p-8 shadow-inner shadow-black/40">
+                        <h2 class="text-2xl font-semibold text-white">Stake Originals lineup</h2>
+                        <p class="mt-3 max-w-2xl text-sm text-slate-400">
+                            The flagship experiences unlock next. Each card will evolve into a launchpad with seeding for provably fair randomness.
+                        </p>
+                        <div class="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-semibold text-white">Dice</h3>
+                                    <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-200">Step 5</span>
+                                </div>
+                                <p class="mt-3 text-sm text-slate-400">Low-house-edge classic with manual and auto bet support coming soon.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-semibold text-white">Crash</h3>
+                                    <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-200">Step 5</span>
+                                </div>
+                                <p class="mt-3 text-sm text-slate-400">Watch the multiplier climb and bail before the crash—auto cashout rules on deck.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-semibold text-white">Plinko</h3>
+                                    <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-200">Step 5</span>
+                                </div>
+                                <p class="mt-3 text-sm text-slate-400">Risk profiles and peg layouts prep for customizable variance paths.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-semibold text-white">Mines</h3>
+                                    <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-200">Step 5</span>
+                                </div>
+                                <p class="mt-3 text-sm text-slate-400">Custom grids, cashout ladders, and provably fair seeds wire in soon.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-semibold text-white">Limbo</h3>
+                                    <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-200">Step 5</span>
+                                </div>
+                                <p class="mt-3 text-sm text-slate-400">Choose your multiplier target—the PRNG engine ties into Step 5.</p>
+                            </div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/80 p-6">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-semibold text-white">Blackjack</h3>
+                                    <span class="rounded-full bg-emerald-500/10 px-3 py-1 text-xs font-semibold text-emerald-200">Step 5</span>
+                                </div>
+                                <p class="mt-3 text-sm text-slate-400">Supports manual play and auto strategies with seed verification.</p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
 
@@ -277,13 +548,14 @@
     <script>
         const STORAGE_KEY = 'stakeCasinoState';
         const legacyUserKey = 'casinoUser';
+
         const defaultState = {
-            version: 1,
+            version: 2,
             user: null,
             wallet: {
                 currency: 'BTC',
                 balance: 0,
-                chips: [0.00000050, 0.00000100, 0.00000200, 0.00000500]
+                chips: [0.0000005, 0.000001, 0.000002, 0.000005]
             },
             favorites: [],
             history: [],
@@ -296,7 +568,11 @@
                 events: 12
             },
             roadmap: {
-                step: 1
+                step: 2
+            },
+            navigation: {
+                activeTab: 'lobby',
+                sidebarOpen: false
             }
         };
 
@@ -326,6 +602,10 @@
                     roadmap: {
                         ...defaultState.roadmap,
                         ...(parsed.roadmap || {})
+                    },
+                    navigation: {
+                        ...defaultState.navigation,
+                        ...(parsed.navigation || {})
                     }
                 };
             } catch (error) {
@@ -340,7 +620,40 @@
 
         const state = hydrateState();
 
-        // Bridge legacy auth data into the new state container once.
+        const ensureNavigationState = () => {
+            if (!state.navigation || typeof state.navigation !== 'object') {
+                state.navigation = { ...defaultState.navigation };
+                return;
+            }
+
+            state.navigation = {
+                ...defaultState.navigation,
+                ...state.navigation
+            };
+        };
+
+        ensureNavigationState();
+
+        if (state.version !== defaultState.version) {
+            state.version = defaultState.version;
+            saveState(state);
+        }
+
+        const ensureRoadmapProgress = () => {
+            if (!state.roadmap || typeof state.roadmap !== 'object') {
+                state.roadmap = { ...defaultState.roadmap };
+                saveState(state);
+                return;
+            }
+
+            if (typeof state.roadmap.step !== 'number' || state.roadmap.step < 2) {
+                state.roadmap.step = 2;
+                saveState(state);
+            }
+        };
+
+        ensureRoadmapProgress();
+
         const legacyUserRaw = localStorage.getItem(legacyUserKey);
         if (!state.user && legacyUserRaw) {
             try {
@@ -357,6 +670,212 @@
             }
         }
 
+        const TAB_ORDER = ['lobby', 'live-casino', 'featured-slots', 'game-shows', 'stake-originals'];
+        const TAB_SHORTCUTS = {
+            '1': 'lobby',
+            '2': 'live-casino',
+            '3': 'featured-slots',
+            '4': 'game-shows',
+            '5': 'stake-originals'
+        };
+
+        const tabButtons = Array.from(document.querySelectorAll('[data-tab]'));
+        const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
+        const tabButtonMap = new Map(tabButtons.map((button) => [button.dataset.tab, button]));
+        const tabPanelMap = new Map(tabPanels.map((panel) => [panel.dataset.tabPanel, panel]));
+        const roadmapPills = document.querySelectorAll('[data-roadmap-step]');
+        const mobileToggle = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('primary-sidebar');
+        const sidebarBackdrop = document.getElementById('mobile-sidebar-backdrop');
+
+        const updateRoadmapPills = () => {
+            const currentStep = state.roadmap && typeof state.roadmap.step === 'number' ? state.roadmap.step : 1;
+            roadmapPills.forEach((pill) => {
+                const pillStep = Number(pill.dataset.roadmapStep);
+                let status = 'upcoming';
+                if (currentStep > pillStep) {
+                    status = 'complete';
+                } else if (currentStep === pillStep) {
+                    status = 'active';
+                }
+                pill.setAttribute('data-status', status);
+            });
+        };
+
+        updateRoadmapPills();
+
+        const renderTabs = ({ focusButton = false } = {}) => {
+            const active = state.navigation?.activeTab || defaultState.navigation.activeTab;
+            TAB_ORDER.forEach((tabId) => {
+                const button = tabButtonMap.get(tabId);
+                const panel = tabPanelMap.get(tabId);
+                const isActive = tabId === active;
+
+                if (button) {
+                    button.classList.toggle('tab-button-active', isActive);
+                    button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    button.setAttribute('tabindex', isActive ? '0' : '-1');
+                    if (isActive && focusButton) {
+                        requestAnimationFrame(() => button.focus());
+                    }
+                }
+
+                if (panel) {
+                    if (isActive) {
+                        panel.removeAttribute('hidden');
+                        panel.setAttribute('tabindex', '0');
+                    } else {
+                        panel.setAttribute('hidden', 'true');
+                        panel.setAttribute('tabindex', '-1');
+                    }
+                }
+            });
+
+            const tabIndicator = document.getElementById('state-tab-indicator');
+            if (tabIndicator) {
+                const label = tabButtonMap.get(active)?.textContent?.trim() || 'Lobby';
+                tabIndicator.textContent = label;
+            }
+        };
+
+        const setActiveTab = (tabId, { focusButton = false, persist = true } = {}) => {
+            const normalized = TAB_ORDER.includes(tabId) ? tabId : defaultState.navigation.activeTab;
+            ensureNavigationState();
+            const previous = state.navigation.activeTab;
+            state.navigation.activeTab = normalized;
+            if (persist && previous !== normalized) {
+                saveState(state);
+            }
+            renderTabs({ focusButton });
+        };
+
+        if (tabButtons.length && tabPanels.length) {
+            renderTabs();
+
+            tabButtons.forEach((button) => {
+                const tabId = button.dataset.tab;
+                button.addEventListener('click', () => setActiveTab(tabId));
+                button.addEventListener('keydown', (event) => {
+                    const index = TAB_ORDER.indexOf(tabId);
+                    if (event.key === 'ArrowRight') {
+                        event.preventDefault();
+                        const next = (index + 1) % TAB_ORDER.length;
+                        setActiveTab(TAB_ORDER[next], { focusButton: true });
+                        return;
+                    }
+                    if (event.key === 'ArrowLeft') {
+                        event.preventDefault();
+                        const prev = (index - 1 + TAB_ORDER.length) % TAB_ORDER.length;
+                        setActiveTab(TAB_ORDER[prev], { focusButton: true });
+                        return;
+                    }
+                    if (event.key === 'Home') {
+                        event.preventDefault();
+                        setActiveTab(TAB_ORDER[0], { focusButton: true });
+                        return;
+                    }
+                    if (event.key === 'End') {
+                        event.preventDefault();
+                        setActiveTab(TAB_ORDER[TAB_ORDER.length - 1], { focusButton: true });
+                        return;
+                    }
+                    if (event.key === ' ' || event.key === 'Enter') {
+                        event.preventDefault();
+                        setActiveTab(tabId, { focusButton: true });
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if ((event.metaKey || event.ctrlKey) && !event.shiftKey && TAB_SHORTCUTS[event.key]) {
+                    event.preventDefault();
+                    setActiveTab(TAB_SHORTCUTS[event.key], { focusButton: true });
+                }
+            });
+        }
+
+        const applySidebarState = (open) => {
+            if (!sidebar) {
+                return;
+            }
+
+            if (open) {
+                sidebar.classList.remove('hidden');
+                sidebar.classList.add('fixed', 'inset-y-0', 'left-0', 'top-0', 'z-50', 'flex');
+                sidebar.setAttribute('aria-hidden', 'false');
+                mobileToggle?.setAttribute('aria-expanded', 'true');
+                sidebarBackdrop?.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('hidden');
+                sidebar.classList.remove('fixed', 'inset-y-0', 'left-0', 'top-0', 'z-50', 'flex');
+                sidebar.setAttribute('aria-hidden', 'true');
+                mobileToggle?.setAttribute('aria-expanded', 'false');
+                sidebarBackdrop?.classList.add('hidden');
+            }
+        };
+
+        const desktopQuery = window.matchMedia('(min-width: 1280px)');
+
+        const setSidebarOpen = (open, { persist = true } = {}) => {
+            ensureNavigationState();
+            const previous = state.navigation.sidebarOpen;
+            state.navigation.sidebarOpen = open;
+
+            if (persist && previous !== open) {
+                saveState(state);
+            }
+
+            if (!desktopQuery.matches) {
+                applySidebarState(open);
+            }
+
+            const sidebarIndicator = document.getElementById('state-sidebar-indicator');
+            if (sidebarIndicator) {
+                sidebarIndicator.textContent = open ? 'Open' : 'Closed';
+            }
+        };
+
+        const syncSidebarForViewport = (event) => {
+            const matches = typeof event.matches === 'boolean' ? event.matches : !!event;
+            if (matches) {
+                if (sidebar) {
+                    sidebar.classList.remove('hidden', 'fixed', 'inset-y-0', 'left-0', 'top-0', 'z-50', 'flex');
+                    sidebar.setAttribute('aria-hidden', 'false');
+                }
+                sidebarBackdrop?.classList.add('hidden');
+                mobileToggle?.setAttribute('aria-expanded', 'false');
+                if (state.navigation.sidebarOpen) {
+                    state.navigation.sidebarOpen = false;
+                    saveState(state);
+                }
+            } else {
+                applySidebarState(Boolean(state.navigation.sidebarOpen));
+            }
+        };
+
+        if (sidebar) {
+            syncSidebarForViewport(desktopQuery);
+            if (typeof desktopQuery.addEventListener === 'function') {
+                desktopQuery.addEventListener('change', syncSidebarForViewport);
+            } else if (typeof desktopQuery.addListener === 'function') {
+                desktopQuery.addListener(syncSidebarForViewport);
+            }
+        }
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                setSidebarOpen(!state.navigation.sidebarOpen);
+            });
+        }
+
+        sidebarBackdrop?.addEventListener('click', () => setSidebarOpen(false));
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && state.navigation.sidebarOpen && !desktopQuery.matches) {
+                setSidebarOpen(false);
+            }
+        });
+
         const authActions = document.getElementById('auth-actions');
         const profileSummary = document.getElementById('profile-summary');
         const usernameLabel = document.getElementById('header-username');
@@ -365,33 +884,49 @@
         const walletSummary = document.getElementById('wallet-summary');
         const liveEventsCount = document.getElementById('live-events-count');
         const footerYear = document.getElementById('footer-year');
+        const stateAuthIndicator = document.getElementById('state-auth-indicator');
 
         const renderHeader = () => {
-            footerYear.textContent = new Date().getFullYear();
-            if (state.live && typeof state.live.events === 'number') {
+            if (footerYear) {
+                footerYear.textContent = new Date().getFullYear();
+            }
+
+            if (liveEventsCount && state.live && typeof state.live.events === 'number') {
                 liveEventsCount.textContent = state.live.events;
             }
 
-            if (state.wallet && typeof state.wallet.balance === 'number') {
+            if (walletBalance && walletSummary && state.wallet && typeof state.wallet.balance === 'number') {
                 const formatted = state.wallet.balance.toLocaleString('en-US', {
                     minimumFractionDigits: 8,
                     maximumFractionDigits: 8
                 });
                 walletBalance.textContent = `${formatted} ${state.wallet.currency || 'BTC'}`;
                 walletSummary.classList.remove('hidden');
+            } else if (walletSummary) {
+                walletSummary.classList.add('hidden');
             }
 
             if (state.user && state.user.username) {
-                usernameLabel.textContent = state.user.username;
-                profileSummary.classList.remove('hidden');
-                authActions.classList.add('hidden');
+                if (usernameLabel) {
+                    usernameLabel.textContent = state.user.username;
+                }
+                profileSummary?.classList.remove('hidden');
+                authActions?.classList.add('hidden');
+                if (stateAuthIndicator) {
+                    stateAuthIndicator.textContent = state.user.username;
+                }
             } else {
-                profileSummary.classList.add('hidden');
-                authActions.classList.remove('hidden');
+                profileSummary?.classList.add('hidden');
+                authActions?.classList.remove('hidden');
+                if (stateAuthIndicator) {
+                    stateAuthIndicator.textContent = 'Guest';
+                }
             }
         };
 
         renderHeader();
+        renderTabs();
+        setSidebarOpen(Boolean(state.navigation.sidebarOpen), { persist: false });
 
         if (logoutButton) {
             logoutButton.addEventListener('click', () => {
