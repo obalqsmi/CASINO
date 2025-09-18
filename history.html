@@ -3,36 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>History - Casino Royale</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1a202c; }
-    </style>
+    <title>Transaction History | Stake Casino</title>
+    <meta name="description" content="Stake.com style funds history with deposits, withdrawals, swaps, and export-ready statements.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-+1YwkpawuO/7dBDEuDfSU/EYEYVplpXCMVvjJAnYXhYzuq/n6PvJEa3TBUnIFVQGryuVKy7jH9MuNoMylkz7dA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="text-white">
-    <!-- Header -->
-    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-yellow-500"><i class="fas fa-gem mr-2"></i>Casino Royale</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-gray-300 hover:text-yellow-400">Home</a>
-                <a href="dashboard.html" class="text-gray-300 hover:text-yellow-400">Dashboard</a>
-                <a href="history.html" class="text-yellow-400 font-bold">History</a>
-                <a href="help.html" class="text-gray-300 hover:text-yellow-400">Help</a>
-                <a href="settings.html" class="text-gray-300 hover:text-yellow-400">Settings</a>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="brand">
+                <span class="brand-logo">
+                    <img src="assets/images/logo.png" alt="Stake Casino logo">
+                </span>
+                <span>Stake Casino</span>
+            </a>
+            <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" data-nav-links>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="casino.html" class="nav-link">Casino</a>
+                <a href="history.html" class="nav-link active">History</a>
+                <a href="help.html" class="nav-link">Help</a>
+                <a href="account.html" class="nav-link">Account</a>
+                <a href="settings.html" class="nav-link">Settings</a>
+                <div class="mobile-only">
+                    <div class="action-buttons" data-mobile-auth>
+                        <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
+                    </div>
+                    <div class="action-buttons user-info" data-mobile-user>
+                        <a href="account.html" class="primary-button btn account-button">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span class="account-text">
+                                <span class="account-title">Account</span>
+                                <span class="account-username" data-username>Guest</span>
+                            </span>
+                        </a>
+                        <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="action-buttons" data-auth-buttons>
+                <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
             </div>
-        </nav>
-    </header>
-    <!-- Main -->
-    <main class="bg-gray-800 min-h-[calc(100vh-150px)]">
-        <div class="container mx-auto px-6 py-20 text-center">
-            <h1 class="text-5xl font-extrabold text-white mb-4">Game History</h1>
-            <p class="text-lg text-gray-300">This page will show your past games and results.</p>
+            <div class="action-buttons user-info" data-user-info>
+                <a href="account.html" class="primary-button btn account-button">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="account-text">
+                        <span class="account-title">Account</span>
+                        <span class="account-username" data-username>Guest</span>
+                    </span>
+                </a>
+                <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+            </div>
         </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h1 class="section-title">Transaction history</h1>
+                        <p class="section-subtitle">Monitor deposits, withdrawals, and swaps with Stake.com level clarity and exportable statements.</p>
+                    </div>
+                    <div class="badge-pill"><i class="fa-solid fa-cloud-arrow-down"></i> Export CSV</div>
+                </div>
+
+                <div class="metric-grid">
+                    <article class="metric-card">
+                        <span class="metric-label">Deposits</span>
+                        <span class="metric-value">$128,400</span>
+                        <span class="metric-meta positive"><i class="fa-solid fa-arrow-trend-up"></i> 32 entries</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Withdrawals</span>
+                        <span class="metric-value">$86,250</span>
+                        <span class="metric-meta"><i class="fa-solid fa-gauge"></i> Avg 43s confirm</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Swaps</span>
+                        <span class="metric-value">$24,890</span>
+                        <span class="metric-meta"><i class="fa-solid fa-arrows-rotate"></i> 14 conversions</span>
+                    </article>
+                    <article class="metric-card">
+                        <span class="metric-label">Net flow</span>
+                        <span class="metric-value">+$17,260</span>
+                        <span class="metric-meta positive"><i class="fa-solid fa-wallet"></i> Healthy bankroll</span>
+                    </article>
+                </div>
+
+                <div class="filters">
+                    <button class="filter-chip active"><i class="fa-solid fa-list"></i> All</button>
+                    <button class="filter-chip"><i class="fa-solid fa-circle-arrow-down"></i> Deposits</button>
+                    <button class="filter-chip"><i class="fa-solid fa-circle-arrow-up"></i> Withdrawals</button>
+                    <button class="filter-chip"><i class="fa-solid fa-arrows-left-right"></i> Swaps</button>
+                    <button class="filter-chip"><i class="fa-solid fa-calendar"></i> Last 7 days</button>
+                </div>
+
+                <div class="table-wrapper">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Type</th>
+                                <th>Asset</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                                <th>Reference</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>05 May 2025 • 18:42</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-circle-arrow-down"></i> Deposit</span></td>
+                                <td>USDT</td>
+                                <td>$5,000</td>
+                                <td>Completed</td>
+                                <td>#DP-94721</td>
+                            </tr>
+                            <tr>
+                                <td>05 May 2025 • 17:05</td>
+                                <td><span class="status-badge pending"><i class="fa-solid fa-arrows-left-right"></i> Swap</span></td>
+                                <td>BTC &rarr; ETH</td>
+                                <td>$2,450</td>
+                                <td>Confirming</td>
+                                <td>#SW-11854</td>
+                            </tr>
+                            <tr>
+                                <td>05 May 2025 • 02:38</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-circle-arrow-up"></i> Withdrawal</span></td>
+                                <td>BTC</td>
+                                <td>$4,800</td>
+                                <td>Completed</td>
+                                <td>#WD-88241</td>
+                            </tr>
+                            <tr>
+                                <td>04 May 2025 • 21:14</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-circle-arrow-down"></i> Deposit</span></td>
+                                <td>ETH</td>
+                                <td>$3,750</td>
+                                <td>Completed</td>
+                                <td>#DP-94418</td>
+                            </tr>
+                            <tr>
+                                <td>04 May 2025 • 16:09</td>
+                                <td><span class="status-badge pending"><i class="fa-solid fa-circle-arrow-up"></i> Withdrawal</span></td>
+                                <td>USDC</td>
+                                <td>$1,200</td>
+                                <td>Pending</td>
+                                <td>#WD-87902</td>
+                            </tr>
+                            <tr>
+                                <td>04 May 2025 • 08:52</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-arrows-left-right"></i> Swap</span></td>
+                                <td>USDT &rarr; BTC</td>
+                                <td>$3,100</td>
+                                <td>Completed</td>
+                                <td>#SW-11802</td>
+                            </tr>
+                            <tr>
+                                <td>03 May 2025 • 12:31</td>
+                                <td><span class="status-badge won"><i class="fa-solid fa-circle-arrow-down"></i> Deposit</span></td>
+                                <td>BTC</td>
+                                <td>$7,500</td>
+                                <td>Completed</td>
+                                <td>#DP-93952</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Statements &amp; alerts</h2>
+                        <p class="section-subtitle">Stay informed with automated exports and balance notifications.</p>
+                    </div>
+                </div>
+                <div class="card-grid">
+                    <article class="surface-card highlight">
+                        <h3 class="card-title">Scheduled statements</h3>
+                        <p class="card-meta">Weekly CSV exports drop into your inbox and sync with your account archive.</p>
+                        <div class="list-inline">
+                            <span class="chip"><i class="fa-solid fa-calendar-week"></i> Delivered Mondays</span>
+                            <span class="chip"><i class="fa-solid fa-inbox"></i> 6 month retention</span>
+                        </div>
+                    </article>
+                    <article class="surface-card">
+                        <h3 class="card-title">Balance alerts</h3>
+                        <p class="card-meta">Trigger push and email alerts when balance thresholds or cooldowns hit.</p>
+                        <ul class="bullet-list">
+                            <li>Notify when bankroll dips below $10k</li>
+                            <li>Ping after 2 consecutive large withdrawals</li>
+                            <li>Remind to claim reload bonuses</li>
+                        </ul>
+                    </article>
+                    <article class="surface-card">
+                        <h3 class="card-title">Audit trail</h3>
+                        <p class="card-meta">Device, IP, and compliance notes attached to every transfer for clarity.</p>
+                        <div class="ticket-meta">
+                            <span><i class="fa-solid fa-desktop"></i> Chrome • NYC</span>
+                            <span><i class="fa-solid fa-mobile-screen"></i> iOS • London</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
     </main>
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-10"><div class="container mx-auto px-6 text-center text-gray-400"><p>&copy; 2025 Casino Royale. All Rights Reserved.</p></div></footer>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <a href="index.html" class="brand">
+                    <span class="brand-logo">
+                        <img src="assets/images/logo.png" alt="Stake Casino logo">
+                    </span>
+                    <span>Stake Casino</span>
+                </a>
+                <p>Stake.com inspired history hub with lightning-fast exports and detailed transaction status updates.</p>
+                <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
+            </div>
+            <div>
+                <h4 class="card-title">Product</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="casino.html">Casino</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Account</h4>
+                <div class="footer-links">
+                    <a href="history.html">History</a>
+                    <a href="account.html">Account</a>
+                    <a href="settings.html">Settings</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Support</h4>
+                <div class="footer-links">
+                    <a href="help.html">Help Center</a>
+                    <a href="help.html#faq">FAQs</a>
+                    <a href="mailto:support@stakecasino.example">support@stakecasino.example</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Stake Casino. Inspired by Stake.com&rsquo;s world-class experience. Play responsibly.
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

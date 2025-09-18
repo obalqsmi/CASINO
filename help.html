@@ -3,36 +3,237 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help - Casino Royale</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1a202c; }
-    </style>
+    <title>Help Center | Stake Casino</title>
+    <meta name="description" content="Support hub with FAQs, responsible gaming resources, and contact options for Stake.com inspired casino players.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-+1YwkpawuO/7dBDEuDfSU/EYEYVplpXCMVvjJAnYXhYzuq/n6PvJEa3TBUnIFVQGryuVKy7jH9MuNoMylkz7dA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="assets/styles.css">
 </head>
-<body class="text-white">
-    <!-- Header -->
-    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-yellow-500"><i class="fas fa-gem mr-2"></i>Casino Royale</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-gray-300 hover:text-yellow-400">Home</a>
-                <a href="dashboard.html" class="text-gray-300 hover:text-yellow-400">Dashboard</a>
-                <a href="history.html" class="text-gray-300 hover:text-yellow-400">History</a>
-                <a href="help.html" class="text-yellow-400 font-bold">Help</a>
-                <a href="settings.html" class="text-gray-300 hover:text-yellow-400">Settings</a>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="brand">
+                <span class="brand-logo">
+                    <img src="assets/images/logo.png" alt="Stake Casino logo">
+                </span>
+                <span>Stake Casino</span>
+            </a>
+            <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" data-nav-links>
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="dashboard.html" class="nav-link">Dashboard</a>
+                <a href="casino.html" class="nav-link">Casino</a>
+                <a href="history.html" class="nav-link">History</a>
+                <a href="help.html" class="nav-link active">Help</a>
+                <a href="account.html" class="nav-link">Account</a>
+                <a href="settings.html" class="nav-link">Settings</a>
+                <div class="mobile-only">
+                    <div class="action-buttons" data-mobile-auth>
+                        <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
+                    </div>
+                    <div class="action-buttons user-info" data-mobile-user>
+                        <a href="account.html" class="primary-button btn account-button">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span class="account-text">
+                                <span class="account-title">Account</span>
+                                <span class="account-username" data-username>Guest</span>
+                            </span>
+                        </a>
+                        <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="action-buttons" data-auth-buttons>
+                <a href="account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
             </div>
-        </nav>
-    </header>
-    <!-- Main -->
-    <main class="bg-gray-800 min-h-[calc(100vh-150px)]">
-        <div class="container mx-auto px-6 py-20 text-center">
-            <h1 class="text-5xl font-extrabold text-white mb-4">Help & Support</h1>
-            <p class="text-lg text-gray-300">This page will contain FAQs and contact information.</p>
+            <div class="action-buttons user-info" data-user-info>
+                <a href="account.html" class="primary-button btn account-button">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="account-text">
+                        <span class="account-title">Account</span>
+                        <span class="account-username" data-username>Guest</span>
+                    </span>
+                </a>
+                <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+            </div>
         </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h1 class="section-title">Help center</h1>
+                        <p class="section-subtitle">Get instant support, browse Stake.com inspired FAQs, and manage responsible gaming tools.</p>
+                    </div>
+                    <div class="badge-pill"><i class="fa-solid fa-headset"></i> Support online 24/7</div>
+                </div>
+                <div class="card-grid">
+                    <article class="surface-card highlight">
+                        <h2 class="card-title">Live chat</h2>
+                        <p class="card-meta">Connect to a support specialist within 60 seconds directly inside the casino lobby.</p>
+                        <div class="hero-actions">
+                            <a href="mailto:support@stakecasino.example" class="primary-button btn"><i class="fa-solid fa-comment-dots"></i> Start chat</a>
+                        </div>
+                        <div class="list-inline">
+                            <span class="chip"><i class="fa-solid fa-language"></i> 8 languages</span>
+                            <span class="chip"><i class="fa-solid fa-clock"></i> Avg 45s wait</span>
+                        </div>
+                    </article>
+                    <article class="surface-card">
+                        <h2 class="card-title">Responsible play</h2>
+                        <p class="card-meta">Set limits, cooling-off periods, and self-exclusion windows that sync with your dashboard.</p>
+                        <ul class="bullet-list">
+                            <li>Deposit, wager, and loss limits</li>
+                            <li>Session reminders and break timers</li>
+                            <li>Access to jurisdictional support resources</li>
+                        </ul>
+                    </article>
+                    <article class="surface-card">
+                        <h2 class="card-title">Community</h2>
+                        <p class="card-meta">Stay informed with Stake.com style announcements, patch notes, and player guides.</p>
+                        <ul class="bullet-list">
+                            <li>Weekly feature rundowns</li>
+                            <li>High-roller Q&amp;A series</li>
+                            <li>Official Discord and Telegram</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Frequently asked questions</h2>
+                        <p class="section-subtitle">Answers to the top requests we receive from Stake.com style players.</p>
+                    </div>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item" open>
+                        <summary><i class="fa-solid fa-wallet"></i> How long do withdrawals take?</summary>
+                        <p>Crypto withdrawals are processed instantly with most networks clearing inside 45 seconds. Larger compliance-flagged payouts surface in your history page with status updates.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><i class="fa-solid fa-gift"></i> Where can I see my bonus progress?</summary>
+                        <p>Bonus rollover, rakeback, and reload tracking live on your dashboard summary and update in real time as you play.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><i class="fa-solid fa-user-shield"></i> How do I enable 2FA?</summary>
+                        <p>Head to the account page, pair your authenticator app, and store the backup code shown. Your device list updates instantly.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><i class="fa-solid fa-file-export"></i> Can I export my play history?</summary>
+                        <p>Yes. Visit the history page, pick a date range, and download CSV or JSON exports for taxes and tracking.</p>
+                    </details>
+                    <details class="faq-item">
+                        <summary><i class="fa-solid fa-flag-checkered"></i> How do cooldowns work?</summary>
+                        <p>Set a duration under Responsible Play. The timer prevents wagering across all games and is reflected on the dashboard timeline.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <div>
+                        <h2 class="section-title">Contact the team</h2>
+                        <p class="section-subtitle">Reach us through whichever channel suits you best.</p>
+                    </div>
+                </div>
+                <div class="table-wrapper">
+                    <table class="table table-compact">
+                        <thead>
+                            <tr>
+                                <th>Channel</th>
+                                <th>Hours</th>
+                                <th>Response time</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><i class="fa-solid fa-comments"></i> Live chat</td>
+                                <td>24/7</td>
+                                <td>Under 1 minute</td>
+                                <td>Launch directly within the casino header.</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa-solid fa-envelope"></i> Email</td>
+                                <td>24/7</td>
+                                <td>Under 2 hours</td>
+                                <td>support@stakecasino.example</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa-solid fa-people-group"></i> Community</td>
+                                <td>Daily</td>
+                                <td>Same day</td>
+                                <td>Join Discord or Telegram for announcements.</td>
+                            </tr>
+                            <tr>
+                                <td><i class="fa-solid fa-shield-heart"></i> Safer gambling hotline</td>
+                                <td>09:00 &ndash; 23:00 UTC</td>
+                                <td>Within 15 minutes</td>
+                                <td>Certified specialists &amp; multilingual support.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
     </main>
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-10"><div class="container mx-auto px-6 text-center text-gray-400"><p>&copy; 2025 Casino Royale. All Rights Reserved.</p></div></footer>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <a href="index.html" class="brand">
+                    <span class="brand-logo">
+                        <img src="assets/images/logo.png" alt="Stake Casino logo">
+                    </span>
+                    <span>Stake Casino</span>
+                </a>
+                <p>Stake.com inspired support hub with instant chat, responsible tools, and FAQ coverage.</p>
+                <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
+            </div>
+            <div>
+                <h4 class="card-title">Product</h4>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="casino.html">Casino</a>
+                    <a href="dashboard.html">Dashboard</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Account</h4>
+                <div class="footer-links">
+                    <a href="history.html">History</a>
+                    <a href="account.html">Account</a>
+                    <a href="settings.html">Settings</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Support</h4>
+                <div class="footer-links">
+                    <a href="help.html">Help Center</a>
+                    <a href="help.html#faq">FAQs</a>
+                    <a href="mailto:support@stakecasino.example">support@stakecasino.example</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Stake Casino. Inspired by Stake.com&rsquo;s world-class experience. Play responsibly.
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
 </body>
 </html>

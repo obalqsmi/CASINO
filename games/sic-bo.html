@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sic Bo | Stake Casino</title>
+    <meta name="description" content="Roll Stake.com inspired Sic Bo with small, big, and triple bets, instant settlements, and live history.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-+1YwkpawuO/7dBDEuDfSU/EYEYVplpXCMVvjJAnYXhYzuq/n6PvJEa3TBUnIFVQGryuVKy7jH9MuNoMylkz7dA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body data-game="sicbo">
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="brand">
+                <span class="brand-logo">
+                    <img src="../assets/images/logo.png" alt="Stake Casino logo">
+                </span>
+                <span>Stake Casino</span>
+            </a>
+            <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" data-nav-links>
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../dashboard.html" class="nav-link">Dashboard</a>
+                <a href="../casino.html" class="nav-link active">Casino</a>
+                <a href="../history.html" class="nav-link">History</a>
+                <a href="../help.html" class="nav-link">Help</a>
+                <a href="../account.html" class="nav-link">Account</a>
+                <a href="../settings.html" class="nav-link">Settings</a>
+                <div class="mobile-only">
+                    <div class="action-buttons" data-mobile-auth>
+                        <a href="../account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
+                    </div>
+                    <div class="action-buttons user-info" data-mobile-user>
+                        <a href="../account.html" class="primary-button btn account-button">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span class="account-text">
+                                <span class="account-title">Account</span>
+                                <span class="account-username" data-username>Guest</span>
+                            </span>
+                        </a>
+                        <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="action-buttons" data-auth-buttons>
+                <a href="../account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
+            </div>
+            <div class="action-buttons user-info" data-user-info>
+                <a href="../account.html" class="primary-button btn account-button">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="account-text">
+                        <span class="account-title">Account</span>
+                        <span class="account-username" data-username>Guest</span>
+                    </span>
+                </a>
+                <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section game-hero">
+            <div class="container">
+                <div class="surface-card highlight game-hero-card">
+                    <div class="hero-label"><i class="fa-solid fa-dice"></i> Dice</div>
+                    <h1 class="hero-title">Sic Bo Tai Sai</h1>
+                    <p class="hero-subtitle">Throw three dice Stake.com style with big, small, and triple bets, full payouts, and balance tracking.</p>
+                    <div class="hero-actions">
+                        <a href="../casino.html" class="ghost-button btn"><i class="fa-solid fa-arrow-left"></i> Back to casino lobby</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="game-layout two-column" data-game-root>
+                    <article class="surface-card game-panel primary-panel">
+                        <div class="game-status-bar">
+                            <div class="balance-badges">
+                                <div class="balance-card">
+                                    <strong>Balance</strong>
+                                    <span>$<span data-balance>0.00</span></span>
+                                </div>
+                                <div class="balance-card">
+                                    <strong>Bet target</strong>
+                                    <span data-selected-bet>SMALL</span>
+                                </div>
+                            </div>
+                            <div class="bet-controls">
+                                <label for="sicbo-bet">Stake</label>
+                                <input type="number" id="sicbo-bet" class="input-field" data-bet-input min="1" step="1" value="15">
+                                <button class="primary-button btn" data-roll><i class="fa-solid fa-dice"></i> Roll</button>
+                            </div>
+                        </div>
+                        <div class="chip-grid">
+                            <button class="chip-button active" data-bet-option="small"><i class="fa-solid fa-arrow-down"></i> Small 4-10</button>
+                            <button class="chip-button" data-bet-option="big"><i class="fa-solid fa-arrow-up"></i> Big 11-17</button>
+                            <button class="chip-button" data-bet-option="triple"><i class="fa-solid fa-dice-three"></i> Triple</button>
+                        </div>
+                        <div class="sicbo-dice">
+                            <div class="dice-face" data-dice>1</div>
+                            <div class="dice-face" data-dice>2</div>
+                            <div class="dice-face" data-dice>3</div>
+                        </div>
+                        <p class="game-status" data-game-message>Select a bet, set your stake, and roll the dice.</p>
+                        <div class="history-wrapper">
+                            <div class="panel-header">
+                                <h2 class="card-title">Roll history</h2>
+                                <span class="panel-meta">Latest rolls first</span>
+                            </div>
+                            <ul class="history-list" data-history></ul>
+                        </div>
+                    </article>
+                    <aside class="surface-card game-panel info-panel">
+                        <h2 class="card-title">Table briefing</h2>
+                        <ul class="bullet-list">
+                            <li>Small wins on totals 4-10 excluding triples.</li>
+                            <li>Big wins on totals 11-17 excluding triples.</li>
+                            <li>Triple bet pays 30:1 whenever all dice match.</li>
+                            <li>History tracks every roll with timestamps.</li>
+                        </ul>
+                        <div class="info-callout">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <div>
+                                <strong>Dice tip:</strong> Mix big and small bets to balance variance and chase triples occasionally.
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <a href="../index.html" class="brand">
+                    <span class="brand-logo">
+                        <img src="../assets/images/logo.png" alt="Stake Casino logo">
+                    </span>
+                    <span>Stake Casino</span>
+                </a>
+                <p>Stake.com inspired interface delivering lightning-fast casino action with deep analytics.</p>
+                <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
+            </div>
+            <div>
+                <h4 class="card-title">Product</h4>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../casino.html">Casino</a>
+                    <a href="../dashboard.html">Dashboard</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Account</h4>
+                <div class="footer-links">
+                    <a href="../history.html">History</a>
+                    <a href="../account.html">Account</a>
+                    <a href="../settings.html">Settings</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Support</h4>
+                <div class="footer-links">
+                    <a href="../help.html">Help Center</a>
+                    <a href="../help.html#faq">FAQs</a>
+                    <a href="mailto:support@stakecasino.example">support@stakecasino.example</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Stake Casino. Inspired by Stake.com&rsquo;s world-class experience. Play responsibly.
+        </div>
+    </footer>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>

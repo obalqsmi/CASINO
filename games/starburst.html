@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starburst Slot | Stake Casino</title>
+    <meta name="description" content="Spin the Stake.com inspired Starburst slot with blazing gems, expanding wilds, and autoplay-ready bankroll tracking.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-+1YwkpawuO/7dBDEuDfSU/EYEYVplpXCMVvjJAnYXhYzuq/n6PvJEa3TBUnIFVQGryuVKy7jH9MuNoMylkz7dA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body data-game="slot-starburst">
+    <header class="site-header">
+        <div class="container">
+            <a href="../index.html" class="brand">
+                <span class="brand-logo">
+                    <img src="../assets/images/logo.png" alt="Stake Casino logo">
+                </span>
+                <span>Stake Casino</span>
+            </a>
+            <button class="menu-toggle" data-menu-toggle aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-links" data-nav-links>
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="../dashboard.html" class="nav-link">Dashboard</a>
+                <a href="../casino.html" class="nav-link active">Casino</a>
+                <a href="../history.html" class="nav-link">History</a>
+                <a href="../help.html" class="nav-link">Help</a>
+                <a href="../account.html" class="nav-link">Account</a>
+                <a href="../settings.html" class="nav-link">Settings</a>
+                <div class="mobile-only">
+                    <div class="action-buttons" data-mobile-auth>
+                        <a href="../account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
+                    </div>
+                    <div class="action-buttons user-info" data-mobile-user>
+                        <a href="../account.html" class="primary-button btn account-button">
+                            <i class="fa-solid fa-circle-user"></i>
+                            <span class="account-text">
+                                <span class="account-title">Account</span>
+                                <span class="account-username" data-username>Guest</span>
+                            </span>
+                        </a>
+                        <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+                    </div>
+                </div>
+            </nav>
+            <div class="action-buttons" data-auth-buttons>
+                <a href="../account.html" class="primary-button btn"><i class="fa-solid fa-circle-plus"></i> Set up profile</a>
+            </div>
+            <div class="action-buttons user-info" data-user-info>
+                <a href="../account.html" class="primary-button btn account-button">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="account-text">
+                        <span class="account-title">Account</span>
+                        <span class="account-username" data-username>Guest</span>
+                    </span>
+                </a>
+                <button class="ghost-button btn" data-logout><i class="fa-solid fa-arrow-right-from-bracket"></i> Log Out</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section game-hero">
+            <div class="container">
+                <div class="surface-card highlight game-hero-card">
+                    <div class="hero-label"><i class="fa-solid fa-gem"></i> Slot</div>
+                    <h1 class="hero-title">Starburst</h1>
+                    <p class="hero-subtitle">Light up the reels with classic Starburst wilds in a Stake.com inspired interface featuring autoplay-ready bankroll management.</p>
+                    <div class="hero-actions">
+                        <a href="../casino.html" class="ghost-button btn"><i class="fa-solid fa-arrow-left"></i> Back to casino lobby</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="game-layout two-column" data-game-root>
+                    <article class="surface-card game-panel primary-panel">
+                        <div class="game-status-bar">
+                            <div class="balance-badges">
+                                <div class="balance-card">
+                                    <strong>Balance</strong>
+                                    <span>$<span data-balance>0.00</span></span>
+                                </div>
+                                <div class="balance-card">
+                                    <strong>Lines</strong>
+                                    <span>10</span>
+                                </div>
+                            </div>
+                            <div class="bet-controls">
+                                <label for="starburst-bet">Stake per spin</label>
+                                <input type="number" id="starburst-bet" class="input-field" data-bet-input min="1" step="1" value="20">
+                                <button class="primary-button btn" data-spin><i class="fa-solid fa-play"></i> Spin</button>
+                            </div>
+                        </div>
+                        <div class="slot-stage">
+                            <div class="slot-reels" data-reels></div>
+                        </div>
+                        <p class="game-status" data-game-message>Set your stake and spin the reels.</p>
+                        <div class="history-wrapper">
+                            <div class="panel-header">
+                                <h2 class="card-title">Spin history</h2>
+                                <span class="panel-meta">Latest spins first</span>
+                            </div>
+                            <ul class="history-list" data-history></ul>
+                        </div>
+                    </article>
+                    <aside class="surface-card game-panel info-panel">
+                        <h2 class="card-title">Slot briefing</h2>
+                        <ul class="bullet-list">
+                            <li>Expanding wilds substitute for any gem to boost left-to-right wins.</li>
+                            <li>Three or more matching symbols from the first reel pay according to the paytable.</li>
+                            <li>Balance automatically adjusts with each spin result.</li>
+                            <li>History log captures wins for fast auditing.</li>
+                        </ul>
+                        <div class="info-callout">
+                            <i class="fa-solid fa-lightbulb"></i>
+                            <div>
+                                <strong>Strategy tip:</strong> Increase stakes after wild expansions to capitalise on streaks.
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div>
+                <a href="../index.html" class="brand">
+                    <span class="brand-logo">
+                        <img src="../assets/images/logo.png" alt="Stake Casino logo">
+                    </span>
+                    <span>Stake Casino</span>
+                </a>
+                <p>Stake.com inspired interface delivering lightning-fast casino action with deep analytics.</p>
+                <div class="tagline"><i class="fa-solid fa-shield-halved"></i> Provably fair • Crypto-first • 24/7 support</div>
+            </div>
+            <div>
+                <h4 class="card-title">Product</h4>
+                <div class="footer-links">
+                    <a href="../index.html">Home</a>
+                    <a href="../casino.html">Casino</a>
+                    <a href="../dashboard.html">Dashboard</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Account</h4>
+                <div class="footer-links">
+                    <a href="../history.html">History</a>
+                    <a href="../account.html">Account</a>
+                    <a href="../settings.html">Settings</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="card-title">Support</h4>
+                <div class="footer-links">
+                    <a href="../help.html">Help Center</a>
+                    <a href="../help.html#faq">FAQs</a>
+                    <a href="mailto:support@stakecasino.example">support@stakecasino.example</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Stake Casino. Inspired by Stake.com&rsquo;s world-class experience. Play responsibly.
+        </div>
+    </footer>
+
+    <script src="../scripts.js"></script>
+</body>
+</html>
