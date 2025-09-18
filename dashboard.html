@@ -3,59 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - Casino Royale</title>
+    <title>Stake Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #1a202c;
         }
     </style>
 </head>
-<body class="text-white">
-
-    <!-- Header Section -->
-    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-yellow-500">
-                <i class="fas fa-gem mr-2"></i>Casino Royale
-            </a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-gray-300 hover:text-yellow-400 transition duration-300">Home</a>
-                <a href="dashboard.html" class="text-yellow-400 font-bold transition duration-300">Dashboard</a>
-                <a href="history.html" class="text-gray-300 hover:text-yellow-400 transition duration-300">History</a>
-                <a href="help.html" class="text-gray-300 hover:text-yellow-400 transition duration-300">Help</a>
-                <a href="settings.html" class="text-gray-300 hover:text-yellow-400 transition duration-300">Settings</a>
+<body class="bg-slate-950 text-slate-100">
+    <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-800 bg-slate-900/80 backdrop-blur-lg">
+        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
+            <div class="flex items-center gap-6">
+                <a href="index.html" class="flex items-center gap-2 text-emerald-400">
+                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10">
+                        <i class="fas fa-dice text-xl"></i>
+                    </span>
+                    <div>
+                        <span class="block text-sm font-semibold text-slate-300">Stake</span>
+                        <span class="text-xl font-extrabold tracking-tight text-white">Casino Hub</span>
+                    </div>
+                </a>
+                <nav class="hidden items-center gap-4 text-sm font-medium text-slate-400 lg:flex">
+                    <span class="rounded-full border border-slate-700 px-3 py-1 text-emerald-300">Dashboard</span>
+                    <a class="rounded-full border border-transparent px-3 py-1 transition hover:border-slate-700 hover:text-emerald-200" href="history.html">History</a>
+                    <a class="rounded-full border border-transparent px-3 py-1 transition hover:border-slate-700 hover:text-emerald-200" href="help.html">Help</a>
+                    <a class="rounded-full border border-transparent px-3 py-1 transition hover:border-slate-700 hover:text-emerald-200" href="settings.html">Settings</a>
+                </nav>
             </div>
-            <!-- In a real app, this would show user info and a logout button -->
-            <div class="hidden md:flex items-center space-x-4">
-                 <button class="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
-                    Log Out
+            <div class="hidden max-w-lg flex-1 items-center justify-center px-6 lg:flex">
+                <label for="global-search" class="relative flex w-full items-center">
+                    <span class="absolute left-4 text-slate-500">
+                        <i class="fas fa-search"></i>
+                    </span>
+                    <input id="global-search" type="search" placeholder="Search games, providers, features" class="w-full rounded-full border border-slate-800 bg-slate-900/60 py-3 pl-12 pr-4 text-sm text-white shadow-inner focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" />
+                    <span class="pointer-events-none absolute right-4 hidden text-[11px] font-semibold uppercase tracking-widest text-slate-500 xl:block">⌘K</span>
+                </label>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="hidden items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-2 lg:flex">
+                    <div class="text-left">
+                        <p class="text-[11px] uppercase tracking-wider text-slate-500">Wallet Balance</p>
+                        <p class="text-lg font-semibold text-white">0.00000000 BTC</p>
+                    </div>
+                    <button class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-300 transition hover:bg-emerald-500/20">
+                        <i class="fas fa-wallet"></i>
+                    </button>
+                </div>
+                <button class="hidden h-10 w-10 items-center justify-center rounded-xl border border-slate-800 text-slate-400 transition hover:border-emerald-400 hover:text-emerald-300 sm:flex">
+                    <i class="fas fa-bell"></i>
+                </button>
+                <button class="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/60 text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">
+                    <i class="fas fa-user"></i>
                 </button>
             </div>
-            <button class="md:hidden text-white">
-                <i class="fas fa-bars text-2xl"></i>
-            </button>
-        </nav>
+        </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="bg-gray-800">
-        <div class="container mx-auto px-6 py-20 text-center">
-            <h1 class="text-5xl font-extrabold text-white mb-4">Dashboard</h1>
-            <p class="text-lg text-gray-300">Welcome! This is where the main game selection will be.</p>
-        </div>
-    </main>
+    <div class="flex min-h-screen pt-20">
+        <aside class="fixed bottom-0 left-0 top-20 hidden w-72 flex-col border-r border-slate-800 bg-slate-950/70 backdrop-blur xl:flex">
+            <div class="flex-1 overflow-y-auto px-6 py-8">
+                <div class="mb-8 flex items-center justify-between text-xs uppercase tracking-widest text-slate-500">
+                    <span>Main</span>
+                    <button class="rounded-full border border-slate-800 px-3 py-1 text-[10px] font-semibold text-slate-400 transition hover:border-emerald-400 hover:text-emerald-300">Collapse</button>
+                </div>
+                <nav class="space-y-6 text-sm font-semibold text-slate-400">
+                    <div class="space-y-1">
+                        <a href="#" class="flex items-center justify-between rounded-xl border border-transparent bg-emerald-500/10 px-4 py-3 text-emerald-200">
+                            <span class="flex items-center gap-3">
+                                <i class="fas fa-chess-knight"></i>
+                                Casino
+                            </span>
+                            <i class="fas fa-chevron-right text-xs"></i>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
+                            <i class="fas fa-basketball-ball"></i>
+                            Sports
+                        </a>
+                        <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
+                            <i class="fas fa-ticket"></i>
+                            My Bets
+                        </a>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="px-4 text-xs font-medium uppercase tracking-widest text-slate-500">Live Events</p>
+                        <a href="#" class="flex items-center justify-between rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
+                            <span class="flex items-center gap-3">
+                                <span class="relative">
+                                    <span class="absolute -left-2 -top-2 h-2 w-2 rounded-full bg-emerald-400"></span>
+                                    <i class="fas fa-broadcast-tower ml-2"></i>
+                                </span>
+                                Live Events
+                            </span>
+                            <span class="rounded-full bg-emerald-500/20 px-2 text-xs text-emerald-300">12</span>
+                        </a>
+                        <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
+                            <i class="fas fa-clock"></i>
+                            Starting Soon
+                        </a>
+                        <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
+                            <i class="fas fa-fire"></i>
+                            Popular Leagues
+                        </a>
+                    </div>
+                </nav>
+            </div>
+            <div class="border-t border-slate-800 px-6 py-6">
+                <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-400">
+                    <p class="font-semibold text-slate-200">Stake Tips</p>
+                    <p class="mt-2 leading-relaxed text-slate-400">Future modules like wallets, games, and live counters will appear here. Layout scaffolding is now in place.</p>
+                </div>
+            </div>
+        </aside>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-10">
-        <div class="container mx-auto px-6 text-center text-gray-400">
-             <p>&copy; 2025 Casino Royale. All Rights Reserved.</p>
-             <p class="text-sm mt-2">Please gamble responsibly.</p>
-        </div>
-    </footer>
+        <main class="flex-1 px-6 pb-16 pt-10 xl:ml-72">
+            <div class="mx-auto w-full max-w-6xl space-y-10">
+                <section class="rounded-3xl border border-slate-800 bg-slate-900/40 p-8 shadow-xl shadow-slate-950/30">
+                    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                        <div>
+                            <p class="text-sm font-medium uppercase tracking-widest text-emerald-300">Overview</p>
+                            <h1 class="text-3xl font-bold text-white">Stake-style Dashboard</h1>
+                        </div>
+                        <div class="flex items-center gap-3 text-xs text-slate-400">
+                            <span class="inline-flex items-center gap-2 rounded-full border border-slate-800 px-3 py-1">
+                                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+                                Layout Ready
+                            </span>
+                            <span class="inline-flex items-center gap-2 rounded-full border border-slate-800 px-3 py-1">
+                                <i class="fas fa-layer-group"></i>
+                                Step 1 of 8
+                            </span>
+                        </div>
+                    </div>
+                    <p class="mt-6 text-sm leading-relaxed text-slate-400">The structural layout mirrors Stake&apos;s dashboard hierarchy with a persistent top bar, sidebar navigation, and a central stage for casino experiences. Future steps will progressively add interactive tabs, games, wallet mechanics, and persistent state.</p>
+                </section>
 
+                <section class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+                    <article class="rounded-2xl border border-dashed border-slate-800/70 bg-slate-900/30 p-6 text-center">
+                        <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Coming Up</p>
+                        <h2 class="mt-4 text-xl font-bold text-white">Stake Originals Grid</h2>
+                        <p class="mt-3 text-sm text-slate-400">Interactive cards for Dice, Crash, Plinko, Mines, Limbo, and Blackjack will live here.</p>
+                    </article>
+                    <article class="rounded-2xl border border-dashed border-slate-800/70 bg-slate-900/30 p-6 text-center">
+                        <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">In Progress</p>
+                        <h2 class="mt-4 text-xl font-bold text-white">Wallet &amp; Bet Controls</h2>
+                        <p class="mt-3 text-sm text-slate-400">Deposit, withdrawal, chip denominations, and betting sliders will occupy the dedicated controls panel.</p>
+                    </article>
+                    <article class="rounded-2xl border border-dashed border-slate-800/70 bg-slate-900/30 p-6 text-center">
+                        <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Future</p>
+                        <h2 class="mt-4 text-xl font-bold text-white">Slots Carousel &amp; Simulators</h2>
+                        <p class="mt-3 text-sm text-slate-400">Stake-favorite slots like Sweet Bonanza and Gates of Olympus will spin from this section.</p>
+                    </article>
+                </section>
+
+                <section class="rounded-3xl border border-slate-800 bg-slate-900/40 p-8">
+                    <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                        <div class="max-w-2xl">
+                            <h2 class="text-2xl font-semibold text-white">Implementation Roadmap</h2>
+                            <p class="mt-3 text-sm text-slate-400">Each phase will extend this scaffold without disrupting the established structure. The next iteration adds tabbed navigation and interactive modules while preserving the top-level layout introduced here.</p>
+                        </div>
+                        <ul class="grid gap-2 text-sm text-slate-400">
+                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Step 1: Layout foundation ✅</li>
+                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 2: Tabs &amp; navigation</li>
+                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 3: Stake Originals grid</li>
+                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 4: Wallet &amp; bet controls</li>
+                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 5: Game engines</li>
+                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 6: Slots simulator</li>
+                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 7: History, favorites, search</li>
+                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 8: Settings &amp; security</li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
 </body>
 </html>
