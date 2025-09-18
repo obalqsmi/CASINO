@@ -1,38 +1,591 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help - Casino Royale</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stake Casino Hub · Help Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1a202c; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
-<body class="text-white">
-    <!-- Header -->
-    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-yellow-500"><i class="fas fa-gem mr-2"></i>Casino Royale</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-gray-300 hover:text-yellow-400">Home</a>
-                <a href="dashboard.html" class="text-gray-300 hover:text-yellow-400">Dashboard</a>
-                <a href="history.html" class="text-gray-300 hover:text-yellow-400">History</a>
-                <a href="help.html" class="text-yellow-400 font-bold">Help</a>
-                <a href="settings.html" class="text-gray-300 hover:text-yellow-400">Settings</a>
+<body class="bg-slate-950 text-slate-100">
+    <div class="flex min-h-screen bg-slate-950">
+        <aside id="primary-sidebar" class="hidden w-72 flex-col border-r border-slate-900/70 bg-slate-950/60 backdrop-blur-xl xl:fixed xl:inset-y-0 xl:flex" aria-label="Primary navigation">
+            <div class="flex-1 overflow-y-auto px-6 pb-12 pt-10">
+                <a href="index.html" class="flex items-center gap-3 text-emerald-400">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-2xl">
+                        <i class="fas fa-dice"></i>
+                    </span>
+                    <span>
+                        <span class="block text-xs uppercase tracking-[0.4em] text-slate-500">Stake</span>
+                        <span class="text-xl font-bold text-white">Casino Hub</span>
+                    </span>
+                </a>
+                <nav class="mt-12 space-y-6 text-sm font-medium text-slate-400">
+                    <div>
+                        <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Casino</p>
+                        <div class="mt-3 space-y-1">
+                            <a href="index.html" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-chess-knight"></i>Lobby
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-basketball-ball"></i>Sports
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-ticket"></i>My Bets
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Live</p>
+                        <div class="mt-3 space-y-1">
+                            <a href="#" class="flex items-center justify-between rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <span class="flex items-center gap-3">
+                                    <span class="relative">
+                                        <span class="absolute -left-2 -top-2 h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+                                        <i class="fas fa-broadcast-tower ml-3"></i>
+                                    </span>
+                                    Live Events
+                                </span>
+                                <span id="live-events-count" class="rounded-full bg-emerald-500/20 px-2 text-xs font-semibold text-emerald-200">12</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-stopwatch"></i>Starting Soon
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-fire"></i>Popular Leagues
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Account</p>
+                        <div class="mt-3 space-y-1">
+                            <a href="history.html" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-history"></i>History
+                            </a>
+                            <a href="settings.html" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-sliders-h"></i>Settings
+                            </a>
+                            <a href="help.html" aria-current="page" class="flex items-center justify-between rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-emerald-200 shadow-inner shadow-emerald-500/10">
+                                <span class="flex items-center gap-3"><i class="fas fa-circle-question"></i>Help Center</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </nav>
-    </header>
-    <!-- Main -->
-    <main class="bg-gray-800 min-h-[calc(100vh-150px)]">
-        <div class="container mx-auto px-6 py-20 text-center">
-            <h1 class="text-5xl font-extrabold text-white mb-4">Help & Support</h1>
-            <p class="text-lg text-gray-300">This page will contain FAQs and contact information.</p>
+            <div class="border-t border-slate-900/60 px-6 py-8 text-xs text-slate-500">
+                <p class="font-semibold text-slate-300">Need assistance?</p>
+                <p class="mt-2 leading-relaxed text-slate-500">The help center collects FAQs, contact workflows, and responsible gaming resources once customer support integrations are wired in Step 7.</p>
+            </div>
+        </aside>
+
+        <div id="mobile-sidebar-backdrop" class="fixed inset-0 z-40 hidden bg-slate-950/80 backdrop-blur-sm xl:hidden" aria-hidden="true"></div>
+
+        <div class="flex min-h-screen flex-1 flex-col xl:ml-72">
+            <header class="sticky top-0 z-40 border-b border-slate-900/70 bg-slate-950/90 backdrop-blur">
+                <div class="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-10">
+                    <div class="flex items-center gap-4">
+                        <button id="mobile-nav-toggle" class="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-800 text-slate-300 transition hover:border-emerald-400 hover:text-emerald-300 xl:hidden" type="button" aria-label="Toggle navigation" aria-controls="primary-sidebar" aria-expanded="false">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <a href="index.html" class="flex items-center gap-3 xl:hidden">
+                            <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-300">
+                                <i class="fas fa-dice"></i>
+                            </span>
+                            <span>
+                                <span class="block text-xs uppercase tracking-[0.4em] text-slate-500">Stake</span>
+                                <span class="text-lg font-semibold text-white">Casino Hub</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="hidden max-w-xl flex-1 items-center justify-center px-6 md:flex">
+                        <label for="global-search" class="relative flex w-full items-center">
+                            <span class="absolute left-4 text-slate-500"><i class="fas fa-search"></i></span>
+                            <input id="global-search" type="search" placeholder="Search games, providers, or features" class="w-full rounded-full border border-slate-900/70 bg-slate-950/80 py-3 pl-12 pr-4 text-sm text-slate-100 shadow-inner shadow-black/40 transition focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30" />
+                            <span class="pointer-events-none absolute right-4 hidden text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500 lg:block">⌘K</span>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div id="wallet-summary" class="hidden items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-2 text-left text-sm shadow-inner shadow-black/40 sm:flex">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Balance</p>
+                                <p id="wallet-balance" class="text-lg font-semibold text-white">0.00000000 BTC</p>
+                            </div>
+                            <button class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-300 transition hover:bg-emerald-500/20" aria-label="Wallet actions">
+                                <i class="fas fa-wallet"></i>
+                            </button>
+                        </div>
+                        <button class="hidden h-11 w-11 items-center justify-center rounded-2xl border border-slate-900/70 text-slate-400 transition hover:border-emerald-400 hover:text-emerald-300 sm:flex" aria-label="Notifications">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <div id="auth-actions" class="flex items-center gap-2">
+                            <a href="login.html" class="rounded-xl border border-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Log In</a>
+                            <a href="signup.html" class="rounded-xl bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400">Sign Up</a>
+                        </div>
+                        <div id="profile-summary" class="hidden items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-3 py-2 text-sm shadow-inner shadow-black/40">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Player</p>
+                                <p id="header-username" class="font-semibold text-white">Player</p>
+                            </div>
+                            <button id="logout-button" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-900/70 text-slate-400 transition hover:border-red-400 hover:text-red-300" aria-label="Log out">
+                                <i class="fas fa-arrow-right-from-bracket"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-y-auto px-4 pb-16 pt-10 sm:px-6 lg:px-10">
+                <section class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-8 shadow-inner shadow-black/40">
+                    <div class="flex flex-col gap-6 lg:flex-row lg:justify-between">
+                        <div>
+                            <h2 class="text-2xl font-semibold text-white">Support overview</h2>
+                            <p class="mt-3 max-w-2xl text-sm text-slate-400">Knowledge base articles, live chat, and player safety workflows will power this hub. The layout now matches the Stake aesthetic while we prepare for integrations.</p>
+                        </div>
+                        <div class="grid gap-3 text-sm text-slate-300">
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-3">Step 7 · FAQs &amp; guides</div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-3">Step 7 · Support contact</div>
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-3">Step 8 · Responsible gaming tools</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mt-10 grid gap-6 lg:grid-cols-2">
+                    <article class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-6">
+                        <h3 class="text-lg font-semibold text-white">FAQs in progress</h3>
+                        <ul class="mt-4 space-y-3 text-sm text-slate-400">
+                            <li class="flex gap-3"><span class="text-emerald-300"><i class="fas fa-circle"></i></span>How provably-fair games generate results</li>
+                            <li class="flex gap-3"><span class="text-emerald-300"><i class="fas fa-circle"></i></span>Managing wallets, chips, and conversions</li>
+                            <li class="flex gap-3"><span class="text-emerald-300"><i class="fas fa-circle"></i></span>Using auto-bet &amp; risk controls responsibly</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-6">
+                        <h3 class="text-lg font-semibold text-white">Need live help?</h3>
+                        <p class="mt-4 text-sm text-slate-400">Live chat, email support, and social channels will integrate here. For now, bookmark this space—alerts and contact options will surface alongside Step 7 features.</p>
+                        <div class="mt-6 grid gap-3">
+                            <button class="rounded-2xl border border-slate-900/70 px-4 py-3 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Live chat (soon)</button>
+                            <button class="rounded-2xl border border-slate-900/70 px-4 py-3 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Email support (soon)</button>
+                            <button class="rounded-2xl border border-slate-900/70 px-4 py-3 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Community (soon)</button>
+                        </div>
+                    </article>
+                    <article class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-6 lg:col-span-2">
+                        <h3 class="text-lg font-semibold text-white">Responsible gaming resources</h3>
+                        <p class="mt-4 text-sm text-slate-400">Self-exclusion, deposit limits, session reminders, and cooling-off periods will integrate with Step 8&apos;s lock and shred mechanisms to maintain player safety.</p>
+                        <div class="mt-6 grid gap-3 md:grid-cols-2">
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-4 text-sm text-slate-400">Session limits &amp; reminders</div>
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-4 text-sm text-slate-400">Self-exclusion &amp; account pauses</div>
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-4 text-sm text-slate-400">Third-party counseling links</div>
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-4 text-sm text-slate-400">Jurisdiction compliance tools</div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="mt-10 rounded-3xl border border-dashed border-emerald-500/40 bg-emerald-500/5 p-8 text-sm text-emerald-100">
+                    <h3 class="text-lg font-semibold text-emerald-200">Stay tuned</h3>
+                    <ul class="mt-4 space-y-2 text-slate-200">
+                        <li>Dynamic search across FAQs and help articles.</li>
+                        <li>Ticket submission tied to your Stake account.</li>
+                        <li>Real-time outage and maintenance notices.</li>
+                        <li>Integrated knowledge base for all casino modules.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <footer class="border-t border-slate-900/70 bg-slate-950/80 px-4 py-6 text-xs text-slate-500 sm:px-6 lg:px-10">
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <p>&copy; <span id="footer-year"></span> Stake Casino Hub.</p>
+                    <p>Help center integrations will unlock alongside Step 7.</p>
+                </div>
+            </footer>
         </div>
-    </main>
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-10"><div class="container mx-auto px-6 text-center text-gray-400"><p>&copy; 2025 Casino Royale. All Rights Reserved.</p></div></footer>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'stakeCasinoState';
+        const legacyUserKey = 'casinoUser';
+
+        const defaultState = {
+            version: 2,
+            user: null,
+            wallet: {
+                currency: 'BTC',
+                balance: 0,
+                chips: [0.0000005, 0.000001, 0.000002, 0.000005]
+            },
+            favorites: [],
+            history: [],
+            settings: {
+                sound: true,
+                shredMode: false,
+                decoyAccount: null
+            },
+            live: {
+                events: 12
+            },
+            roadmap: {
+                step: 2
+            },
+            navigation: {
+                activeTab: 'lobby',
+                sidebarOpen: false
+            }
+        };
+
+        const hydrateState = () => {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) {
+                return JSON.parse(JSON.stringify(defaultState));
+            }
+
+            try {
+                const parsed = JSON.parse(raw);
+                return {
+                    ...JSON.parse(JSON.stringify(defaultState)),
+                    ...parsed,
+                    wallet: {
+                        ...defaultState.wallet,
+                        ...(parsed.wallet || {})
+                    },
+                    settings: {
+                        ...defaultState.settings,
+                        ...(parsed.settings || {})
+                    },
+                    live: {
+                        ...defaultState.live,
+                        ...(parsed.live || {})
+                    },
+                    roadmap: {
+                        ...defaultState.roadmap,
+                        ...(parsed.roadmap || {})
+                    },
+                    navigation: {
+                        ...defaultState.navigation,
+                        ...(parsed.navigation || {})
+                    }
+                };
+            } catch (error) {
+                console.warn('Unable to parse stored state, resetting.', error);
+                return JSON.parse(JSON.stringify(defaultState));
+            }
+        };
+
+        const saveState = (state) => {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        };
+
+        const state = hydrateState();
+
+        const ensureNavigationState = () => {
+            if (!state.navigation || typeof state.navigation !== 'object') {
+                state.navigation = { ...defaultState.navigation };
+                return;
+            }
+
+            state.navigation = {
+                ...defaultState.navigation,
+                ...state.navigation
+            };
+        };
+
+        ensureNavigationState();
+
+        if (state.version !== defaultState.version) {
+            state.version = defaultState.version;
+            saveState(state);
+        }
+
+        const ensureRoadmapProgress = () => {
+            if (!state.roadmap || typeof state.roadmap !== 'object') {
+                state.roadmap = { ...defaultState.roadmap };
+                saveState(state);
+                return;
+            }
+
+            if (typeof state.roadmap.step !== 'number' || state.roadmap.step < 2) {
+                state.roadmap.step = 2;
+                saveState(state);
+            }
+        };
+
+        ensureRoadmapProgress();
+
+        const legacyUserRaw = localStorage.getItem(legacyUserKey);
+        if (!state.user && legacyUserRaw) {
+            try {
+                const legacyUser = JSON.parse(legacyUserRaw);
+                if (legacyUser && legacyUser.username) {
+                    state.user = {
+                        username: legacyUser.username,
+                        email: legacyUser.email || null
+                    };
+                    saveState(state);
+                }
+            } catch (error) {
+                console.warn('Unable to parse legacy user data.', error);
+            }
+        }
+
+        const TAB_ORDER = ['lobby', 'live-casino', 'featured-slots', 'game-shows', 'stake-originals'];
+        const TAB_SHORTCUTS = {
+            '1': 'lobby',
+            '2': 'live-casino',
+            '3': 'featured-slots',
+            '4': 'game-shows',
+            '5': 'stake-originals'
+        };
+
+        const tabButtons = Array.from(document.querySelectorAll('[data-tab]'));
+        const tabPanels = Array.from(document.querySelectorAll('[data-tab-panel]'));
+        const tabButtonMap = new Map(tabButtons.map((button) => [button.dataset.tab, button]));
+        const tabPanelMap = new Map(tabPanels.map((panel) => [panel.dataset.tabPanel, panel]));
+        const roadmapPills = document.querySelectorAll('[data-roadmap-step]');
+        const mobileToggle = document.getElementById('mobile-nav-toggle');
+        const sidebar = document.getElementById('primary-sidebar');
+        const sidebarBackdrop = document.getElementById('mobile-sidebar-backdrop');
+
+        const updateRoadmapPills = () => {
+            const currentStep = state.roadmap && typeof state.roadmap.step === 'number' ? state.roadmap.step : 1;
+            roadmapPills.forEach((pill) => {
+                const pillStep = Number(pill.dataset.roadmapStep);
+                let status = 'upcoming';
+                if (currentStep > pillStep) {
+                    status = 'complete';
+                } else if (currentStep === pillStep) {
+                    status = 'active';
+                }
+                pill.setAttribute('data-status', status);
+            });
+        };
+
+        updateRoadmapPills();
+
+        const renderTabs = ({ focusButton = false } = {}) => {
+            const active = state.navigation?.activeTab || defaultState.navigation.activeTab;
+            TAB_ORDER.forEach((tabId) => {
+                const button = tabButtonMap.get(tabId);
+                const panel = tabPanelMap.get(tabId);
+                const isActive = tabId === active;
+
+                if (button) {
+                    button.classList.toggle('tab-button-active', isActive);
+                    button.setAttribute('aria-selected', isActive ? 'true' : 'false');
+                    button.setAttribute('tabindex', isActive ? '0' : '-1');
+                    if (isActive && focusButton) {
+                        requestAnimationFrame(() => button.focus());
+                    }
+                }
+
+                if (panel) {
+                    if (isActive) {
+                        panel.removeAttribute('hidden');
+                        panel.setAttribute('tabindex', '0');
+                    } else {
+                        panel.setAttribute('hidden', 'true');
+                        panel.setAttribute('tabindex', '-1');
+                    }
+                }
+            });
+        };
+
+        const setActiveTab = (tabId, { focusButton = false, persist = true } = {}) => {
+            const normalized = TAB_ORDER.includes(tabId) ? tabId : defaultState.navigation.activeTab;
+            ensureNavigationState();
+            const previous = state.navigation.activeTab;
+            state.navigation.activeTab = normalized;
+            if (persist && previous !== normalized) {
+                saveState(state);
+            }
+            renderTabs({ focusButton });
+        };
+
+        if (tabButtons.length && tabPanels.length) {
+            renderTabs();
+
+            tabButtons.forEach((button) => {
+                const tabId = button.dataset.tab;
+                button.addEventListener('click', () => setActiveTab(tabId));
+                button.addEventListener('keydown', (event) => {
+                    const index = TAB_ORDER.indexOf(tabId);
+                    if (event.key === 'ArrowRight') {
+                        event.preventDefault();
+                        const next = (index + 1) % TAB_ORDER.length;
+                        setActiveTab(TAB_ORDER[next], { focusButton: true });
+                        return;
+                    }
+                    if (event.key === 'ArrowLeft') {
+                        event.preventDefault();
+                        const prev = (index - 1 + TAB_ORDER.length) % TAB_ORDER.length;
+                        setActiveTab(TAB_ORDER[prev], { focusButton: true });
+                        return;
+                    }
+                    if (event.key === 'Home') {
+                        event.preventDefault();
+                        setActiveTab(TAB_ORDER[0], { focusButton: true });
+                        return;
+                    }
+                    if (event.key === 'End') {
+                        event.preventDefault();
+                        setActiveTab(TAB_ORDER[TAB_ORDER.length - 1], { focusButton: true });
+                        return;
+                    }
+                    if (event.key === ' ' || event.key === 'Enter') {
+                        event.preventDefault();
+                        setActiveTab(tabId, { focusButton: true });
+                    }
+                });
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if ((event.metaKey || event.ctrlKey) && !event.shiftKey && TAB_SHORTCUTS[event.key]) {
+                    event.preventDefault();
+                    setActiveTab(TAB_SHORTCUTS[event.key], { focusButton: true });
+                }
+            });
+        }
+
+        const applySidebarState = (open) => {
+            if (!sidebar) {
+                return;
+            }
+
+            if (open) {
+                sidebar.classList.remove('hidden');
+                sidebar.classList.add('fixed', 'inset-y-0', 'left-0', 'top-0', 'z-50', 'flex');
+                sidebar.setAttribute('aria-hidden', 'false');
+                mobileToggle?.setAttribute('aria-expanded', 'true');
+                sidebarBackdrop?.classList.remove('hidden');
+            } else {
+                sidebar.classList.add('hidden');
+                sidebar.classList.remove('fixed', 'inset-y-0', 'left-0', 'top-0', 'z-50', 'flex');
+                sidebar.setAttribute('aria-hidden', 'true');
+                mobileToggle?.setAttribute('aria-expanded', 'false');
+                sidebarBackdrop?.classList.add('hidden');
+            }
+        };
+
+        const desktopQuery = window.matchMedia('(min-width: 1280px)');
+
+        const setSidebarOpen = (open, { persist = true } = {}) => {
+            ensureNavigationState();
+            if (state.navigation.sidebarOpen === open) {
+                if (!desktopQuery.matches) {
+                    applySidebarState(open);
+                }
+                return;
+            }
+
+            state.navigation.sidebarOpen = open;
+            if (persist) {
+                saveState(state);
+            }
+
+            if (!desktopQuery.matches) {
+                applySidebarState(open);
+            }
+        };
+
+        const syncSidebarForViewport = (event) => {
+            const matches = typeof event.matches === 'boolean' ? event.matches : !!event;
+            if (matches) {
+                if (sidebar) {
+                    sidebar.classList.remove('hidden', 'fixed', 'inset-y-0', 'left-0', 'top-0', 'z-50', 'flex');
+                    sidebar.setAttribute('aria-hidden', 'false');
+                }
+                sidebarBackdrop?.classList.add('hidden');
+                mobileToggle?.setAttribute('aria-expanded', 'false');
+                if (state.navigation.sidebarOpen) {
+                    state.navigation.sidebarOpen = false;
+                    saveState(state);
+                }
+            } else {
+                applySidebarState(Boolean(state.navigation.sidebarOpen));
+            }
+        };
+
+        if (sidebar) {
+            syncSidebarForViewport(desktopQuery);
+            if (typeof desktopQuery.addEventListener === 'function') {
+                desktopQuery.addEventListener('change', syncSidebarForViewport);
+            } else if (typeof desktopQuery.addListener === 'function') {
+                desktopQuery.addListener(syncSidebarForViewport);
+            }
+        }
+
+        if (mobileToggle) {
+            mobileToggle.addEventListener('click', () => {
+                setSidebarOpen(!state.navigation.sidebarOpen);
+            });
+        }
+
+        sidebarBackdrop?.addEventListener('click', () => setSidebarOpen(false));
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape' && state.navigation.sidebarOpen && !desktopQuery.matches) {
+                setSidebarOpen(false);
+            }
+        });
+
+        const authActions = document.getElementById('auth-actions');
+        const profileSummary = document.getElementById('profile-summary');
+        const usernameLabel = document.getElementById('header-username');
+        const logoutButton = document.getElementById('logout-button');
+        const walletBalance = document.getElementById('wallet-balance');
+        const walletSummary = document.getElementById('wallet-summary');
+        const liveEventsCount = document.getElementById('live-events-count');
+        const footerYear = document.getElementById('footer-year');
+
+        const renderHeader = () => {
+            if (footerYear) {
+                footerYear.textContent = new Date().getFullYear();
+            }
+
+            if (liveEventsCount && state.live && typeof state.live.events === 'number') {
+                liveEventsCount.textContent = state.live.events;
+            }
+
+            if (walletBalance && walletSummary && state.wallet && typeof state.wallet.balance === 'number') {
+                const formatted = state.wallet.balance.toLocaleString('en-US', {
+                    minimumFractionDigits: 8,
+                    maximumFractionDigits: 8
+                });
+                walletBalance.textContent = `${formatted} ${state.wallet.currency || 'BTC'}`;
+                walletSummary.classList.remove('hidden');
+            } else if (walletSummary) {
+                walletSummary.classList.add('hidden');
+            }
+
+            if (state.user && state.user.username) {
+                if (usernameLabel) {
+                    usernameLabel.textContent = state.user.username;
+                }
+                profileSummary?.classList.remove('hidden');
+                authActions?.classList.add('hidden');
+            } else {
+                profileSummary?.classList.add('hidden');
+                authActions?.classList.remove('hidden');
+            }
+        };
+
+        renderHeader();
+
+        if (logoutButton) {
+            logoutButton.addEventListener('click', () => {
+                state.user = null;
+                saveState(state);
+                localStorage.removeItem(legacyUserKey);
+                renderHeader();
+            });
+        }
+    </script>
 </body>
 </html>
