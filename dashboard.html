@@ -1,183 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stake Dashboard</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="refresh" content="0; url=index.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stake Casino Hub · Redirecting</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top, rgba(16, 185, 129, 0.15), rgba(15, 23, 42, 1));
+            color: #cbd5f5;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        .card {
+            padding: 2.5rem 2rem;
+            border-radius: 1.5rem;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(20, 83, 45, 0.4);
+            box-shadow: 0 40px 80px -24px rgba(16, 185, 129, 0.35);
+            text-align: center;
+            max-width: 480px;
+            width: 90%;
+        }
+        .card h1 {
+            font-size: 1.75rem;
+            color: #f9fafb;
+            margin-bottom: 0.75rem;
+        }
+        .card p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #a5b4fc;
+        }
+        .card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1.75rem;
+            padding: 0.6rem 1.6rem;
+            border-radius: 9999px;
+            background: rgba(16, 185, 129, 0.2);
+            color: #34d399;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .card a:hover {
+            background: rgba(16, 185, 129, 0.35);
+            transform: translateY(-1px);
         }
     </style>
 </head>
-<body class="bg-slate-950 text-slate-100">
-    <header class="fixed inset-x-0 top-0 z-50 border-b border-slate-800 bg-slate-900/80 backdrop-blur-lg">
-        <div class="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-            <div class="flex items-center gap-6">
-                <a href="index.html" class="flex items-center gap-2 text-emerald-400">
-                    <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10">
-                        <i class="fas fa-dice text-xl"></i>
-                    </span>
-                    <div>
-                        <span class="block text-sm font-semibold text-slate-300">Stake</span>
-                        <span class="text-xl font-extrabold tracking-tight text-white">Casino Hub</span>
-                    </div>
-                </a>
-                <nav class="hidden items-center gap-4 text-sm font-medium text-slate-400 lg:flex">
-                    <span class="rounded-full border border-slate-700 px-3 py-1 text-emerald-300">Dashboard</span>
-                    <a class="rounded-full border border-transparent px-3 py-1 transition hover:border-slate-700 hover:text-emerald-200" href="history.html">History</a>
-                    <a class="rounded-full border border-transparent px-3 py-1 transition hover:border-slate-700 hover:text-emerald-200" href="help.html">Help</a>
-                    <a class="rounded-full border border-transparent px-3 py-1 transition hover:border-slate-700 hover:text-emerald-200" href="settings.html">Settings</a>
-                </nav>
-            </div>
-            <div class="hidden max-w-lg flex-1 items-center justify-center px-6 lg:flex">
-                <label for="global-search" class="relative flex w-full items-center">
-                    <span class="absolute left-4 text-slate-500">
-                        <i class="fas fa-search"></i>
-                    </span>
-                    <input id="global-search" type="search" placeholder="Search games, providers, features" class="w-full rounded-full border border-slate-800 bg-slate-900/60 py-3 pl-12 pr-4 text-sm text-white shadow-inner focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/40" />
-                    <span class="pointer-events-none absolute right-4 hidden text-[11px] font-semibold uppercase tracking-widest text-slate-500 xl:block">⌘K</span>
-                </label>
-            </div>
-            <div class="flex items-center gap-4">
-                <div class="hidden items-center gap-3 rounded-2xl border border-slate-800 bg-slate-900/60 px-4 py-2 lg:flex">
-                    <div class="text-left">
-                        <p class="text-[11px] uppercase tracking-wider text-slate-500">Wallet Balance</p>
-                        <p class="text-lg font-semibold text-white">0.00000000 BTC</p>
-                    </div>
-                    <button class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-300 transition hover:bg-emerald-500/20">
-                        <i class="fas fa-wallet"></i>
-                    </button>
-                </div>
-                <button class="hidden h-10 w-10 items-center justify-center rounded-xl border border-slate-800 text-slate-400 transition hover:border-emerald-400 hover:text-emerald-300 sm:flex">
-                    <i class="fas fa-bell"></i>
-                </button>
-                <button class="flex h-12 w-12 items-center justify-center rounded-2xl border border-slate-800 bg-slate-900/60 text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">
-                    <i class="fas fa-user"></i>
-                </button>
-            </div>
-        </div>
-    </header>
-
-    <div class="flex min-h-screen pt-20">
-        <aside class="fixed bottom-0 left-0 top-20 hidden w-72 flex-col border-r border-slate-800 bg-slate-950/70 backdrop-blur xl:flex">
-            <div class="flex-1 overflow-y-auto px-6 py-8">
-                <div class="mb-8 flex items-center justify-between text-xs uppercase tracking-widest text-slate-500">
-                    <span>Main</span>
-                    <button class="rounded-full border border-slate-800 px-3 py-1 text-[10px] font-semibold text-slate-400 transition hover:border-emerald-400 hover:text-emerald-300">Collapse</button>
-                </div>
-                <nav class="space-y-6 text-sm font-semibold text-slate-400">
-                    <div class="space-y-1">
-                        <a href="#" class="flex items-center justify-between rounded-xl border border-transparent bg-emerald-500/10 px-4 py-3 text-emerald-200">
-                            <span class="flex items-center gap-3">
-                                <i class="fas fa-chess-knight"></i>
-                                Casino
-                            </span>
-                            <i class="fas fa-chevron-right text-xs"></i>
-                        </a>
-                        <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
-                            <i class="fas fa-basketball-ball"></i>
-                            Sports
-                        </a>
-                        <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
-                            <i class="fas fa-ticket"></i>
-                            My Bets
-                        </a>
-                    </div>
-                    <div class="space-y-1">
-                        <p class="px-4 text-xs font-medium uppercase tracking-widest text-slate-500">Live Events</p>
-                        <a href="#" class="flex items-center justify-between rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
-                            <span class="flex items-center gap-3">
-                                <span class="relative">
-                                    <span class="absolute -left-2 -top-2 h-2 w-2 rounded-full bg-emerald-400"></span>
-                                    <i class="fas fa-broadcast-tower ml-2"></i>
-                                </span>
-                                Live Events
-                            </span>
-                            <span class="rounded-full bg-emerald-500/20 px-2 text-xs text-emerald-300">12</span>
-                        </a>
-                        <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
-                            <i class="fas fa-clock"></i>
-                            Starting Soon
-                        </a>
-                        <a href="#" class="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-slate-900/60">
-                            <i class="fas fa-fire"></i>
-                            Popular Leagues
-                        </a>
-                    </div>
-                </nav>
-            </div>
-            <div class="border-t border-slate-800 px-6 py-6">
-                <div class="rounded-2xl border border-slate-800 bg-slate-900/60 p-4 text-xs text-slate-400">
-                    <p class="font-semibold text-slate-200">Stake Tips</p>
-                    <p class="mt-2 leading-relaxed text-slate-400">Future modules like wallets, games, and live counters will appear here. Layout scaffolding is now in place.</p>
-                </div>
-            </div>
-        </aside>
-
-        <main class="flex-1 px-6 pb-16 pt-10 xl:ml-72">
-            <div class="mx-auto w-full max-w-6xl space-y-10">
-                <section class="rounded-3xl border border-slate-800 bg-slate-900/40 p-8 shadow-xl shadow-slate-950/30">
-                    <div class="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-                        <div>
-                            <p class="text-sm font-medium uppercase tracking-widest text-emerald-300">Overview</p>
-                            <h1 class="text-3xl font-bold text-white">Stake-style Dashboard</h1>
-                        </div>
-                        <div class="flex items-center gap-3 text-xs text-slate-400">
-                            <span class="inline-flex items-center gap-2 rounded-full border border-slate-800 px-3 py-1">
-                                <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
-                                Layout Ready
-                            </span>
-                            <span class="inline-flex items-center gap-2 rounded-full border border-slate-800 px-3 py-1">
-                                <i class="fas fa-layer-group"></i>
-                                Step 1 of 8
-                            </span>
-                        </div>
-                    </div>
-                    <p class="mt-6 text-sm leading-relaxed text-slate-400">The structural layout mirrors Stake&apos;s dashboard hierarchy with a persistent top bar, sidebar navigation, and a central stage for casino experiences. Future steps will progressively add interactive tabs, games, wallet mechanics, and persistent state.</p>
-                </section>
-
-                <section class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-                    <article class="rounded-2xl border border-dashed border-slate-800/70 bg-slate-900/30 p-6 text-center">
-                        <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Coming Up</p>
-                        <h2 class="mt-4 text-xl font-bold text-white">Stake Originals Grid</h2>
-                        <p class="mt-3 text-sm text-slate-400">Interactive cards for Dice, Crash, Plinko, Mines, Limbo, and Blackjack will live here.</p>
-                    </article>
-                    <article class="rounded-2xl border border-dashed border-slate-800/70 bg-slate-900/30 p-6 text-center">
-                        <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">In Progress</p>
-                        <h2 class="mt-4 text-xl font-bold text-white">Wallet &amp; Bet Controls</h2>
-                        <p class="mt-3 text-sm text-slate-400">Deposit, withdrawal, chip denominations, and betting sliders will occupy the dedicated controls panel.</p>
-                    </article>
-                    <article class="rounded-2xl border border-dashed border-slate-800/70 bg-slate-900/30 p-6 text-center">
-                        <p class="text-xs font-semibold uppercase tracking-[0.4em] text-slate-500">Future</p>
-                        <h2 class="mt-4 text-xl font-bold text-white">Slots Carousel &amp; Simulators</h2>
-                        <p class="mt-3 text-sm text-slate-400">Stake-favorite slots like Sweet Bonanza and Gates of Olympus will spin from this section.</p>
-                    </article>
-                </section>
-
-                <section class="rounded-3xl border border-slate-800 bg-slate-900/40 p-8">
-                    <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                        <div class="max-w-2xl">
-                            <h2 class="text-2xl font-semibold text-white">Implementation Roadmap</h2>
-                            <p class="mt-3 text-sm text-slate-400">Each phase will extend this scaffold without disrupting the established structure. The next iteration adds tabbed navigation and interactive modules while preserving the top-level layout introduced here.</p>
-                        </div>
-                        <ul class="grid gap-2 text-sm text-slate-400">
-                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Step 1: Layout foundation ✅</li>
-                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 2: Tabs &amp; navigation</li>
-                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 3: Stake Originals grid</li>
-                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 4: Wallet &amp; bet controls</li>
-                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 5: Game engines</li>
-                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 6: Slots simulator</li>
-                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 7: History, favorites, search</li>
-                            <li class="flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 8: Settings &amp; security</li>
-                        </ul>
-                    </div>
-                </section>
-            </div>
-        </main>
+<body>
+    <div class="card">
+        <span class="text-emerald-300 text-sm uppercase tracking-[0.4em]">Stake Casino Hub</span>
+        <h1>Dashboard unified</h1>
+        <p>We&apos;ve consolidated the Stake experience into <strong>index.html</strong> so every future feature lives inside a single cohesive shell.</p>
+        <a href="index.html"><i class="fas fa-arrow-right"></i>Continue to the new dashboard</a>
     </div>
 </body>
 </html>

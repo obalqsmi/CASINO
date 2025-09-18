@@ -1,38 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Help - Casino Royale</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stake Casino Hub · Help Center</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #1a202c; }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
     </style>
 </head>
-<body class="text-white">
-    <!-- Header -->
-    <header class="bg-gray-900 shadow-lg sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-yellow-500"><i class="fas fa-gem mr-2"></i>Casino Royale</a>
-            <div class="hidden md:flex items-center space-x-6">
-                <a href="index.html" class="text-gray-300 hover:text-yellow-400">Home</a>
-                <a href="dashboard.html" class="text-gray-300 hover:text-yellow-400">Dashboard</a>
-                <a href="history.html" class="text-gray-300 hover:text-yellow-400">History</a>
-                <a href="help.html" class="text-yellow-400 font-bold">Help</a>
-                <a href="settings.html" class="text-gray-300 hover:text-yellow-400">Settings</a>
+<body class="bg-slate-950 text-slate-100">
+    <div class="flex min-h-screen bg-slate-950">
+        <aside class="hidden w-72 flex-col border-r border-slate-900/70 bg-slate-950/60 backdrop-blur-xl xl:fixed xl:inset-y-0 xl:flex">
+            <div class="flex-1 overflow-y-auto px-6 pb-12 pt-10">
+                <a href="index.html" class="flex items-center gap-3 text-emerald-400">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-2xl">
+                        <i class="fas fa-dice"></i>
+                    </span>
+                    <span>
+                        <span class="block text-xs uppercase tracking-[0.4em] text-slate-500">Stake</span>
+                        <span class="text-xl font-bold text-white">Casino Hub</span>
+                    </span>
+                </a>
+                <nav class="mt-12 space-y-6 text-sm font-medium text-slate-400">
+                    <div>
+                        <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Casino</p>
+                        <div class="mt-3 space-y-1">
+                            <a href="index.html" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-chess-knight"></i>Lobby
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-basketball-ball"></i>Sports
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-ticket"></i>My Bets
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Live</p>
+                        <div class="mt-3 space-y-1">
+                            <a href="#" class="flex items-center justify-between rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <span class="flex items-center gap-3">
+                                    <span class="relative">
+                                        <span class="absolute -left-2 -top-2 h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+                                        <i class="fas fa-broadcast-tower ml-3"></i>
+                                    </span>
+                                    Live Events
+                                </span>
+                                <span id="live-events-count" class="rounded-full bg-emerald-500/20 px-2 text-xs font-semibold text-emerald-200">12</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-stopwatch"></i>Starting Soon
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-fire"></i>Popular Leagues
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Account</p>
+                        <div class="mt-3 space-y-1">
+                            <a href="history.html" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-history"></i>History
+                            </a>
+                            <a href="settings.html" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-sliders-h"></i>Settings
+                            </a>
+                            <a href="help.html" aria-current="page" class="flex items-center justify-between rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-emerald-200 shadow-inner shadow-emerald-500/10">
+                                <span class="flex items-center gap-3"><i class="fas fa-circle-question"></i>Help Center</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </nav>
             </div>
-        </nav>
-    </header>
-    <!-- Main -->
-    <main class="bg-gray-800 min-h-[calc(100vh-150px)]">
-        <div class="container mx-auto px-6 py-20 text-center">
-            <h1 class="text-5xl font-extrabold text-white mb-4">Help & Support</h1>
-            <p class="text-lg text-gray-300">This page will contain FAQs and contact information.</p>
+            <div class="border-t border-slate-900/60 px-6 py-8 text-xs text-slate-500">
+                <p class="font-semibold text-slate-300">Need assistance?</p>
+                <p class="mt-2 leading-relaxed text-slate-500">The help center collects FAQs, contact workflows, and responsible gaming resources once customer support integrations are wired in Step 7.</p>
+            </div>
+        </aside>
+
+        <div class="flex min-h-screen flex-1 flex-col xl:ml-72">
+            <header class="sticky top-0 z-40 border-b border-slate-900/70 bg-slate-950/90 backdrop-blur">
+                <div class="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-10">
+                    <div class="flex items-center gap-4">
+                        <a href="index.html" class="flex items-center gap-3 xl:hidden">
+                            <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-300">
+                                <i class="fas fa-dice"></i>
+                            </span>
+                            <span>
+                                <span class="block text-xs uppercase tracking-[0.4em] text-slate-500">Stake</span>
+                                <span class="text-lg font-semibold text-white">Casino Hub</span>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="flex flex-1 items-center justify-center px-6">
+                        <h1 class="text-lg font-semibold text-slate-200 sm:text-xl">Help Center &amp; Support</h1>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <div id="auth-actions" class="flex items-center gap-2">
+                            <a href="login.html" class="rounded-xl border border-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Log In</a>
+                            <a href="signup.html" class="rounded-xl bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400">Sign Up</a>
+                        </div>
+                        <div id="profile-summary" class="hidden items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-3 py-2 text-sm shadow-inner shadow-black/40">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Player</p>
+                                <p id="header-username" class="font-semibold text-white">Player</p>
+                            </div>
+                            <button id="logout-button" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-900/70 text-slate-400 transition hover:border-red-400 hover:text-red-300" aria-label="Log out">
+                                <i class="fas fa-arrow-right-from-bracket"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-y-auto px-4 pb-16 pt-10 sm:px-6 lg:px-10">
+                <section class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-8 shadow-inner shadow-black/40">
+                    <div class="flex flex-col gap-6 lg:flex-row lg:justify-between">
+                        <div>
+                            <h2 class="text-2xl font-semibold text-white">Support overview</h2>
+                            <p class="mt-3 max-w-2xl text-sm text-slate-400">Knowledge base articles, live chat, and player safety workflows will power this hub. The layout now matches the Stake aesthetic while we prepare for integrations.</p>
+                        </div>
+                        <div class="grid gap-3 text-sm text-slate-300">
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-3">Step 7 · FAQs &amp; guides</div>
+                            <div class="rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-3">Step 7 · Support contact</div>
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-3">Step 8 · Responsible gaming tools</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="mt-10 grid gap-6 lg:grid-cols-2">
+                    <article class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-6">
+                        <h3 class="text-lg font-semibold text-white">FAQs in progress</h3>
+                        <ul class="mt-4 space-y-3 text-sm text-slate-400">
+                            <li class="flex gap-3"><span class="text-emerald-300"><i class="fas fa-circle"></i></span>How provably-fair games generate results</li>
+                            <li class="flex gap-3"><span class="text-emerald-300"><i class="fas fa-circle"></i></span>Managing wallets, chips, and conversions</li>
+                            <li class="flex gap-3"><span class="text-emerald-300"><i class="fas fa-circle"></i></span>Using auto-bet &amp; risk controls responsibly</li>
+                        </ul>
+                    </article>
+                    <article class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-6">
+                        <h3 class="text-lg font-semibold text-white">Need live help?</h3>
+                        <p class="mt-4 text-sm text-slate-400">Live chat, email support, and social channels will integrate here. For now, bookmark this space—alerts and contact options will surface alongside Step 7 features.</p>
+                        <div class="mt-6 grid gap-3">
+                            <button class="rounded-2xl border border-slate-900/70 px-4 py-3 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Live chat (soon)</button>
+                            <button class="rounded-2xl border border-slate-900/70 px-4 py-3 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Email support (soon)</button>
+                            <button class="rounded-2xl border border-slate-900/70 px-4 py-3 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Community (soon)</button>
+                        </div>
+                    </article>
+                    <article class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-6 lg:col-span-2">
+                        <h3 class="text-lg font-semibold text-white">Responsible gaming resources</h3>
+                        <p class="mt-4 text-sm text-slate-400">Self-exclusion, deposit limits, session reminders, and cooling-off periods will integrate with Step 8&apos;s lock and shred mechanisms to maintain player safety.</p>
+                        <div class="mt-6 grid gap-3 md:grid-cols-2">
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-4 text-sm text-slate-400">Session limits &amp; reminders</div>
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-4 text-sm text-slate-400">Self-exclusion &amp; account pauses</div>
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-4 text-sm text-slate-400">Third-party counseling links</div>
+                            <div class="rounded-2xl border border-dashed border-slate-800 px-4 py-4 text-sm text-slate-400">Jurisdiction compliance tools</div>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="mt-10 rounded-3xl border border-dashed border-emerald-500/40 bg-emerald-500/5 p-8 text-sm text-emerald-100">
+                    <h3 class="text-lg font-semibold text-emerald-200">Stay tuned</h3>
+                    <ul class="mt-4 space-y-2 text-slate-200">
+                        <li>Dynamic search across FAQs and help articles.</li>
+                        <li>Ticket submission tied to your Stake account.</li>
+                        <li>Real-time outage and maintenance notices.</li>
+                        <li>Integrated knowledge base for all casino modules.</li>
+                    </ul>
+                </section>
+            </main>
+
+            <footer class="border-t border-slate-900/70 bg-slate-950/80 px-4 py-6 text-xs text-slate-500 sm:px-6 lg:px-10">
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <p>&copy; <span id="footer-year"></span> Stake Casino Hub.</p>
+                    <p>Help center integrations will unlock alongside Step 7.</p>
+                </div>
+            </footer>
         </div>
-    </main>
-    <!-- Footer -->
-    <footer class="bg-gray-900 py-10"><div class="container mx-auto px-6 text-center text-gray-400"><p>&copy; 2025 Casino Royale. All Rights Reserved.</p></div></footer>
+    </div>
+
+    <script>
+        const STORAGE_KEY = 'stakeCasinoState';
+        const legacyUserKey = 'casinoUser';
+
+        const state = (() => {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) {
+                return null;
+            }
+            try {
+                return JSON.parse(raw);
+            } catch (error) {
+                console.warn('Unable to parse stored state.', error);
+                return null;
+            }
+        })() || {};
+
+        const authActions = document.getElementById('auth-actions');
+        const profileSummary = document.getElementById('profile-summary');
+        const usernameLabel = document.getElementById('header-username');
+        const logoutButton = document.getElementById('logout-button');
+        const footerYear = document.getElementById('footer-year');
+        const liveEventsCount = document.getElementById('live-events-count');
+
+        footerYear.textContent = new Date().getFullYear();
+        if (state.live && typeof state.live.events === 'number' && liveEventsCount) {
+            liveEventsCount.textContent = state.live.events;
+        }
+
+        const renderAuth = () => {
+            if (state.user && state.user.username) {
+                usernameLabel.textContent = state.user.username;
+                profileSummary.classList.remove('hidden');
+                authActions.classList.add('hidden');
+            } else {
+                profileSummary.classList.add('hidden');
+                authActions.classList.remove('hidden');
+            }
+        };
+
+        renderAuth();
+
+        if (logoutButton) {
+            logoutButton.addEventListener('click', () => {
+                state.user = null;
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+                localStorage.removeItem(legacyUserKey);
+                renderAuth();
+            });
+        }
+    </script>
 </body>
 </html>

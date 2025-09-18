@@ -1,171 +1,406 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Casino Royale - The Ultimate Gaming Experience</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stake Casino Hub</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #0f1923; /* Main dark background */
         }
-        .sidebar {
-            background-color: #1a2935;
-        }
-        .main-content {
-            background-color: #0f1923;
-        }
-        .game-card {
-            background-color: #2d3748;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .game-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 15px rgba(29, 78, 216, 0.5); /* Blue glow */
-        }
-        .btn-primary {
-            @apply bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md transition duration-300;
-        }
-         .btn-secondary {
-            @apply bg-slate-700 hover:bg-slate-600 text-white font-bold py-2 px-4 rounded-md transition duration-300;
+        .scroll-shadow {
+            box-shadow: inset 0 1px 0 0 rgba(15, 23, 42, 0.7);
         }
     </style>
 </head>
-<body class="text-slate-300">
-
-    <div class="flex min-h-screen">
-        <!-- Collapsible Sidebar -->
-        <aside class="sidebar w-64 min-h-screen flex-shrink-0 p-4 space-y-6 hidden md:flex md:flex-col">
-            <a href="index.html" class="text-2xl font-bold text-white text-center">
-                <i class="fas fa-gem mr-2 text-blue-500"></i>Casino Royale
-            </a>
-            <nav class="flex-grow space-y-2">
-                <a href="dashboard.html" class="flex items-center p-3 rounded-lg hover:bg-slate-700 transition-colors">
-                    <i class="fas fa-dice w-6 text-center text-slate-400"></i><span class="ml-4">Casino</span>
+<body class="bg-slate-950 text-slate-100">
+    <div class="flex min-h-screen bg-slate-950">
+        <!-- Desktop Sidebar -->
+        <aside class="hidden w-72 flex-col border-r border-slate-900/70 bg-slate-950/60 backdrop-blur-xl xl:fixed xl:inset-y-0 xl:flex">
+            <div class="flex-1 overflow-y-auto px-6 pb-12 pt-10">
+                <a href="index.html" class="flex items-center gap-3 text-emerald-400">
+                    <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-500/10 text-2xl">
+                        <i class="fas fa-dice"></i>
+                    </span>
+                    <span>
+                        <span class="block text-xs uppercase tracking-[0.4em] text-slate-500">Stake</span>
+                        <span class="text-xl font-bold text-white">Casino Hub</span>
+                    </span>
                 </a>
-                 <a href="history.html" class="flex items-center p-3 rounded-lg hover:bg-slate-700 transition-colors">
-                    <i class="fas fa-history w-6 text-center text-slate-400"></i><span class="ml-4">History</span>
-                </a>
-                <a href="settings.html" class="flex items-center p-3 rounded-lg hover:bg-slate-700 transition-colors">
-                    <i class="fas fa-cog w-6 text-center text-slate-400"></i><span class="ml-4">Settings</span>
-                </a>
-                 <a href="help.html" class="flex items-center p-3 rounded-lg hover:bg-slate-700 transition-colors">
-                    <i class="fas fa-question-circle w-6 text-center text-slate-400"></i><span class="ml-4">Help</span>
-                </a>
-            </nav>
-            <div class="space-y-2 text-sm text-slate-500">
-                <p>&copy; 2025 Casino Royale</p>
+                <nav class="mt-12 space-y-6 text-sm font-medium text-slate-400">
+                    <div>
+                        <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Casino</p>
+                        <div class="mt-3 space-y-1">
+                            <a href="index.html" aria-current="page" class="flex items-center justify-between rounded-2xl border border-emerald-500/40 bg-emerald-500/10 px-4 py-3 text-emerald-200 shadow-inner shadow-emerald-500/10">
+                                <span class="flex items-center gap-3"><i class="fas fa-chess-knight"></i>Lobby</span>
+                                <i class="fas fa-chevron-right text-xs"></i>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-basketball-ball"></i>Sports
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-ticket"></i>My Bets
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Live</p>
+                        <div class="mt-3 space-y-1">
+                            <a href="#" class="flex items-center justify-between rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <span class="flex items-center gap-3">
+                                    <span class="relative">
+                                        <span class="absolute -left-2 -top-2 h-2 w-2 animate-pulse rounded-full bg-emerald-400"></span>
+                                        <i class="fas fa-broadcast-tower ml-3"></i>
+                                    </span>
+                                    Live Events
+                                </span>
+                                <span id="live-events-count" class="rounded-full bg-emerald-500/20 px-2 text-xs font-semibold text-emerald-200">12</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-stopwatch"></i>Starting Soon
+                            </a>
+                            <a href="#" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-fire"></i>Popular Leagues
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="px-4 text-[11px] uppercase tracking-[0.5em] text-slate-600">Account</p>
+                        <div class="mt-3 space-y-1">
+                            <a href="history.html" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-history"></i>History
+                            </a>
+                            <a href="settings.html" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-sliders-h"></i>Settings
+                            </a>
+                            <a href="help.html" class="flex items-center gap-3 rounded-2xl px-4 py-3 transition hover:bg-slate-900/80">
+                                <i class="fas fa-circle-question"></i>Help Center
+                            </a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="border-t border-slate-900/60 px-6 py-8 text-xs text-slate-500">
+                <p class="font-semibold text-slate-300">Roadmap</p>
+                <p class="mt-2 leading-relaxed text-slate-500">Phase 1 establishes the Stake-inspired shell that will host wallet mechanics, Stake Originals, slots, search, history, and security flows across upcoming iterations.</p>
             </div>
         </aside>
 
-        <!-- Main Content -->
-        <div class="flex-grow">
-            <!-- Header -->
-            <header class="main-content flex items-center justify-between p-4 border-b border-slate-800">
-                <button class="md:hidden text-white">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-                <div class="w-full max-w-xs relative hidden md:block">
-                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-500"></i>
-                    <input type="text" placeholder="Search for games..." class="w-full bg-slate-800 border border-slate-700 rounded-full py-2 pl-10 pr-4 text-white focus:outline-none focus:border-blue-500">
+        <div class="flex min-h-screen flex-1 flex-col xl:ml-72">
+            <!-- Top Bar -->
+            <header class="sticky top-0 z-40 border-b border-slate-900/70 bg-slate-950/90 backdrop-blur">
+                <div class="flex h-20 items-center justify-between px-4 sm:px-6 lg:px-10">
+                    <div class="flex items-center gap-4">
+                        <button class="flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-800 text-slate-300 transition hover:border-emerald-400 hover:text-emerald-300 xl:hidden" aria-label="Toggle navigation">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                        <a href="index.html" class="flex items-center gap-3 xl:hidden">
+                            <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-500/10 text-emerald-300">
+                                <i class="fas fa-dice"></i>
+                            </span>
+                            <span>
+                                <span class="block text-xs uppercase tracking-[0.4em] text-slate-500">Stake</span>
+                                <span class="text-lg font-semibold text-white">Casino Hub</span>
+                            </span>
+                        </a>
+                    </div>
+
+                    <div class="hidden max-w-xl flex-1 items-center justify-center px-6 md:flex">
+                        <label for="global-search" class="relative flex w-full items-center">
+                            <span class="absolute left-4 text-slate-500"><i class="fas fa-search"></i></span>
+                            <input id="global-search" type="search" placeholder="Search games, providers, or features" class="w-full rounded-full border border-slate-900/70 bg-slate-950/80 py-3 pl-12 pr-4 text-sm text-slate-100 shadow-inner shadow-black/40 transition focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/30" />
+                            <span class="pointer-events-none absolute right-4 hidden text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-500 lg:block">⌘K</span>
+                        </label>
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <div id="wallet-summary" class="hidden items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-2 text-left text-sm shadow-inner shadow-black/40 sm:flex">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Balance</p>
+                                <p id="wallet-balance" class="text-lg font-semibold text-white">0.00000000 BTC</p>
+                            </div>
+                            <button class="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-300 transition hover:bg-emerald-500/20" aria-label="Wallet actions">
+                                <i class="fas fa-wallet"></i>
+                            </button>
+                        </div>
+                        <button class="hidden h-11 w-11 items-center justify-center rounded-2xl border border-slate-900/70 text-slate-400 transition hover:border-emerald-400 hover:text-emerald-300 sm:flex" aria-label="Notifications">
+                            <i class="fas fa-bell"></i>
+                        </button>
+                        <div id="auth-actions" class="flex items-center gap-2">
+                            <a href="login.html" class="rounded-xl border border-slate-900/70 px-4 py-2 text-sm font-semibold text-slate-300 transition hover:border-emerald-400 hover:text-emerald-200">Log In</a>
+                            <a href="signup.html" class="rounded-xl bg-emerald-500/90 px-4 py-2 text-sm font-semibold text-slate-950 transition hover:bg-emerald-400">Sign Up</a>
+                        </div>
+                        <div id="profile-summary" class="hidden items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-3 py-2 text-sm shadow-inner shadow-black/40">
+                            <div>
+                                <p class="text-[10px] uppercase tracking-[0.3em] text-slate-500">Player</p>
+                                <p id="header-username" class="font-semibold text-white">Player</p>
+                            </div>
+                            <button id="logout-button" class="flex h-10 w-10 items-center justify-center rounded-xl border border-slate-900/70 text-slate-400 transition hover:border-red-400 hover:text-red-300" aria-label="Log out">
+                                <i class="fas fa-arrow-right-from-bracket"></i>
+                            </button>
+                        </div>
+                    </div>
                 </div>
-                <div id="auth-buttons" class="flex items-center space-x-4">
-                    <a href="login.html" class="btn-secondary">Log In</a>
-                    <a href="signup.html" class="btn-primary">Sign Up</a>
-                </div>
-                 <div id="user-info" class="hidden items-center space-x-4">
-                     <span id="username-display" class="font-semibold text-white"></span>
-                     <button id="logout-button" class="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">Log Out</button>
+
+                <div class="border-t border-slate-900/60 px-4 sm:px-6 lg:px-10">
+                    <nav class="flex flex-wrap gap-2 py-3 text-sm font-semibold text-slate-400">
+                        <button class="rounded-full border border-emerald-400/60 bg-emerald-500/10 px-4 py-2 text-emerald-200 shadow-inner shadow-emerald-500/10">Lobby</button>
+                        <button class="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-800 hover:text-emerald-200">Live Casino</button>
+                        <button class="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-800 hover:text-emerald-200">Featured Slots</button>
+                        <button class="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-800 hover:text-emerald-200">Game Shows</button>
+                        <button class="rounded-full border border-transparent px-4 py-2 transition hover:border-slate-800 hover:text-emerald-200">Stake Originals</button>
+                    </nav>
                 </div>
             </header>
 
-            <main class="main-content p-6">
-                <!-- Hero Banner -->
-                <section class="mb-10">
-                    <div class="rounded-lg overflow-hidden relative h-80">
-                         <img src="https://placehold.co/1200x400/0f1923/FFFFFF?text=Epic+Jackpot+Event" class="w-full h-full object-cover" alt="Promotional Banner">
-                         <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-start p-12">
-                            <h1 class="text-4xl font-extrabold text-white mb-3">New Original Game!</h1>
-                            <p class="text-slate-300 max-w-lg mb-6">Experience the thrill of 'Cosmic Crash'. Predict the multiplier and win big before it's too late!</p>
-                            <a href="dashboard.html" class="btn-primary text-lg">Play Now</a>
-                         </div>
+            <!-- Main content -->
+            <main class="flex-1 overflow-y-auto px-4 pb-16 pt-10 sm:px-6 lg:px-10">
+                <section class="rounded-3xl border border-slate-900/70 bg-slate-950/60 p-8 shadow-xl shadow-black/40">
+                    <div class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
+                        <div>
+                            <p class="text-sm font-semibold uppercase tracking-[0.5em] text-emerald-300">Phase 1</p>
+                            <h1 class="mt-2 text-3xl font-bold text-white md:text-4xl">Stake Dashboard Shell Ready</h1>
+                            <p class="mt-4 max-w-2xl text-sm leading-relaxed text-slate-400">The foundational layout mirrors Stake&apos;s casino experience with a fixed top bar, persistent sidebar, and contextual tab rail. Future updates will progressively activate wallet mechanics, Stake Originals, slots, account history, security tools, and persistent state.</p>
+                        </div>
+                        <div class="grid gap-3 text-sm text-slate-300">
+                            <div class="flex items-center gap-3 rounded-2xl border border-slate-900/70 bg-slate-950/70 px-4 py-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Step 1 · Layout scaffold</div>
+                            <div class="flex items-center gap-3 rounded-2xl border border-dashed border-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 2 · Navigation logic</div>
+                            <div class="flex items-center gap-3 rounded-2xl border border-dashed border-slate-800 px-4 py-3"><span class="h-2 w-2 rounded-full bg-slate-700"></span>Step 3 · Stake Originals</div>
+                        </div>
                     </div>
                 </section>
 
-                <!-- Game Grid -->
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-6">Popular Games</h2>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
-                        <!-- Repeat this game card block for each game -->
-                        <div class="game-card rounded-lg overflow-hidden cursor-pointer">
-                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Slots" class="w-full h-48 object-cover">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-white">Book of Slots</h3>
-                                <p class="text-sm text-slate-400">Provider Name</p>
+                <section class="mt-10 grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+                    <article class="rounded-2xl border border-slate-900/70 bg-slate-950/50 p-6 shadow-inner shadow-black/40">
+                        <p class="text-xs font-semibold uppercase tracking-[0.5em] text-slate-500">Stake Originals</p>
+                        <h2 class="mt-3 text-xl font-semibold text-white">Interactive grid incoming</h2>
+                        <p class="mt-3 text-sm text-slate-400">Dice, Crash, Plinko, Mines, Limbo, and Blackjack will sit inside the main grid with live odds, bet inputs, and provably-fair seeding once Step 3 &amp; 5 land.</p>
+                    </article>
+                    <article class="rounded-2xl border border-slate-900/70 bg-slate-950/50 p-6 shadow-inner shadow-black/40">
+                        <p class="text-xs font-semibold uppercase tracking-[0.5em] text-slate-500">Wallet &amp; chips</p>
+                        <h2 class="mt-3 text-xl font-semibold text-white">Bet controls panel prepared</h2>
+                        <p class="mt-3 text-sm text-slate-400">Deposit, withdraw, convert, transfer, chip presets, and turbo bet adjustments will dock under the header as dedicated controls in Step 4.</p>
+                    </article>
+                    <article class="rounded-2xl border border-slate-900/70 bg-slate-950/50 p-6 shadow-inner shadow-black/40">
+                        <p class="text-xs font-semibold uppercase tracking-[0.5em] text-slate-500">Slots &amp; Shows</p>
+                        <h2 class="mt-3 text-xl font-semibold text-white">Carousel staging area</h2>
+                        <p class="mt-3 text-sm text-slate-400">Sweet Bonanza, Wanted Dead or a Wild, Sugar Rush, Gates of Olympus, Dork Unit, and Dog Mansion Megaways will rotate here with modal simulators.</p>
+                    </article>
+                </section>
+
+                <section class="mt-10 rounded-3xl border border-slate-900/70 bg-slate-950/60 p-8">
+                    <div class="grid gap-8 lg:grid-cols-[1.5fr,1fr]">
+                        <div class="space-y-6">
+                            <div class="flex items-center justify-between">
+                                <h2 class="text-2xl font-semibold text-white">Stake Originals Preview</h2>
+                                <span class="rounded-full border border-emerald-400/60 bg-emerald-500/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-emerald-200">Step 3 soon</span>
+                            </div>
+                            <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
+                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-dice"></i></div>
+                                    <h3 class="mt-4 text-lg font-semibold text-white">Dice</h3>
+                                    <p class="mt-2 text-xs text-slate-400">Provably-fair rolls with risk sliders and instant payouts.</p>
+                                </div>
+                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
+                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-rocket"></i></div>
+                                    <h3 class="mt-4 text-lg font-semibold text-white">Crash</h3>
+                                    <p class="mt-2 text-xs text-slate-400">Charted multipliers with auto cash-out and live queue.</p>
+                                </div>
+                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
+                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-bullseye"></i></div>
+                                    <h3 class="mt-4 text-lg font-semibold text-white">Plinko</h3>
+                                    <p class="mt-2 text-xs text-slate-400">Risk tiers, pin rows, and weighted cups ready for simulation.</p>
+                                </div>
+                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
+                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-bomb"></i></div>
+                                    <h3 class="mt-4 text-lg font-semibold text-white">Mines</h3>
+                                    <p class="mt-2 text-xs text-slate-400">Dynamic boards with cash-out ladders and volatility tuning.</p>
+                                </div>
+                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
+                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-wave-square"></i></div>
+                                    <h3 class="mt-4 text-lg font-semibold text-white">Limbo</h3>
+                                    <p class="mt-2 text-xs text-slate-400">Pick a multiplier, beat the odds, and chain rapid bets.</p>
+                                </div>
+                                <div class="rounded-2xl border border-dashed border-slate-800 bg-slate-950/80 p-5 text-center">
+                                    <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-emerald-500/10 text-2xl text-emerald-300"><i class="fas fa-chess-king"></i></div>
+                                    <h3 class="mt-4 text-lg font-semibold text-white">Blackjack</h3>
+                                    <p class="mt-2 text-xs text-slate-400">Multi-hand blackjack with split, double, and insurance logic.</p>
+                                </div>
                             </div>
                         </div>
-                        <div class="game-card rounded-lg overflow-hidden cursor-pointer">
-                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Blackjack" class="w-full h-48 object-cover">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-white">Live Blackjack</h3>
-                                <p class="text-sm text-slate-400">Evolution</p>
+                        <div class="space-y-6 rounded-3xl border border-slate-900/70 bg-slate-950/70 p-6">
+                            <div>
+                                <h3 class="text-lg font-semibold text-white">Slots Carousel Preview</h3>
+                                <p class="mt-2 text-sm text-slate-400">Upcoming carousel anchors for Stake-favorite slots with modal simulators, auto-spins, and paylines.</p>
                             </div>
+                            <ul class="space-y-3 text-sm text-slate-300">
+                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Sweet Bonanza</li>
+                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Wanted Dead or a Wild</li>
+                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Sugar Rush</li>
+                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Gates of Olympus</li>
+                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Dork Unit</li>
+                                <li class="flex items-center gap-3"><span class="h-2 w-2 rounded-full bg-emerald-400"></span>Dog Mansion Megaways</li>
+                            </ul>
                         </div>
-                         <div class="game-card rounded-lg overflow-hidden cursor-pointer">
-                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Roulette" class="w-full h-48 object-cover">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-white">American Roulette</h3>
-                                <p class="text-sm text-slate-400">Pragmatic Play</p>
-                            </div>
-                        </div>
-                        <div class="game-card rounded-lg overflow-hidden cursor-pointer">
-                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Crash" class="w-full h-48 object-cover">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-white">Cosmic Crash</h3>
-                                <p class="text-sm text-slate-400">Royale Originals</p>
-                            </div>
-                        </div>
-                        <div class="game-card rounded-lg overflow-hidden cursor-pointer">
-                            <img src="https://placehold.co/300x400/1a2935/FFFFFF?text=Baccarat" class="w-full h-48 object-cover">
-                            <div class="p-3">
-                                <h3 class="font-semibold text-white">Speed Baccarat</h3>
-                                <p class="text-sm text-slate-400">Evolution</p>
-                            </div>
-                        </div>
-                        <!-- ... add more game cards as needed -->
                     </div>
+                </section>
+
+                <section class="mt-10 rounded-3xl border border-dashed border-emerald-500/30 bg-emerald-500/5 p-8 text-sm text-emerald-100">
+                    <h2 class="text-xl font-semibold text-emerald-200">Implementation Roadmap</h2>
+                    <ol class="mt-4 space-y-3 text-slate-200">
+                        <li><span class="font-semibold text-emerald-300">Step 1 · Layout foundation</span> — Complete. Shared Stake-inspired shell across the project with fixed header, sidebar, and content canvas.</li>
+                        <li><span class="font-semibold text-emerald-300">Step 2 · Tabs &amp; navigation</span> — Upcoming interactive tab router, keyboard shortcuts, and mobile tray.</li>
+                        <li><span class="font-semibold text-emerald-300">Step 3 · Stake Originals grid</span> — Engage cards, quick launch modals, and seeded randomization pipeline.</li>
+                        <li><span class="font-semibold text-emerald-300">Step 4 · Wallet &amp; bet controls</span> — Deposit/withdraw/convert/transfer, chip presets, bet sizing, and auto bet toggles.</li>
+                        <li><span class="font-semibold text-emerald-300">Step 5 · Game engines</span> — Dice, Crash, Plinko, Mines, Limbo, Blackjack with provably-fair logic.</li>
+                        <li><span class="font-semibold text-emerald-300">Step 6 · Slots carousel</span> — 5×3 reel simulations, paylines, spins, and auto-spins.</li>
+                        <li><span class="font-semibold text-emerald-300">Step 7 · History &amp; discovery</span> — Favorites, search, filters, live counters, toasts, and notifications.</li>
+                        <li><span class="font-semibold text-emerald-300">Step 8 · Security &amp; extras</span> — Settings, seeds, lock screen, shred mode, decoy accounts, state export/import.</li>
+                    </ol>
                 </section>
             </main>
+
+            <footer class="border-t border-slate-900/70 bg-slate-950/80 px-4 py-6 text-xs text-slate-500 sm:px-6 lg:px-10">
+                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <p>&copy; <span id="footer-year"></span> Stake Casino Hub. All rights reserved.</p>
+                    <p>Phase 1 establishes the canvas for the full Stake experience.</p>
+                </div>
+            </footer>
         </div>
     </div>
-     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const user = JSON.parse(localStorage.getItem('casinoUser'));
-            const authButtons = document.getElementById('auth-buttons');
-            const userInfo = document.getElementById('user-info');
-            
-            if (user && user.username) {
-                authButtons.classList.add('hidden');
-                userInfo.classList.remove('hidden');
-                userInfo.classList.add('flex');
-                document.getElementById('username-display').textContent = `Welcome, ${user.username}`;
-            } else {
-                authButtons.classList.remove('hidden');
-                userInfo.classList.add('hidden');
+
+    <script>
+        const STORAGE_KEY = 'stakeCasinoState';
+        const legacyUserKey = 'casinoUser';
+        const defaultState = {
+            version: 1,
+            user: null,
+            wallet: {
+                currency: 'BTC',
+                balance: 0,
+                chips: [0.00000050, 0.00000100, 0.00000200, 0.00000500]
+            },
+            favorites: [],
+            history: [],
+            settings: {
+                sound: true,
+                shredMode: false,
+                decoyAccount: null
+            },
+            live: {
+                events: 12
+            },
+            roadmap: {
+                step: 1
+            }
+        };
+
+        const hydrateState = () => {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            if (!raw) {
+                return JSON.parse(JSON.stringify(defaultState));
             }
 
-            const logoutButton = document.getElementById('logout-button');
-            if(logoutButton) {
-                logoutButton.addEventListener('click', () => {
-                    localStorage.removeItem('casinoUser');
-                    window.location.reload();
-                });
+            try {
+                const parsed = JSON.parse(raw);
+                return {
+                    ...JSON.parse(JSON.stringify(defaultState)),
+                    ...parsed,
+                    wallet: {
+                        ...defaultState.wallet,
+                        ...(parsed.wallet || {})
+                    },
+                    settings: {
+                        ...defaultState.settings,
+                        ...(parsed.settings || {})
+                    },
+                    live: {
+                        ...defaultState.live,
+                        ...(parsed.live || {})
+                    },
+                    roadmap: {
+                        ...defaultState.roadmap,
+                        ...(parsed.roadmap || {})
+                    }
+                };
+            } catch (error) {
+                console.warn('Unable to parse stored state, resetting.', error);
+                return JSON.parse(JSON.stringify(defaultState));
             }
-        });
+        };
+
+        const saveState = (state) => {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        };
+
+        const state = hydrateState();
+
+        // Bridge legacy auth data into the new state container once.
+        const legacyUserRaw = localStorage.getItem(legacyUserKey);
+        if (!state.user && legacyUserRaw) {
+            try {
+                const legacyUser = JSON.parse(legacyUserRaw);
+                if (legacyUser && legacyUser.username) {
+                    state.user = {
+                        username: legacyUser.username,
+                        email: legacyUser.email || null
+                    };
+                    saveState(state);
+                }
+            } catch (error) {
+                console.warn('Unable to parse legacy user data.', error);
+            }
+        }
+
+        const authActions = document.getElementById('auth-actions');
+        const profileSummary = document.getElementById('profile-summary');
+        const usernameLabel = document.getElementById('header-username');
+        const logoutButton = document.getElementById('logout-button');
+        const walletBalance = document.getElementById('wallet-balance');
+        const walletSummary = document.getElementById('wallet-summary');
+        const liveEventsCount = document.getElementById('live-events-count');
+        const footerYear = document.getElementById('footer-year');
+
+        const renderHeader = () => {
+            footerYear.textContent = new Date().getFullYear();
+            if (state.live && typeof state.live.events === 'number') {
+                liveEventsCount.textContent = state.live.events;
+            }
+
+            if (state.wallet && typeof state.wallet.balance === 'number') {
+                const formatted = state.wallet.balance.toLocaleString('en-US', {
+                    minimumFractionDigits: 8,
+                    maximumFractionDigits: 8
+                });
+                walletBalance.textContent = `${formatted} ${state.wallet.currency || 'BTC'}`;
+                walletSummary.classList.remove('hidden');
+            }
+
+            if (state.user && state.user.username) {
+                usernameLabel.textContent = state.user.username;
+                profileSummary.classList.remove('hidden');
+                authActions.classList.add('hidden');
+            } else {
+                profileSummary.classList.add('hidden');
+                authActions.classList.remove('hidden');
+            }
+        };
+
+        renderHeader();
+
+        if (logoutButton) {
+            logoutButton.addEventListener('click', () => {
+                state.user = null;
+                saveState(state);
+                localStorage.removeItem(legacyUserKey);
+                renderHeader();
+            });
+        }
     </script>
 </body>
 </html>
-
